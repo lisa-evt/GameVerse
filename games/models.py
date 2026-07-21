@@ -33,12 +33,9 @@ class Genre(models.Model):
     )
 
     class Meta:
-        """Meta options for the Genre model."""
-
         ordering = ['name']
 
     def __str__(self):
-        # pylint: disable=E0307
         return self.name
 
 
@@ -105,7 +102,6 @@ class Character(models.Model):
     photo = models.ImageField(upload_to='characters/photos/')
 
     def __str__(self):
-        # pylint: disable=E0307
         return self.name
 
 
@@ -127,5 +123,4 @@ class Quest(models.Model):
     )
 
     def __str__(self):
-        # pylint: disable=E0307
         return self.title

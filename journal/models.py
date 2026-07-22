@@ -61,7 +61,9 @@ class UserJournal(CreatedAtModel):
     )
     favorite_quests = models.ManyToManyField(
         'games.Quest',
-        related_name='favorited_in'
+        related_name='favorited_in',
+        null=True, 
+        blank=True,
     )
     review = models.TextField(null=True, blank=True)
     personal_rating = models.FloatField(null=True, blank=True)

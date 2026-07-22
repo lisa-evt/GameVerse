@@ -1,7 +1,6 @@
 from django.conf import settings
-from django.db import models
 from django.core.exceptions import ValidationError
-
+from django.db import models
 
 STATUS_MAX_CHAR_LENGTH = 11
 MAX_QUOTE_LENGTH = 250

@@ -2,8 +2,9 @@
 
 import django.core.validators
 import django.db.models.deletion
-import games.models
 from django.db import migrations, models
+
+import games.models
 
 
 class Migration(migrations.Migration):

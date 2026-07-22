@@ -1,0 +1,85 @@
+
+[
+  {
+    "model": "journal.userjournal",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "game": 1,
+      "status": "completed",
+      "favorite_quests": [
+        1,
+        2
+      ],
+      "review": "One of the best story-driven RPGs I've played. Ciri's story hit hard.",
+      "personal_rating": 9.5,
+      "is_on_showcase": true,
+      "completed_date": "2026-03-15",
+      "created_at": "2026-02-01T18:20:00Z"
+    }
+  },
+  {
+    "model": "journal.userjournal",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "game": 2,
+      "status": "in_progress",
+      "favorite_quests": [
+        3
+      ],
+      "review": null,
+      "personal_rating": null,
+      "is_on_showcase": false,
+      "completed_date": null,
+      "created_at": "2026-04-10T12:00:00Z"
+    }
+  },
+  {
+    "model": "journal.userjournal",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "game": 5,
+      "status": "completed",
+      "favorite_quests": [
+        7
+      ],
+      "review": "Astarion's companion arc alone is worth the playthrough.",
+      "personal_rating": 10,
+      "is_on_showcase": true,
+      "completed_date": "2026-05-20",
+      "created_at": "2026-03-01T09:15:00Z"
+    }
+  },
+  {
+    "model": "journal.userjournal",
+    "pk": 4,
+    "fields": {
+      "user": 2,
+      "game": 8,
+      "status": "dropped",
+      "favorite_quests": [],
+      "review": "Too brutal for me, might come back to it later.",
+      "personal_rating": 6,
+      "is_on_showcase": false,
+      "completed_date": null,
+      "created_at": "2026-03-20T21:45:00Z"
+    }
+  },
+  {
+    "model": "journal.userjournal",
+    "pk": 5,
+    "fields": {
+      "user": 1,
+      "game": 10,
+      "status": "planned",
+      "favorite_quests": [],
+      "review": null,
+      "personal_rating": null,
+      "is_on_showcase": false,
+      "completed_date": null,
+      "created_at": "2026-06-01T08:00:00Z"
+    }
+  }
+]

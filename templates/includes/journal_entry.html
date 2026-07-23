@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<article id="main">
+    <header>
+        <h2>[Название игры]</h2>
+        <p>[Краткий подзаголовок — например, платформа и год прохождения]</p>
+    </header>
+
+    <section class="wrapper style5">
+        <div class="inner">
+
+            <h3>Игра</h3>
+            <p>[Плейсхолдер: общая информация об игре — жанр, платформа, разработчик, дата прохождения]</p>
+
+            <hr />
+
+            <h3>Любимые персонажи</h3>
+            <p>[Плейсхолдер: текст про любимых персонажей]</p>
+
+            <hr />
+
+            <h3>Любимые квесты</h3>
+            <p>[Плейсхолдер: текст про запомнившиеся квесты]</p>
+
+            <hr />
+
+            <h3>Скриншоты</h3>
+            <div class="image fit"><img src="{% static 'images/pic01.jpg' %}" alt="" /></div>
+            <div class="image fit"><img src="{% static 'images/pic02.jpg' %}" alt="" /></div>
+            <div class="image fit"><img src="{% static 'images/pic03.jpg' %}" alt="" /></div>
+
+            <hr />
+
+            <h3>Ревью</h3>
+            <p>[Плейсхолдер: общее впечатление, рейтинг, стоит ли рекомендовать]</p>
+
+        </div>
+    </section>
+</article>
+
+{% endblock %}

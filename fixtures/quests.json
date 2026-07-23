@@ -1,0 +1,253 @@
+[
+  {
+    "model": "games.quest",
+    "pk": 6,
+    "fields": {
+      "title": "Ranni the Witch",
+      "description": "One of Elden Ring's longest and most beloved questlines. Follow the mysterious witch Ranni through hidden regions, legendary bosses, and uncover secrets leading to one of the game's most iconic endings.",
+      "game": 2
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 7,
+    "fields": {
+      "title": "Millicent's Quest",
+      "description": "Help Millicent battle the Scarlet Rot while uncovering her mysterious origins. The journey spans multiple regions and ends with a difficult moral decision.",
+      "game": 2
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 8,
+    "fields": {
+      "title": "Alexander the Iron Fist",
+      "description": "Travel alongside the friendly Living Jar Alexander as he searches for glory. His humorous yet heroic adventure culminates in one of Elden Ring's most memorable encounters.",
+      "game": 2
+    }
+  },
+
+  {
+    "model": "games.quest",
+    "pk": 9,
+    "fields": {
+      "title": "The Journey",
+      "description": "Kratos and Atreus set out to fulfill Faye's final wish by scattering her ashes from the highest peak. Their adventure becomes a powerful story about family and redemption.",
+      "game": 3
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 10,
+    "fields": {
+      "title": "Fafnir's Hoard",
+      "description": "Explore the cursed treasure vault of the legendary dwarf Fafnir, solving puzzles and battling dangerous enemies while learning the story behind the curse.",
+      "game": 3
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 11,
+    "fields": {
+      "title": "Queen of the Valkyries",
+      "description": "After freeing every Valkyrie, challenge Sigrun in the game's toughest optional boss fight, requiring perfect timing and mastery of every combat mechanic.",
+      "game": 3
+    }
+  },
+
+  {
+    "model": "games.quest",
+    "pk": 12,
+    "fields": {
+      "title": "Sinnerman",
+      "description": "A convicted criminal seeks redemption through an unsettling public crucifixion. The quest explores faith, guilt, and the commercialization of human suffering.",
+      "game": 4
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 13,
+    "fields": {
+      "title": "Pyramid Song",
+      "description": "Join Judy Alvarez on a dive through the flooded ruins of her childhood home in one of Cyberpunk 2077's most emotional and atmospheric missions.",
+      "game": 4
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 14,
+    "fields": {
+      "title": "Dream On",
+      "description": "Investigate strange events surrounding a mayoral candidate as a conspiracy involving surveillance, memory manipulation, and political control unfolds.",
+      "game": 4
+    }
+  },
+
+  {
+    "model": "games.quest",
+    "pk": 15,
+    "fields": {
+      "title": "Save the Emerald Grove",
+      "description": "Decide the fate of the Emerald Grove and its refugees. Your choices influence major storylines and determine the survival of many characters.",
+      "game": 5
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 16,
+    "fields": {
+      "title": "Find the Nightsong",
+      "description": "Search for the legendary Nightsong hidden beneath the Shadow-Cursed Lands. The outcome dramatically changes the story and companion quests.",
+      "game": 5
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 17,
+    "fields": {
+      "title": "Astarion's Personal Quest",
+      "description": "Help Astarion confront his vampire master Cazador. The quest explores freedom, revenge, and the consequences of embracing or rejecting power.",
+      "game": 5
+    }
+  },
+
+  {
+    "model": "games.quest",
+    "pk": 18,
+    "fields": {
+      "title": "American Venom",
+      "description": "John Marston hunts Micah Bell during the emotional epilogue, delivering long-awaited justice and bringing Red Dead Redemption 2 to its unforgettable conclusion.",
+      "game": 6
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 19,
+    "fields": {
+      "title": "A Quiet Time",
+      "description": "Arthur and Lenny spend an unforgettable evening drinking in Valentine. This hilarious mission is considered one of the funniest moments in the game.",
+      "game": 6
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 20,
+    "fields": {
+      "title": "Red Dead Redemption",
+      "description": "Arthur Morgan makes his final stand while helping John escape, creating one of the most emotional and memorable endings in gaming history.",
+      "game": 6
+    }
+  },
+
+  {
+    "model": "games.quest",
+    "pk": 21,
+    "fields": {
+      "title": "The White Lady",
+      "description": "Help the spirit of a grieving woman find peace by recovering her lost possessions in one of Hollow Knight's most touching side stories.",
+      "game": 7
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 22,
+    "fields": {
+      "title": "The Grimm Troupe",
+      "description": "Summon the mysterious Grimm Troupe and gather scarlet flames across Hallownest, unlocking new bosses, lore, and memorable music.",
+      "game": 7
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 23,
+    "fields": {
+      "title": "Delicate Flower",
+      "description": "Carry a fragile flower across Hallownest without taking damage. A demanding challenge rewarding patience, precision, and careful route planning.",
+      "game": 7
+    }
+  },
+
+  {
+    "model": "games.quest",
+    "pk": 24,
+    "fields": {
+      "title": "Anri of Astora",
+      "description": "Follow Anri through a tragic journey across Lothric. Your choices determine whether the quest ends in hope, sacrifice, or betrayal.",
+      "game": 8
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 25,
+    "fields": {
+      "title": "Siegward of Catarina",
+      "description": "Help the cheerful knight Siegward fulfill a promise to an old friend, leading to one of Dark Souls III's most memorable boss encounters.",
+      "game": 8
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 26,
+    "fields": {
+      "title": "Greirat of the Undead Settlement",
+      "description": "Support Greirat as he scavenges dangerous locations for valuable items. His survival depends entirely on the player's decisions.",
+      "game": 8
+    }
+  },
+
+  {
+    "model": "games.quest",
+    "pk": 27,
+    "fields": {
+      "title": "The Jewel Store Job",
+      "description": "Michael organizes a high-profile jewelry heist with Franklin. The mission introduces GTA V's iconic planning and crew selection mechanics.",
+      "game": 9
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 28,
+    "fields": {
+      "title": "The Big Score",
+      "description": "The largest heist in GTA V where careful planning, skilled crew members, and player choices determine the outcome and final rewards.",
+      "game": 9
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 29,
+    "fields": {
+      "title": "Three's Company",
+      "description": "Michael, Franklin, and Trevor work together for the first time during a daring FIB operation involving helicopters and rooftop rescues.",
+      "game": 9
+    }
+  },
+
+  {
+    "model": "games.quest",
+    "pk": 30,
+    "fields": {
+      "title": "Escape from the Underworld",
+      "description": "Zagreus repeatedly attempts to escape the Underworld while uncovering the truth about his family and forging relationships with the Olympian gods.",
+      "game": 10
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 31,
+    "fields": {
+      "title": "Orpheus and Eurydice",
+      "description": "Reunite the legendary lovers by resolving their long-standing conflict in one of Hades' most heartwarming and rewarding character storylines.",
+      "game": 10
+    }
+  },
+  {
+    "model": "games.quest",
+    "pk": 32,
+    "fields": {
+      "title": "Achilles and Patroclus",
+      "description": "Help Achilles reconcile with Patroclus after centuries apart, exploring themes of forgiveness, loyalty, and enduring friendship.",
+      "game": 10
+    }
+  }
+]

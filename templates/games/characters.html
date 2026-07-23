@@ -1,0 +1,12 @@
+{% extends 'games/list_grid.html' %}
+
+{% block page_title %}Characters — gameVerse{% endblock %}
+{% block heading %}Characters{% endblock %}
+{% block empty_text %}No characters yet.{% endblock %}
+
+{% block card_body %}
+<div class="card-body">
+  <h5 class="card-title">{{ item.name }}</h5>
+  <p class="card-text text-muted">{{ item.game }}</p>
+</div>
+{% endblock %}

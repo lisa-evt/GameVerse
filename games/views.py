@@ -1,14 +1,18 @@
 from django.shortcuts import render
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
-from .models import Game
+from .models import Game, Character
 
-GAMES_PER_PAGE = 12
+ELEMENTS_PER_PAGE = 10
 
 
 class GamesListView(ListView):
     model = Game
-    paginate_by = GAMES_PER_PAGE
-    template_name = 'games/games_library.html'
-    context_object_name = 'games_library'
+    paginate_by = ELEMENTS_PER_PAGE
+    template_name = 'games/games.html'
 
+
+class CharactersListView(ListView):
+    model = Character
+    paginate_by = ELEMENTS_PER_PAGE
+    template_name = 'games/characters.html'

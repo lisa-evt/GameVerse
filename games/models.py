@@ -2,6 +2,13 @@ from datetime import date
 
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
+from django.conf import settings
+from .utils import generate_unique_slug
+
+
+TITLE_MAX_LENGTH = 120
+NAME_MAX_LENGTH = 200
+FIRST_VIDEOGAME_REALISE_YEAR = 1958
 
 
 def current_year():
@@ -13,11 +20,6 @@ def current_year():
         int: The current calendar year.
     """
     return date.today().year
-
-
-TITLE_MAX_LENGTH = 120
-NAME_MAX_LENGTH = 150
-FIRST_VIDEOGAME_REALISE_YEAR = 1958
 
 
 class Genre(models.Model):
@@ -55,17 +57,11 @@ class Game(models.Model):
             stored in 'games/covers/'.
         metacritic_rating (FloatField): Rating score from Metacritic.
         genre (ManyToManyField): The genre(s) associated with this game.
+        added_by (Foreign Key): Username of who added the game.
     """
 
     title = models.CharField(max_length=TITLE_MAX_LENGTH)
     description = models.TextField()
-    slug = models.SlugField(
-        unique=True,
-        help_text=(
-            'Page identifier for the URL. '
-            'Only Latin letters, numbers, hyphens, and underscores are allowed'
-        ),
-    )
     realise_year = models.IntegerField(
         validators=(
             MinValueValidator(FIRST_VIDEOGAME_REALISE_YEAR),
@@ -76,6 +72,19 @@ class Game(models.Model):
     cover_image = models.ImageField(upload_to='games/covers')
     metacritic_rating = models.FloatField()
     genres = models.ManyToManyField(Genre, related_name='games')
+    added_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='added_games',
+    )
+    slug = models.SlugField(max_length=NAME_MAX_LENGTH, unique=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = generate_unique_slug(self)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f'{self.title} {self.realise_year}'
@@ -90,6 +99,8 @@ class Character(models.Model):
         game (ForeignKey): The Game model instance this character belongs to.
         photo (ImageField): An image file of the character, stored in
             'characters/photos/'.
+        slug (SlugField): Unique URL identifier containing only Latin letters,
+            numbers, hyphens, and underscores.
     """
 
     name = models.CharField(max_length=NAME_MAX_LENGTH)
@@ -100,6 +111,12 @@ class Character(models.Model):
         related_name='characters',
     )
     photo = models.ImageField(upload_to='characters/photos/')
+    slug = models.SlugField(max_length=NAME_MAX_LENGTH, unique=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = generate_unique_slug(self, slugable_field_name='name')
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name

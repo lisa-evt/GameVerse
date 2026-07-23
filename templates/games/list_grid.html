@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{% block page_title %}gameVerse{% endblock %}{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">{% block heading %}{% endblock %}</h1>
+
+<div class="games-grid">
+  {% for item in object_list %}
+  <div class="game-card-wrapper">
+    <div class="card game-card h-100 shadow-sm">
+      {% block card_body %}{% endblock %}
+    </div>
+  </div>
+  {% empty %}
+  <p>{% block empty_text %}No items yet.{% endblock %}</p>
+  {% endfor %}
+</div>
+
+{% include "includes/paginator.html" %}
+{% endblock %}

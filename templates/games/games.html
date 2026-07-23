@@ -1,0 +1,13 @@
+{% extends 'games/list_grid.html' %}
+
+{% block page_title %}Games — gameVerse{% endblock %}
+{% block heading %}Games{% endblock %}
+{% block empty_text %}No games yet.{% endblock %}
+
+{% block card_body %}
+<img src="{{ item.cover_image.url }}" class="card-img-top" alt="{{ item.title }}">
+<div class="card-body">
+  <h5 class="card-title">{{ item.title }}</h5>
+  <p class="card-text text-muted">{{ item.realise_year }} · {{ item.publisher }}</p>
+</div>
+{% endblock %}

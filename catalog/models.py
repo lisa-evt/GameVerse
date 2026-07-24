@@ -86,8 +86,12 @@ class Game(models.Model):
             self.slug = generate_unique_slug(self)
         super().save(*args, **kwargs)
 
+    class Meta:
+        ordering = ['title']
+
     def __str__(self):
         return f'{self.title} {self.realise_year}'
+    
 
 
 class Character(models.Model):
@@ -117,6 +121,9 @@ class Character(models.Model):
         if not self.slug:
             self.slug = generate_unique_slug(self, slugable_field_name='name')
         super().save(*args, **kwargs)
+
+    class Meta:
+        ordering = ['name']
 
     def __str__(self):
         return self.name

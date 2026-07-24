@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ game.title }} — gameVerse{% endblock %}
+
+{% block content %}
+<h1>{{ character.name }}</h1>
+<p>{{ character.description }}</p>
+
+{% endblock %}

@@ -1,69 +1,69 @@
 [
   {
-    "model": "games.genre",
+    "model": "catalog.genre",
     "pk": 1,
     "fields": {
       "name": "RPG"
     }
   },
   {
-    "model": "games.genre",
+    "model": "catalog.genre",
     "pk": 2,
     "fields": {
       "name": "Action RPG"
     }
   },
   {
-    "model": "games.genre",
+    "model": "catalog.genre",
     "pk": 3,
     "fields": {
       "name": "Action-Adventure"
     }
   },
   {
-    "model": "games.genre",
+    "model": "catalog.genre",
     "pk": 4,
     "fields": {
       "name": "Open World"
     }
   },
   {
-    "model": "games.genre",
+    "model": "catalog.genre",
     "pk": 5,
     "fields": {
       "name": "Souls-like"
     }
   },
   {
-    "model": "games.genre",
+    "model": "catalog.genre",
     "pk": 6,
     "fields": {
       "name": "Cyberpunk"
     }
   },
   {
-    "model": "games.genre",
+    "model": "catalog.genre",
     "pk": 7,
     "fields": {
       "name": "Turn-Based RPG"
     }
   },
   {
-    "model": "games.genre",
+    "model": "catalog.genre",
     "pk": 8,
     "fields": {
       "name": "Metroidvania"
     }
   },
   {
-    "model": "games.genre",
+    "model": "catalog.genre",
     "pk": 9,
     "fields": {
       "name": "Action"
     }
   },
   {
-    "model": "games.genre",
+    "model": "catalog.genre",
     "pk": 10,
     "fields": {
       "name": "Roguelike"

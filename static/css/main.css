@@ -12,7 +12,7 @@
   padding-bottom: 4px;
 }
 
-.games-grid {
+.catalog-grid {
   display: grid;
   grid-template-columns: repeat(2, 220px);
   gap: 16px;
@@ -20,15 +20,15 @@
 }
 
 @media (min-width: 576px) {
-  .games-grid { grid-template-columns: repeat(3, 220px); }
+  .catalog-grid { grid-template-columns: repeat(3, 220px); }
 }
 
 @media (min-width: 768px) {
-  .games-grid { grid-template-columns: repeat(4, 220px); }
+  .catalog-grid { grid-template-columns: repeat(4, 220px); }
 }
 
 @media (min-width: 1200px) {
-  .games-grid { grid-template-columns: repeat(5, 220px); }
+  .catalog-grid { grid-template-columns: repeat(5, 220px); }
 }
 
 .game-card {

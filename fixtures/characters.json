@@ -1,299 +1,329 @@
 [
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 1,
     "fields": {
       "name": "Geralt of Rivia",
+      "slug": "geralt-of-rivia",
       "description": "A mutant witcher who hunts monsters for coin and searches for his adopted daughter, Ciri.",
       "game": 1,
       "photo": "characters/photos/geralt.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 2,
     "fields": {
       "name": "Yennefer of Vengerberg",
+      "slug": "yennefer-of-vengerberg",
       "description": "A powerful sorceress and Geralt's on-and-off love interest.",
       "game": 1,
       "photo": "characters/photos/yennefer.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 3,
     "fields": {
       "name": "Ciri",
+      "slug": "ciri",
       "description": "Princess of Cintra, bearer of the Elder Blood, Geralt's adopted daughter.",
       "game": 1,
       "photo": "characters/photos/ciri.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 4,
     "fields": {
       "name": "Malenia, Blade of Miquella",
+      "slug": "malenia-blade-of-miquella",
       "description": "An unbeaten demigod warrior afflicted by scarlet rot.",
       "game": 2,
       "photo": "characters/photos/malenia.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 5,
     "fields": {
       "name": "Radahn, Starscourge",
+      "slug": "radahn-starscourge",
       "description": "A legendary general famed for stopping time itself in battle.",
       "game": 2,
       "photo": "characters/photos/radahn.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 6,
     "fields": {
       "name": "Ranni the Witch",
+      "slug": "ranni-the-witch",
       "description": "A demigod seeking to become the new Elden Lord under a different order.",
       "game": 2,
       "photo": "characters/photos/ranni.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 7,
     "fields": {
       "name": "Kratos",
+      "slug": "kratos",
       "description": "A former Greek god of war, now living among the Norse gods with his son.",
       "game": 3,
       "photo": "characters/photos/kratos.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 8,
     "fields": {
       "name": "Atreus",
+      "slug": "atreus",
       "description": "Kratos's son, gradually learning the truth about his own heritage.",
       "game": 3,
       "photo": "characters/photos/atreus.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 9,
     "fields": {
       "name": "Freya",
+      "slug": "freya",
       "description": "A Vanir goddess who acts as mentor and ally to Kratos and Atreus.",
       "game": 3,
       "photo": "characters/photos/freya.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 10,
     "fields": {
       "name": "V",
+      "slug": "v",
       "description": "A Night City mercenary whose mind carries the digital engram of Johnny Silverhand.",
       "game": 4,
       "photo": "characters/photos/v.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 11,
     "fields": {
       "name": "Johnny Silverhand",
+      "slug": "johnny-silverhand",
       "description": "A rockerboy legend and terrorist who exists as a digital ghost inside V's head.",
       "game": 4,
       "photo": "characters/photos/johnny.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 12,
     "fields": {
       "name": "Judy Alvarez",
+      "slug": "judy-alvarez",
       "description": "A braindance technician and activist from the Moxes gang.",
       "game": 4,
       "photo": "characters/photos/judy.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 13,
     "fields": {
       "name": "Astarion",
+      "slug": "astarion",
       "description": "A high elf vampire spawn and former actor hiding a dark past.",
       "game": 5,
       "photo": "characters/photos/astarion.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 14,
     "fields": {
       "name": "Shadowheart",
+      "slug": "shadowheart",
       "description": "A secretive cleric of Shar guarding a mysterious artifact.",
       "game": 5,
       "photo": "characters/photos/shadowheart.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 15,
     "fields": {
       "name": "Karlach",
+      "slug": "karlach",
       "description": "A tiefling barbarian with an infernal engine in place of a heart.",
       "game": 5,
       "photo": "characters/photos/karlach.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 16,
     "fields": {
       "name": "Arthur Morgan",
+      "slug": "arthur-morgan",
       "description": "Dutch van der Linde's right-hand man, wrestling with a crisis of conscience.",
       "game": 6,
       "photo": "characters/photos/arthur.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 17,
     "fields": {
       "name": "Dutch van der Linde",
+      "slug": "dutch-van-der-linde",
       "description": "The charismatic gang leader whose ideals increasingly clash with reality.",
       "game": 6,
       "photo": "characters/photos/dutch.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 18,
     "fields": {
       "name": "Sadie Adler",
+      "slug": "sadie-adler",
       "description": "A widowed rancher who becomes one of the gang's most dangerous gunslingers.",
       "game": 6,
       "photo": "characters/photos/sadie.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 19,
     "fields": {
       "name": "The Knight",
+      "slug": "the-knight",
       "description": "A silent bug warrior exploring the ruins of Hallownest.",
       "game": 7,
       "photo": "characters/photos/knight.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 20,
     "fields": {
       "name": "Hornet",
+      "slug": "hornet",
       "description": "Protector of Hallownest and the Knight's adoptive sister, wielding needle and thread.",
       "game": 7,
       "photo": "characters/photos/hornet.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 21,
     "fields": {
       "name": "Quirrel",
+      "slug": "quirrel",
       "description": "A friendly wandering bug explorer.",
       "game": 7,
       "photo": "characters/photos/quirrel.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 22,
     "fields": {
       "name": "Ashen One",
+      "slug": "ashen-one",
       "description": "An undead risen from the grave in search of the Lords of Cinder.",
       "game": 8,
       "photo": "characters/photos/ashen_one.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 23,
     "fields": {
       "name": "Yhorm the Giant",
+      "slug": "yhorm-the-giant",
       "description": "A Lord of Cinder who abandoned his throne and his own power.",
       "game": 8,
       "photo": "characters/photos/yhorm.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 24,
     "fields": {
       "name": "Siegward of Catarina",
+      "slug": "siegward-of-catarina",
       "description": "A noble knight sworn to free his friend Yhorm.",
       "game": 8,
       "photo": "characters/photos/siegward.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 25,
     "fields": {
       "name": "Michael De Santa",
+      "slug": "michael-de-santa",
       "description": "A retired bank robber living in comfort and discontent.",
       "game": 9,
       "photo": "characters/photos/michael.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 26,
     "fields": {
       "name": "Trevor Philips",
+      "slug": "trevor-philips",
       "description": "An unpredictable and violent arms and drug dealer.",
       "game": 9,
       "photo": "characters/photos/trevor.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 27,
     "fields": {
       "name": "Franklin Clinton",
+      "slug": "franklin-clinton",
       "description": "A young repo man and car thief trying to leave street life behind.",
       "game": 9,
       "photo": "characters/photos/franklin.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 28,
     "fields": {
       "name": "Zagreus",
+      "slug": "zagreus",
       "description": "Immortal prince of the Underworld, repeatedly attempting to escape to the surface.",
       "game": 10,
       "photo": "characters/photos/zagreus.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 29,
     "fields": {
       "name": "Megaera",
+      "slug": "megaera",
       "description": "One of the Furies, and the first serious obstacle on Zagreus's escape attempts.",
       "game": 10,
       "photo": "characters/photos/megaera.jpg"
     }
   },
   {
-    "model": "games.character",
+    "model": "catalog.character",
     "pk": 30,
     "fields": {
       "name": "Nyx",
+      "slug": "nyx",
       "description": "The primordial embodiment of Night, Zagreus's adoptive mother.",
       "game": 10,
       "photo": "characters/photos/nyx.jpg"

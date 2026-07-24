@@ -51,7 +51,7 @@ class UserJournal(CreatedAtModel):
         on_delete=models.PROTECT
     )
     game = models.ForeignKey(
-        'games.Game',
+        'catalog.Game',
         on_delete=models.PROTECT,
         related_name='journal',
     )
@@ -60,7 +60,7 @@ class UserJournal(CreatedAtModel):
         choices=GameStatus,
     )
     favorite_quests = models.ManyToManyField(
-        'games.Quest',
+        'catalog.Quest',
         related_name='favorited_in',
         blank=True,
     )
@@ -121,7 +121,7 @@ class FavoriteQuote(models.Model):
     """
     quote = models.CharField(max_length=MAX_QUOTE_LENGTH)
     character = models.ForeignKey(
-        'games.Character',
+        'catalog.Character',
         related_name='quotes',
         on_delete=models.PROTECT,
     )
@@ -163,7 +163,7 @@ class FavoriteCharacter(models.Model):
         on_delete=models.PROTECT
     )
     character = models.ForeignKey(
-        'games.Character',
+        'catalog.Character',
         related_name='favorited_by_users',
         on_delete=models.PROTECT,
     )

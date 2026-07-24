@@ -6,6 +6,7 @@ from .models import Character, Game, Genre, Quest
 class CharacterAdmin(admin.ModelAdmin):
     list_display = ('name', 'game',)
     list_filter = ('game',)
+    readonly_fields = ('slug',)
 
 
 class GameAdmin(admin.ModelAdmin):

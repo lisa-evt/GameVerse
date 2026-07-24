@@ -1,9 +1,12 @@
-# utils.py
 from django.utils.text import slugify
 from unidecode import unidecode
 
 
-def generate_unique_slug(model_instance, slugable_field_name='title', slug_field_name='slug'):
+def generate_unique_slug(
+        model_instance,
+        slugable_field_name='title',
+        slug_field_name='slug'
+):
     """
     Generates unique slug for any item in Django model.
     """

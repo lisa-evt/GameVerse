@@ -42,10 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'journal.apps.JournalConfig',
+    'catalog.apps.CatalogConfig',
     'users.apps.UsersConfig',
+    'journal.apps.JournalConfig',
     'pages.apps.PagesConfig',
-    'games.apps.GamesConfig',
     'django_bootstrap5',
 ]
 

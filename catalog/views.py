@@ -9,10 +9,11 @@ ELEMENTS_PER_PAGE = 10
 class GamesListView(ListView):
     model = Game
     paginate_by = ELEMENTS_PER_PAGE
-    template_name = 'games/games.html'
+    template_name = 'catalog/games.html'
 
 
 class CharactersListView(ListView):
     model = Character
     paginate_by = ELEMENTS_PER_PAGE
-    template_name = 'games/characters.html'
+    template_name = 'catalog/characters.html'
+

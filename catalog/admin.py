@@ -10,7 +10,7 @@ class CharacterAdmin(admin.ModelAdmin):
 
 
 class GameAdmin(admin.ModelAdmin):
-    list_display = ('title', 'publisher', 'realise_year')
+    list_display = ('title', 'publisher', 'release_year')
     search_fields = ('title', 'publisher',)
     readonly_fields = ('slug',)
 

@@ -6,10 +6,10 @@
       "title": "The Witcher 3: Wild Hunt",
       "description": "Geralt of Rivia, a monster-hunting witcher, searches for his adopted daughter Ciri as the Wild Hunt closes in.",
       "slug": "the-witcher-3-wild-hunt",
-      "realise_year": 2015,
+      "release_year": 2015,
       "publisher": "CD Projekt",
       "cover_image": "catalog/covers/witcher3.jpg",
-      "metacritic_rating": 93,
+      "metacritic_score": 93,
       "genres": [
         1,
         4
@@ -23,10 +23,10 @@
       "title": "Elden Ring",
       "description": "An open world dark fantasy shaped by Hidetaka Miyazaki and George R. R. Martin, where the player becomes a Tarnished seeking the Elden Ring.",
       "slug": "elden-ring",
-      "realise_year": 2022,
+      "release_year": 2022,
       "publisher": "Bandai Namco Entertainment",
       "cover_image": "catalog/covers/elden_ring.jpg",
-      "metacritic_rating": 96,
+      "metacritic_score": 96,
       "genres": [
         2,
         4,
@@ -41,10 +41,10 @@
       "title": "God of War",
       "description": "Kratos and his son Atreus journey through the nine realms of Norse mythology.",
       "slug": "god-of-war-2018",
-      "realise_year": 2018,
+      "release_year": 2018,
       "publisher": "Sony Interactive Entertainment",
       "cover_image": "catalog/covers/god_of_war.jpg",
-      "metacritic_rating": 94,
+      "metacritic_score": 94,
       "genres": [
         3
       ]
@@ -57,10 +57,10 @@
       "title": "Cyberpunk 2077",
       "description": "Mercenary V survives in Night City while carrying the digital engram of rockerboy legend Johnny Silverhand.",
       "slug": "cyberpunk-2077",
-      "realise_year": 2020,
+      "release_year": 2020,
       "publisher": "CD Projekt",
       "cover_image": "catalog/covers/cyberpunk2077.jpg",
-      "metacritic_rating": 86,
+      "metacritic_score": 86,
       "genres": [
         1,
         6,
@@ -75,10 +75,10 @@
       "title": "Baldur's Gate 3",
       "description": "A turn-based D&D RPG in which a party infected by mind flayer parasites tries to avoid becoming illithids.",
       "slug": "baldurs-gate-3",
-      "realise_year": 2023,
+      "release_year": 2023,
       "publisher": "Larian Studios",
       "cover_image": "catalog/covers/bg3.jpg",
-      "metacritic_rating": 96,
+      "metacritic_score": 96,
       "genres": [
         1,
         7
@@ -92,10 +92,10 @@
       "title": "Red Dead Redemption 2",
       "description": "Arthur Morgan, a member of the Van der Linde gang, lives through the decline of the Wild West era in early 1900s America.",
       "slug": "red-dead-redemption-2",
-      "realise_year": 2018,
+      "release_year": 2018,
       "publisher": "Rockstar catalog",
       "cover_image": "catalog/covers/rdr2.jpg",
-      "metacritic_rating": 97,
+      "metacritic_score": 97,
       "genres": [
         3,
         4
@@ -109,10 +109,10 @@
       "title": "Hollow Knight",
       "description": "A small bug knight explores the ruined underground kingdom of Hallownest, full of secrets and dangerous creatures.",
       "slug": "hollow-knight",
-      "realise_year": 2017,
+      "release_year": 2017,
       "publisher": "Team Cherry",
       "cover_image": "catalog/covers/hollow_knight.jpg",
-      "metacritic_rating": 90,
+      "metacritic_score": 90,
       "genres": [
         8,
         9
@@ -126,10 +126,10 @@
       "title": "Dark Souls III",
       "description": "An Ashen One, risen from the grave, must return the Lords of Cinder to their thrones and stall the fading of the Flame.",
       "slug": "dark-souls-3",
-      "realise_year": 2016,
+      "release_year": 2016,
       "publisher": "Bandai Namco Entertainment",
       "cover_image": "catalog/covers/dark_souls_3.jpg",
-      "metacritic_rating": 89,
+      "metacritic_score": 89,
       "genres": [
         2,
         5
@@ -143,10 +143,10 @@
       "title": "Grand Theft Auto V",
       "description": "Three criminals, Michael, Trevor and Franklin, plan a series of heists in the fictional city of Los Santos.",
       "slug": "grand-theft-auto-5",
-      "realise_year": 2013,
+      "release_year": 2013,
       "publisher": "Rockstar catalog",
       "cover_image": "catalog/covers/gta5.jpg",
-      "metacritic_rating": 97,
+      "metacritic_score": 97,
       "genres": [
         9,
         4
@@ -160,10 +160,10 @@
       "title": "Hades",
       "description": "Zagreus, son of Hades, repeatedly tries to escape the Underworld, battling the forces of the Greek gods along the way.",
       "slug": "hades",
-      "realise_year": 2020,
+      "release_year": 2020,
       "publisher": "Supergiant catalog",
       "cover_image": "catalog/covers/hades.jpg",
-      "metacritic_rating": 93,
+      "metacritic_score": 93,
       "genres": [
         10,
         9

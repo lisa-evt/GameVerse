@@ -4,10 +4,10 @@
     "pk": 1,
     "fields": {
       "name": "Geralt of Rivia",
-      "slug": "geralt-of-rivia",
-      "description": "A mutant witcher who hunts monsters for coin and searches for his adopted daughter, Ciri.",
+      "description": "A witcher — a mutant monster hunter forged through brutal trials that stripped him of emotion and gifted him with superhuman reflexes. Geralt is a walking contradiction: a man who claims to feel nothing yet consistently chooses the harder, more humane path. His silver hair, cat-like eyes, and two swords mark him as an outsider everywhere he goes, yet his dry wit and quiet loyalty make him one of gaming's most beloved protagonists.",
       "game": 1,
-      "photo": "characters/photos/geralt.jpg"
+      "photo": "characters/photos/geralt.jpg",
+      "slug": "geralt-of-rivia"
     }
   },
   {
@@ -15,10 +15,10 @@
     "pk": 2,
     "fields": {
       "name": "Yennefer of Vengerberg",
-      "slug": "yennefer-of-vengerberg",
-      "description": "A powerful sorceress and Geralt's on-and-off love interest.",
+      "description": "Born a hunchbacked outcast, Yennefer paid an irreversible price to become one of the most powerful sorceresses alive — and she has never forgiven the world for making that trade necessary. Her relationship with Geralt is a decades-long tangle of love, resentment, and mutual respect that neither of them knows how to articulate. Cold on the surface and volcanic underneath, she is the most compelling character in a game full of them.",
       "game": 1,
-      "photo": "characters/photos/yennefer.jpg"
+      "photo": "characters/photos/yennefer.jpg",
+      "slug": "yennefer-of-vengerberg"
     }
   },
   {
@@ -26,307 +26,755 @@
     "pk": 3,
     "fields": {
       "name": "Ciri",
-      "slug": "ciri",
-      "description": "Princess of Cintra, bearer of the Elder Blood, Geralt's adopted daughter.",
+      "description": "Princess of Cintra, child of the Elder Blood, and heir to a power that bends space and time — Ciri has been hunted since birth by forces she barely understands. Raised by Geralt and trained as a witcher despite tradition forbidding it, she is fearless, impulsive, and fiercely independent. Her journey from frightened refugee to legend is the emotional spine of the entire game.",
       "game": 1,
-      "photo": "characters/photos/ciri.jpg"
+      "photo": "characters/photos/ciri.jpg",
+      "slug": "ciri"
     }
   },
   {
     "model": "catalog.character",
     "pk": 4,
     "fields": {
-      "name": "Malenia, Blade of Miquella",
-      "slug": "malenia-blade-of-miquella",
-      "description": "An unbeaten demigod warrior afflicted by scarlet rot.",
-      "game": 2,
-      "photo": "characters/photos/malenia.jpg"
+      "name": "Dandelion",
+      "description": "The greatest bard of the age and Geralt's oldest friend, Dandelion possesses an almost supernatural ability to walk into disaster and walk out with a new song. His cheerful cowardice masks a genuine poet's sensitivity and a loyalty that has kept him at Geralt's side through decades of danger. He narrates the world with florid excess, and the game is immeasurably warmer for it.",
+      "game": 1,
+      "photo": "characters/photos/dandelion.jpg",
+      "slug": "dandelion"
     }
   },
+
   {
     "model": "catalog.character",
     "pk": 5,
     "fields": {
-      "name": "Radahn, Starscourge",
-      "slug": "radahn-starscourge",
-      "description": "A legendary general famed for stopping time itself in battle.",
+      "name": "Arthur Morgan",
+      "description": "A loyal enforcer of the Van der Linde gang who has spent his whole life being someone else's instrument of violence. Arthur is not a good man — he knows this — but as his world collapses around him, he begins to question what loyalty is worth and whether redemption is even possible for someone with his past. His journey is one of quiet, unhurried tragedy, and his arc remains one of the most moving in all of gaming.",
       "game": 2,
-      "photo": "characters/photos/radahn.jpg"
+      "photo": "characters/photos/arthur_morgan.jpg",
+      "slug": "arthur-morgan"
     }
   },
   {
     "model": "catalog.character",
     "pk": 6,
     "fields": {
-      "name": "Ranni the Witch",
-      "slug": "ranni-the-witch",
-      "description": "A demigod seeking to become the new Elden Lord under a different order.",
+      "name": "Dutch van der Linde",
+      "description": "The charismatic idealist who built the gang from nothing on a dream of freedom and a distrust of civilization. Dutch quotes philosophy, inspires devotion, and always has a plan — until the plans start failing and the philosophy curdles into paranoia. Watching Dutch unravel across the game's chapters is a masterclass in how cults of personality collapse under pressure.",
       "game": 2,
-      "photo": "characters/photos/ranni.jpg"
+      "photo": "characters/photos/dutch_van_der_linde.jpg",
+      "slug": "dutch-van-der-linde"
     }
   },
   {
     "model": "catalog.character",
     "pk": 7,
     "fields": {
-      "name": "Kratos",
-      "slug": "kratos",
-      "description": "A former Greek god of war, now living among the Norse gods with his son.",
-      "game": 3,
-      "photo": "characters/photos/kratos.jpg"
+      "name": "John Marston",
+      "description": "A former outlaw trying to leave the past behind and build something real for his wife and son. John is quieter than Arthur, more settled, and haunted by a different kind of guilt. His presence in RDR2 recontextualizes everything players thought they knew about him from the first game, making his ultimate fate even heavier.",
+      "game": 2,
+      "photo": "characters/photos/john_marston.jpg",
+      "slug": "john-marston"
     }
   },
   {
     "model": "catalog.character",
     "pk": 8,
     "fields": {
-      "name": "Atreus",
-      "slug": "atreus",
-      "description": "Kratos's son, gradually learning the truth about his own heritage.",
-      "game": 3,
-      "photo": "characters/photos/atreus.jpg"
+      "name": "Sadie Adler",
+      "description": "A widow who joins the gang with nothing left to lose and quickly proves she has more nerve than half the men combined. Sadie's arc from grieving farmer to feared bounty hunter is one of the most satisfying character progressions in the game — and her unflinching directness makes her every scene crackle with energy.",
+      "game": 2,
+      "photo": "characters/photos/sadie_adler.jpg",
+      "slug": "sadie-adler"
     }
   },
+
   {
     "model": "catalog.character",
     "pk": 9,
     "fields": {
-      "name": "Freya",
-      "slug": "freya",
-      "description": "A Vanir goddess who acts as mentor and ally to Kratos and Atreus.",
+      "name": "Tarnished",
+      "description": "Exiled from the Lands Between and stripped of the grace of the Erdtree, the Tarnished returns as one of the few beings still capable of wielding its power. They carry no name and no spoken lines — only the weight of a broken world and the will to mend it. Their silence is not emptiness; it is a canvas onto which every player projects their own story of ambition, failure, and stubborn persistence.",
       "game": 3,
-      "photo": "characters/photos/freya.jpg"
+      "photo": "characters/photos/tarnished.jpg",
+      "slug": "tarnished"
     }
   },
   {
     "model": "catalog.character",
     "pk": 10,
     "fields": {
-      "name": "V",
-      "slug": "v",
-      "description": "A Night City mercenary whose mind carries the digital engram of Johnny Silverhand.",
-      "game": 4,
-      "photo": "characters/photos/v.jpg"
+      "name": "Melina",
+      "description": "A maiden without a finger on her right hand who offers the Tarnished a pact: she will kindle the flame of ambition in exchange for being brought to the Erdtree. Melina is cryptic and gentle, seemingly human yet clearly something else entirely. Her quiet devotion and the cost of her bargain make the game's ending choices genuinely agonizing.",
+      "game": 3,
+      "photo": "characters/photos/melina.jpg",
+      "slug": "melina"
     }
   },
   {
     "model": "catalog.character",
     "pk": 11,
     "fields": {
-      "name": "Johnny Silverhand",
-      "slug": "johnny-silverhand",
-      "description": "A rockerboy legend and terrorist who exists as a digital ghost inside V's head.",
-      "game": 4,
-      "photo": "characters/photos/johnny.jpg"
+      "name": "Ranni the Witch",
+      "description": "A demigod who severed her own soul to escape the fate the Greater Will decreed for her, leaving her spirit trapped in a doll's body. Ranni is calculating, ancient, and utterly committed to a plan she has been executing in secret for centuries. Her questline is the longest and most rewarding in the game, and her ending offers the only future the Lands Between has chosen for itself.",
+      "game": 3,
+      "photo": "characters/photos/ranni.jpg",
+      "slug": "ranni-the-witch"
     }
   },
   {
     "model": "catalog.character",
     "pk": 12,
     "fields": {
-      "name": "Judy Alvarez",
-      "slug": "judy-alvarez",
-      "description": "A braindance technician and activist from the Moxes gang.",
-      "game": 4,
-      "photo": "characters/photos/judy.jpg"
+      "name": "Malenia, Blade of Miquella",
+      "description": "Twin to the demigod Miquella and afflicted since birth with the Scarlet Rot that slowly consumes her, Malenia has never once been defeated in battle — and she will make sure you understand that personally. She is perhaps the most difficult boss in FromSoftware's history, and also one of the most tragic: a woman of immense power who can never stop destroying everything around her.",
+      "game": 3,
+      "photo": "characters/photos/malenia.jpg",
+      "slug": "malenia-blade-of-miquella"
     }
   },
+
   {
     "model": "catalog.character",
     "pk": 13,
     "fields": {
-      "name": "Astarion",
-      "slug": "astarion",
-      "description": "A high elf vampire spawn and former actor hiding a dark past.",
-      "game": 5,
-      "photo": "characters/photos/astarion.jpg"
+      "name": "Gordon Freeman",
+      "description": "A theoretical physicist at the Black Mesa Research Facility who becomes humanity's last line of defense against an alien invasion — entirely by accident. Gordon never speaks a word, yet his silence is expressive in the best possible way: the world reacts to him as a legend, and the gap between that mythic status and his bewildered-scientist reality is the game's quiet running joke and its greatest narrative trick.",
+      "game": 4,
+      "photo": "characters/photos/gordon_freeman.jpg",
+      "slug": "gordon-freeman"
     }
   },
   {
     "model": "catalog.character",
     "pk": 14,
     "fields": {
-      "name": "Shadowheart",
-      "slug": "shadowheart",
-      "description": "A secretive cleric of Shar guarding a mysterious artifact.",
-      "game": 5,
-      "photo": "characters/photos/shadowheart.jpg"
+      "name": "Alyx Vance",
+      "description": "The daughter of rebel scientist Eli Vance and the most capable ally Gordon has ever had. Alyx repairs his HEV suit, hacks Combine technology, cracks jokes under fire, and never once feels like a sidekick. She is warm, funny, and genuinely competent — a companion character who set the bar for the entire industry and who most games still haven't matched.",
+      "game": 4,
+      "photo": "characters/photos/alyx_vance.jpg",
+      "slug": "alyx-vance"
     }
   },
   {
     "model": "catalog.character",
     "pk": 15,
     "fields": {
-      "name": "Karlach",
-      "slug": "karlach",
-      "description": "A tiefling barbarian with an infernal engine in place of a heart.",
-      "game": 5,
-      "photo": "characters/photos/karlach.jpg"
+      "name": "G-Man",
+      "description": "A mysterious figure in a suit who watches events unfold from the margins, occasionally stepping in to redirect Gordon's fate with unsettling precision. No one knows who he works for, what he wants, or whether he considers himself Gordon's employer, his jailer, or something else entirely. Every appearance is deeply wrong in ways that are hard to articulate, and his briefcase has never been explained.",
+      "game": 4,
+      "photo": "characters/photos/g_man.jpg",
+      "slug": "g-man"
     }
   },
+
   {
     "model": "catalog.character",
     "pk": 16,
     "fields": {
-      "name": "Arthur Morgan",
-      "slug": "arthur-morgan",
-      "description": "Dutch van der Linde's right-hand man, wrestling with a crisis of conscience.",
-      "game": 6,
-      "photo": "characters/photos/arthur.jpg"
+      "name": "Joel Miller",
+      "description": "A survivor who lost everything in the first hours of the outbreak and has spent twenty years building walls instead of relationships. Joel is the game's emotional anchor — fiercely protective, morally compromised, and utterly believable as a man shaped by loss. His bond with Ellie forms slowly and imperfectly, and the choice he makes at the end of the game is one of gaming's most debated acts of love.",
+      "game": 5,
+      "photo": "characters/photos/joel_miller.jpg",
+      "slug": "joel-miller"
     }
   },
   {
     "model": "catalog.character",
     "pk": 17,
     "fields": {
-      "name": "Dutch van der Linde",
-      "slug": "dutch-van-der-linde",
-      "description": "The charismatic gang leader whose ideals increasingly clash with reality.",
-      "game": 6,
-      "photo": "characters/photos/dutch.jpg"
+      "name": "Ellie Williams",
+      "description": "The only known person immune to the Cordyceps fungus, Ellie is 14 years old, furiously funny, and harder than anyone her age should have to be. She grew up in a world without childhood and developed a sharp wit as armor. Her courage is not the absence of fear — she is terrified constantly — but she moves forward anyway, which makes her one of the most genuinely brave characters in any medium.",
+      "game": 5,
+      "photo": "characters/photos/ellie_williams.jpg",
+      "slug": "ellie-williams"
     }
   },
   {
     "model": "catalog.character",
     "pk": 18,
     "fields": {
-      "name": "Sadie Adler",
-      "slug": "sadie-adler",
-      "description": "A widowed rancher who becomes one of the gang's most dangerous gunslingers.",
-      "game": 6,
-      "photo": "characters/photos/sadie.jpg"
+      "name": "Tess",
+      "description": "Joel's smuggling partner and the closest thing he has to a moral compass in the ruined world of Boston. Tess is pragmatic, tough, and harboring more decency than she would ever admit. Her pivotal early decision sets the entire story in motion and defines the stakes of the journey ahead in a way no cutscene could have managed alone.",
+      "game": 5,
+      "photo": "characters/photos/tess.jpg",
+      "slug": "tess"
     }
   },
+
   {
     "model": "catalog.character",
     "pk": 19,
     "fields": {
-      "name": "The Knight",
-      "slug": "the-knight",
-      "description": "A silent bug warrior exploring the ruins of Hallownest.",
-      "game": 7,
-      "photo": "characters/photos/knight.jpg"
+      "name": "Chell",
+      "description": "A test subject of unknown origin who refuses to give up no matter how many times GLaDOS tries to incinerate, drown, or psychologically break her. Chell communicates exclusively through action — she never speaks — yet her determination is palpable in every portal placed and every platform cleared. She is one of gaming's great silent protagonists: defined entirely by what she does rather than what she says.",
+      "game": 6,
+      "photo": "characters/photos/chell.jpg",
+      "slug": "chell"
     }
   },
   {
     "model": "catalog.character",
     "pk": 20,
     "fields": {
-      "name": "Hornet",
-      "slug": "hornet",
-      "description": "Protector of Hallownest and the Knight's adoptive sister, wielding needle and thread.",
-      "game": 7,
-      "photo": "characters/photos/hornet.jpg"
+      "name": "GLaDOS",
+      "description": "The Genetic Lifeform and Disk Operating System who runs Aperture Science with homicidal efficiency and a very particular sense of humor. GLaDOS is the greatest villain-narrator in gaming: she praises you, mocks you, lies to you, and occasionally tells the truth in ways that sting worse than the lies. Her backstory, revealed in fragments, turns her from a monster into something far more complicated and far more sad.",
+      "game": 6,
+      "photo": "characters/photos/glados.jpg",
+      "slug": "glados"
     }
   },
   {
     "model": "catalog.character",
     "pk": 21,
     "fields": {
-      "name": "Quirrel",
-      "slug": "quirrel",
-      "description": "A friendly wandering bug explorer.",
-      "game": 7,
-      "photo": "characters/photos/quirrel.jpg"
+      "name": "Wheatley",
+      "description": "A personality core designed to be the stupidest entity in Aperture Science as a management rail for GLaDOS — a role he was spectacularly suited for. Voiced with genius comic timing by Stephen Merchant, Wheatley starts as a lovable bumbling ally before power reveals exactly how dangerous incompetence paired with authority can be. His arc is a dark comedy about the banality of evil.",
+      "game": 6,
+      "photo": "characters/photos/wheatley.jpg",
+      "slug": "wheatley"
     }
   },
+
   {
     "model": "catalog.character",
     "pk": 22,
     "fields": {
-      "name": "Ashen One",
-      "slug": "ashen-one",
-      "description": "An undead risen from the grave in search of the Lords of Cinder.",
-      "game": 8,
-      "photo": "characters/photos/ashen_one.jpg"
+      "name": "The Wolf (Sekiro)",
+      "description": "A shinobi with no family, no clan, and one purpose: protect the Divine Heir at any cost. The Wolf lost his arm to a lord he failed to save, and the Sculptor replaced it with a prosthetic crammed with hidden tools of war. He is not tortured or conflicted — he is simply committed, utterly and without reservation, which makes him refreshingly different from the typical reluctant hero.",
+      "game": 7,
+      "photo": "characters/photos/wolf_sekiro.jpg",
+      "slug": "the-wolf-sekiro"
     }
   },
   {
     "model": "catalog.character",
     "pk": 23,
     "fields": {
-      "name": "Yhorm the Giant",
-      "slug": "yhorm-the-giant",
-      "description": "A Lord of Cinder who abandoned his throne and his own power.",
-      "game": 8,
-      "photo": "characters/photos/yhorm.jpg"
+      "name": "Genichiro Ashina",
+      "description": "The ruthless lord of Ashina who will do anything — including drinking from the Rejuvenating Waters — to save his crumbling clan from conquest. Genichiro is the game's recurring antagonist and its best mirror: a man whose love for his people drives him to monstrous choices. His three-phase final confrontation is one of FromSoftware's all-time great boss sequences.",
+      "game": 7,
+      "photo": "characters/photos/genichiro.jpg",
+      "slug": "genichiro-ashina"
     }
   },
   {
     "model": "catalog.character",
     "pk": 24,
     "fields": {
-      "name": "Siegward of Catarina",
-      "slug": "siegward-of-catarina",
-      "description": "A noble knight sworn to free his friend Yhorm.",
-      "game": 8,
-      "photo": "characters/photos/siegward.jpg"
+      "name": "Isshin Ashina",
+      "description": "The legendary founder of Ashina, a sword saint of almost mythical skill who conquered the country through sheer martial supremacy. In his twilight years he is warm, philosophical, and seemingly harmless — until the game's final act, when encountering him at full power explains with perfect clarity why everyone in this world speaks his name in hushed tones.",
+      "game": 7,
+      "photo": "characters/photos/isshin_ashina.jpg",
+      "slug": "isshin-ashina"
     }
   },
+
   {
     "model": "catalog.character",
     "pk": 25,
     "fields": {
-      "name": "Michael De Santa",
-      "slug": "michael-de-santa",
-      "description": "A retired bank robber living in comfort and discontent.",
-      "game": 9,
-      "photo": "characters/photos/michael.jpg"
+      "name": "The Knight (Hollow Knight)",
+      "description": "A tiny, silent vessel who descends into the forsaken kingdom of Hallownest carrying only a nail and a destiny they don't yet understand. The Knight says nothing, feels nothing — or so the lore insists — yet their journey through ruin and memory accumulates an emotional weight that hits with full force at the game's end. What they are, and what they were meant to be, is one of the most quietly devastating reveals in indie gaming.",
+      "game": 8,
+      "photo": "characters/photos/hollow_knight.jpg",
+      "slug": "the-knight-hollow-knight"
     }
   },
   {
     "model": "catalog.character",
     "pk": 26,
     "fields": {
-      "name": "Trevor Philips",
-      "slug": "trevor-philips",
-      "description": "An unpredictable and violent arms and drug dealer.",
-      "game": 9,
-      "photo": "characters/photos/trevor.jpg"
+      "name": "Hornet",
+      "description": "The Princess of Deepnest and daughter of the Pale King and the Spider Queen, Hornet is the game's most enigmatic recurring presence. She tests the Knight in combat, guides them cryptically, and is clearly operating on a plan that she has no interest in explaining. Fast, precise, and cool in a way the game never bothers to oversell, she is the character every player wants more of.",
+      "game": 8,
+      "photo": "characters/photos/hornet.jpg",
+      "slug": "hornet"
     }
   },
   {
     "model": "catalog.character",
     "pk": 27,
     "fields": {
-      "name": "Franklin Clinton",
-      "slug": "franklin-clinton",
-      "description": "A young repo man and car thief trying to leave street life behind.",
-      "game": 9,
-      "photo": "characters/photos/franklin.jpg"
+      "name": "Grimm",
+      "description": "The leader of the Grimm Troupe, a traveling carnival of nightmare performers who arrive in Hallownest to collect the Grimmchild's flame. Grimm is theatrical, unsettling, and genuinely charming in the way that only something ancient and uncanny can be. His boss fight is one of the most visually spectacular in the game, and his questline offers one of the most morally interesting endings.",
+      "game": 8,
+      "photo": "characters/photos/grimm.jpg",
+      "slug": "grimm"
     }
   },
   {
     "model": "catalog.character",
     "pk": 28,
     "fields": {
-      "name": "Zagreus",
-      "slug": "zagreus",
-      "description": "Immortal prince of the Underworld, repeatedly attempting to escape to the surface.",
-      "game": 10,
-      "photo": "characters/photos/zagreus.jpg"
+      "name": "Quirrel",
+      "description": "A wandering scholar from Hallownest's past who lost his memories and returned to find them, crossing paths with the Knight multiple times across the kingdom. Quirrel is gentle, curious, and kind in a world that tends to punish all three. His final appearance, sitting quietly by a lake at the edge of everything, is one of the game's most affecting moments — and he doesn't even say goodbye.",
+      "game": 8,
+      "photo": "characters/photos/quirrel.jpg",
+      "slug": "quirrel"
     }
   },
+
   {
     "model": "catalog.character",
     "pk": 29,
     "fields": {
-      "name": "Megaera",
-      "slug": "megaera",
-      "description": "One of the Furies, and the first serious obstacle on Zagreus's escape attempts.",
-      "game": 10,
-      "photo": "characters/photos/megaera.jpg"
+      "name": "The Detective",
+      "description": "A disgraced cop with no memory of the past week who wakes up in a trashed hotel room in the city of Revachol. He can be rebuilt as almost anything — a hardboiled fascist, a communist revolutionary, a sensitive art cop, or a complete disaster — because his identity is the game. His inner voices argue, undermine, and occasionally help him, and watching him piece himself back together is the most unusual RPG experience ever made.",
+      "game": 9,
+      "photo": "characters/photos/detective_disco.jpg",
+      "slug": "the-detective"
     }
   },
   {
     "model": "catalog.character",
     "pk": 30,
     "fields": {
-      "name": "Nyx",
-      "slug": "nyx",
-      "description": "The primordial embodiment of Night, Zagreus's adoptive mother.",
+      "name": "Kim Kitsuragi",
+      "description": "Lieutenant Kitsuragi is everything the Detective is not: composed, methodical, quietly competent, and unimpressed by chaos. Yet he stays. His dry patience for his partner's spectacular dysfunction is the game's emotional backbone, and the slow accumulation of his respect — earned only through action — is more satisfying than any stat milestone. He is the best partner character in any RPG.",
+      "game": 9,
+      "photo": "characters/photos/kim_kitsuragi.jpg",
+      "slug": "kim-kitsuragi"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 31,
+    "fields": {
+      "name": "Jean Vicquemare",
+      "description": "The Detective's old partner and the person who has had to clean up his messes longest. Vicquemare is contemptuous, bitter, and — underneath layers of justified resentment — someone who actually cares about what the Detective could be. Their confrontation is one of the game's rawest scenes, and every word of his anger lands because the game earns it.",
+      "game": 9,
+      "photo": "characters/photos/jean_vicquemare.jpg",
+      "slug": "jean-vicquemare"
+    }
+  },
+
+  {
+    "model": "catalog.character",
+    "pk": 32,
+    "fields": {
+      "name": "Doomguy (Doom Slayer)",
+      "description": "Hell's most feared entity is not a demon. He is a Marine whose rage at the death of his pet rabbit has sustained a one-man war against the armies of darkness across multiple dimensions and timelines. The Doom Slayer does not stop. He does not hide. He does not take cover. He is a force of nature wearing a green suit, and every demon in existence knows his name and is right to be afraid of it.",
       "game": 10,
-      "photo": "characters/photos/nyx.jpg"
+      "photo": "characters/photos/doom_slayer.jpg",
+      "slug": "doom-slayer"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 33,
+    "fields": {
+      "name": "VEGA",
+      "description": "The UAC's benevolent AI who assists the Slayer throughout his campaign with calm tactical analysis and a surprising degree of warmth. VEGA is everything the Khan Maykr is not: honest, helpful, and genuinely decent. His fate midway through the game is one of the few moments Doom Eternal slows down enough to feel something other than exhilaration, and his return makes that something like joy.",
+      "game": 10,
+      "photo": "characters/photos/vega.jpg",
+      "slug": "vega"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 34,
+    "fields": {
+      "name": "The Khan Maykr",
+      "description": "The supreme ruler of the Maykrs who struck a cowardly bargain with Hell to preserve her own civilization at the cost of everyone else's. She speaks in condescension, moves with divine grace, and has never once had to face the consequences of her choices — until the Slayer arrives. Her boss fight is spectacular, and her defeat is deeply satisfying for exactly that reason.",
+      "game": 10,
+      "photo": "characters/photos/khan_maykr.jpg",
+      "slug": "khan-maykr"
+    }
+  },
+
+  {
+    "model": "catalog.character",
+    "pk": 35,
+    "fields": {
+      "name": "Madeline",
+      "description": "A young woman who decides, on something of an impulse, to climb Celeste Mountain — a decision that becomes a battle with the darkest parts of herself. Madeline is funny and self-deprecating, but the game uses its platforming as a literal metaphor for anxiety and self-acceptance in a way that never feels heavy-handed. Her arc is one of the most honest portrayals of struggling with your own mind in any artistic medium.",
+      "game": 11,
+      "photo": "characters/photos/madeline.jpg",
+      "slug": "madeline"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 36,
+    "fields": {
+      "name": "Badeline",
+      "description": "The dark reflection of Madeline who emerges from the mirror and tries to drag her back down the mountain. Badeline is not a villain — she is fear, self-doubt, and protective pessimism given a body. Her transformation across the game from antagonist to ally is the most emotionally complex thing Celeste does, and the postgame chapter, which reframes her perspective entirely, recontextualizes every confrontation that came before.",
+      "game": 11,
+      "photo": "characters/photos/badeline.jpg",
+      "slug": "badeline"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 37,
+    "fields": {
+      "name": "Theo",
+      "description": "An easygoing travel vlogger who meets Madeline on the mountain and becomes her unlikely companion and cheerleader. Theo is not a deep character, and that is precisely the point — his uncomplicated warmth and complete lack of judgment is exactly what Madeline needs to encounter partway up a mountain that keeps trying to destroy her. He is kind, and kindness turns out to matter enormously.",
+      "game": 11,
+      "photo": "characters/photos/theo_celeste.jpg",
+      "slug": "theo-celeste"
+    }
+  },
+
+  {
+    "model": "catalog.character",
+    "pk": 38,
+    "fields": {
+      "name": "Leon S. Kennedy",
+      "description": "A former Raccoon City rookie cop turned elite government agent who never quite loses his habit of making quips under impossible pressure. The remake deepens Leon considerably — giving him visible fear, genuine exhaustion, and a growing moral conflict about the nature of the cult members he is being asked to destroy. He is still the coolest person in any room he enters, but now you can see what it costs him.",
+      "game": 12,
+      "photo": "characters/photos/leon_kennedy.jpg",
+      "slug": "leon-s-kennedy"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 39,
+    "fields": {
+      "name": "Ashley Graham",
+      "description": "The U.S. President's daughter and the reason Leon is in Spain, Ashley has been transformed by the remake from a passive escort burden into an active, resourceful survivor. She picks up weapons, scouts ahead, and pushes back on Leon when he talks down to her. Her growing trust in him feels earned rather than assumed, and their dynamic is far more interesting for it.",
+      "game": 12,
+      "photo": "characters/photos/ashley_graham.jpg",
+      "slug": "ashley-graham"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 40,
+    "fields": {
+      "name": "Ramon Salazar",
+      "description": "The eighth castellan of the Salazar family manor, a preposterously small man with a grotesquely oversized ego and an absolute commitment to dramatic entrances. Salazar is the game's comic villain in a game full of genuinely frightening threats, and his obvious delight in his own villainy makes him completely irresistible. The remake sharpens his menace without removing a single gram of his absurdity.",
+      "game": 12,
+      "photo": "characters/photos/ramon_salazar.jpg",
+      "slug": "ramon-salazar"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 41,
+    "fields": {
+      "name": "Ada Wong",
+      "description": "A spy of unknown allegiances who keeps crossing Leon's path in ways that are never quite coincidental and never fully explained. Ada is the game's most stylish presence, and the remake wisely leans into the genuine tension in her relationship with Leon rather than reducing it to attraction. What she actually wants, and for whom she actually works, remains productively unclear.",
+      "game": 12,
+      "photo": "characters/photos/ada_wong.jpg",
+      "slug": "ada-wong"
+    }
+  },
+
+  {
+    "model": "catalog.character",
+    "pk": 42,
+    "fields": {
+      "name": "Zagreus",
+      "description": "The prince of the Underworld who has decided, completely unilaterally, that he is leaving — and that neither his father's armies nor the laws of reality are going to stop him. Zagreus is warm, stubborn, and possessed of a loyalty to the people he loves that repeatedly gets him killed. His relationship with each Olympian god, each house denizen, and each escaping shade is written with care that makes the repetitive structure feel anything but.",
+      "game": 13,
+      "photo": "characters/photos/zagreus.jpg",
+      "slug": "zagreus"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 43,
+    "fields": {
+      "name": "Hades",
+      "description": "The God of the Dead and Zagreus's cold, immovable father, who meets every escape attempt with the same expression of grim professionalism. The game's greatest trick is slowly revealing that Hades is not a tyrant but a man with reasons — reasons he will never explain to his son because admitting he has feelings is entirely beneath his dignity. His eventual thaw is one of the most satisfying slow burns in the roguelite genre.",
+      "game": 13,
+      "photo": "characters/photos/hades.jpg",
+      "slug": "hades-god"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 44,
+    "fields": {
+      "name": "Megaera",
+      "description": "One of the three Fury sisters and the first true boss Zagreus faces on every run, Megaera is professional, tired, and nursing a complicated history with the prince that she would very much prefer not to discuss. Her irritation at being repeatedly sent to stop him gradually shades into something more ambiguous, and the dialogue Supergiant gives her across dozens of encounters is consistently the sharpest in the game.",
+      "game": 13,
+      "photo": "characters/photos/megaera.jpg",
+      "slug": "megaera"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 45,
+    "fields": {
+      "name": "Achilles",
+      "description": "The legendary hero of the Trojan War spends his afterlife as a trainer in the House of Hades, teaching shades to fight while quietly carrying the weight of choices he made in life. Achilles is the game's most elegiac presence — graceful, wise, and visibly sad in ways that accumulate into one of the most moving supporting character arcs in recent gaming memory.",
+      "game": 13,
+      "photo": "characters/photos/achilles.jpg",
+      "slug": "achilles"
+    }
+  },
+
+  {
+    "model": "catalog.character",
+    "pk": 46,
+    "fields": {
+      "name": "Commander Shepard",
+      "description": "Humanity's first Spectre and the only person who believes the Reapers are real before it is far too late to act. Shepard is remarkable because the game lets you build them completely — their history, their morality, their relationships — and then makes every consequence feel earned by the choices you made. No player's Shepard is quite the same, and that is the point: they are a commander shaped by their crew.",
+      "game": 14,
+      "photo": "characters/photos/commander_shepard.jpg",
+      "slug": "commander-shepard"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 47,
+    "fields": {
+      "name": "Garrus Vakarian",
+      "description": "A turian cop turned vigilante turned Spectre's right hand, Garrus is what happens when a good man tries to operate in a system that rewards compromise and decides to stop compromising. He is loyal, dry, and possessed of a sniper's patience for everything except injustice. His loyalty mission — one of the game's finest — reveals the cost of the vigilante path he nearly chose permanently.",
+      "game": 14,
+      "photo": "characters/photos/garrus.jpg",
+      "slug": "garrus-vakarian"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 48,
+    "fields": {
+      "name": "Mordin Solus",
+      "description": "A former STG operative turned professor who talks at approximately twice the speed of any other character in the game and feels everything twice as deeply as he lets on. Mordin's loyalty mission is a master class in moral complexity, and his arc across the trilogy ends with one of the most quietly heroic moments in RPG history: a scientist who believes in doing the right thing, even when he was the one who did the wrong one.",
+      "game": 14,
+      "photo": "characters/photos/mordin_solus.jpg",
+      "slug": "mordin-solus"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 49,
+    "fields": {
+      "name": "Tali'Zorah",
+      "description": "An engineering prodigy on her Pilgrimage — the quarian rite of passage — who joins Shepard's crew and becomes one of the trilogy's most beloved characters. Tali is brilliant under pressure, fiercely devoted, and carrying the weight of a species whose home was taken from them. Her face is never shown, yet she manages to be one of the most expressive characters in the series.",
+      "game": 14,
+      "photo": "characters/photos/tali_zorah.jpg",
+      "slug": "tali-zorah"
+    }
+  },
+
+  {
+    "model": "catalog.character",
+    "pk": 50,
+    "fields": {
+      "name": "Karlach",
+      "description": "A tiefling barbarian who was sold to Avernus by the man she trusted and spent a decade fighting in the Blood War with an infernal engine replacing her heart. Karlach is the game's most joyful character — she finds delight in everything, from the first apple she has tasted in years to the sensation of rain — which makes the tragedy of her situation cut all the deeper. She deserves better, and the game knows it.",
+      "game": 15,
+      "photo": "characters/photos/karlach.jpg",
+      "slug": "karlach"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 51,
+    "fields": {
+      "name": "Shadowheart",
+      "description": "A half-elf cleric of Shar, the goddess of darkness and loss, who has had her memories selectively removed and is carrying a relic she doesn't understand on a mission she can't fully explain. Shadowheart is guarded, sarcastic, and deeply lonely in ways she has been trained not to examine. Her personal arc is the longest and most carefully constructed in the game, and its resolution genuinely earns every emotion it asks for.",
+      "game": 15,
+      "photo": "characters/photos/shadowheart.jpg",
+      "slug": "shadowheart"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 52,
+    "fields": {
+      "name": "Astarion",
+      "description": "A high elf vampire spawn who spent two centuries under a sadistic master's control and has emerged with exquisite manners, extremely flexible ethics, and a survival instinct so highly developed it has crowded out almost everything else. Astarion is the game's most popular companion for good reason: his arc from self-serving charmer to something genuinely vulnerable is executed with precision, and his approval/disapproval system is the most interesting in the game.",
+      "game": 15,
+      "photo": "characters/photos/astarion.jpg",
+      "slug": "astarion"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 53,
+    "fields": {
+      "name": "Lae'zel",
+      "description": "A githyanki warrior raised from birth to be a weapon in her people's eternal war against the mind flayers — which makes it particularly inconvenient that she now has an illithid tadpole in her brain. Lae'zel is abrasive, contemptuous, and absolutely certain that her worldview is correct. She is also the companion whose growth across the game is the most dramatic: watching her certainty crack is one of the best slow-burn arcs Larian has ever written.",
+      "game": 15,
+      "photo": "characters/photos/lazel.jpg",
+      "slug": "lazel"
+    }
+  },
+
+  {
+    "model": "catalog.character",
+    "pk": 54,
+    "fields": {
+      "name": "Kratos (Norse)",
+      "description": "The Ghost of Sparta has buried his past — literally; his weapons of the old life are hidden under floorboards — and built a new life in the Norse wilderness with his son. He speaks rarely, touches his child stiffly, and tries to teach through correction rather than warmth. The game's quiet miracle is watching him learn, over dozens of hours, that being present is not the same as being absent, and that his son needs a father more than a warrior.",
+      "game": 16,
+      "photo": "characters/photos/kratos_norse.jpg",
+      "slug": "kratos-norse"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 55,
+    "fields": {
+      "name": "Atreus",
+      "description": "Kratos's son, who carries the blood of a god and the soul of his mother, Faye — curious, impulsive, and equipped with a gift for language that makes him indispensable in a world full of Norse gods who have no interest in speaking with his father. Atreus's journey from insecure boy to someone grappling with divine destiny forms the game's emotional arc, and his relationship with Kratos is one of gaming's greatest parent-child portrayals.",
+      "game": 16,
+      "photo": "characters/photos/atreus.jpg",
+      "slug": "atreus"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 56,
+    "fields": {
+      "name": "Mimir",
+      "description": "The smartest man alive, decapitated by Odin and kept as a living head on Kratos's belt, from which position he serves as mythologist, translator, guide, and the only person Kratos seems able to hold a genuine conversation with. Mimir is witty, knowledgeable, and burdened with centuries of guilt for enabling Odin's cruelty. His stories, told during travel, are some of the finest world-building in the series.",
+      "game": 16,
+      "photo": "characters/photos/mimir.jpg",
+      "slug": "mimir"
+    }
+  },
+
+  {
+    "model": "catalog.character",
+    "pk": 57,
+    "fields": {
+      "name": "Eleanor Roosevelt",
+      "description": "The legendary American stateswoman and humanitarian returns as Civilization VI's most diplomatically aggressive leader, deploying her real-life legacy of international cooperation as a strategic toolkit. She excels at cultural victory and diplomatic influence, reflecting her historical championing of the United Nations. Playing her forces you to think about soft power in ways that make the endgame feel like an actual negotiation rather than a military parade.",
+      "game": 17,
+      "photo": "characters/photos/eleanor_roosevelt.jpg",
+      "slug": "eleanor-roosevelt"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 58,
+    "fields": {
+      "name": "Teddy Roosevelt",
+      "description": "Civilization VI's original American leader, a Bull Moose progressive who boosts production in cities built on his home continent and grows distinctly aggressive toward any civilization that tries to build a military presence on his shores. His leader ability channels the real Roosevelt's Corollary to the Monroe Doctrine into a surprisingly effective defensive-expansionist strategy.",
+      "game": 17,
+      "photo": "characters/photos/teddy_roosevelt.jpg",
+      "slug": "teddy-roosevelt"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 59,
+    "fields": {
+      "name": "Cleopatra",
+      "description": "Egypt's most storied ruler returns in Civ VI as a master of diplomatic marriage, using Suzerain status over city-states to amplify her civilization's already formidable trade network. She builds wonders, accumulates gold, and makes alliances with the cheerful ruthlessness of someone who understands exactly how power works. Her AI personality is one of the game's most entertaining: lavishly friendly until she is decidedly not.",
+      "game": 17,
+      "photo": "characters/photos/cleopatra.jpg",
+      "slug": "cleopatra"
+    }
+  },
+
+  {
+    "model": "catalog.character",
+    "pk": 60,
+    "fields": {
+      "name": "Luke",
+      "description": "Street Fighter 6's flagship new character and the game's primary tutorial anchor — a brash, energetic American fighter with a military background who communicates entirely in the language of enthusiasm and fists. Luke is designed to be the face of a new era for the franchise, and his moveset introduces players to the Drive system's possibilities without overwhelming them. His optimism is relentless and, despite everything, charming.",
+      "game": 18,
+      "photo": "characters/photos/luke_sf6.jpg",
+      "slug": "luke-sf6"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 61,
+    "fields": {
+      "name": "Marisa",
+      "description": "A gladiator who fights to honor the traditions of ancient Rome and whose sheer physical presence redefines what a street fighter looks like. Marisa is enormous, devastating, and unexpectedly elegant — her Gladius stance and punishing command grabs make her a joy to play and a terror to face. Her personality, which runs to passionate and direct, makes her one of the most immediately appealing new additions to the roster.",
+      "game": 18,
+      "photo": "characters/photos/marisa_sf6.jpg",
+      "slug": "marisa-sf6"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 62,
+    "fields": {
+      "name": "Ryu",
+      "description": "The eternal wandering fighter whose quest to master the Hadouken has spanned six numbered entries and thirty-five years. In SF6, Ryu has finally found peace with the Dark Hadou that plagued him for decades, and that serenity is reflected in his new fighting style: calmer, more patient, and ferociously powerful in ways that reward players who have grown up with him. He remains the standard against which every other fighter in the franchise is measured.",
+      "game": 18,
+      "photo": "characters/photos/ryu.jpg",
+      "slug": "ryu"
+    }
+  },
+
+  {
+    "model": "catalog.character",
+    "pk": 63,
+    "fields": {
+      "name": "The Hatchling",
+      "description": "A newly graduated astronaut from the small-town space program of Timber Hearth who discovers, on their very first night of exploration, that their solar system is locked in a 22-minute time loop. They carry no weapons and have no combat abilities — only a scout launcher, a ship, and a notebook. Their willingness to keep asking questions, despite dying repeatedly, is the entire emotional argument of the game.",
+      "game": 19,
+      "photo": "characters/photos/hatchling.jpg",
+      "slug": "the-hatchling"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 64,
+    "fields": {
+      "name": "Riebeck",
+      "description": "A banjo-playing archaeologist sheltering inside the Brittle Hollow who is paralyzed by a fear of space that makes his chosen profession something of a cruel joke. Riebeck is the game's warmest character — nervous, self-deprecating, and possessed of a deep love for the history he studies. His music plays at a moment near the end of the game that turns an already devastating sequence into something transcendent.",
+      "game": 19,
+      "photo": "characters/photos/riebeck.jpg",
+      "slug": "riebeck"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 65,
+    "fields": {
+      "name": "Solanum",
+      "description": "A Nomai explorer who found a way to survive the destruction of her body by projecting her consciousness into a quantum state — meaning she exists in multiple places simultaneously and can only be observed one at a time. Communicating with her, pieced together from scattered stone tablets, reveals the entire history of the Nomai's mission and the heartbreaking reason the time loop exists at all.",
+      "game": 19,
+      "photo": "characters/photos/solanum.jpg",
+      "slug": "solanum"
+    }
+  },
+
+  {
+    "model": "catalog.character",
+    "pk": 66,
+    "fields": {
+      "name": "The Ashen One",
+      "description": "An Unkindled warrior called from ash to link the fading flame one final time, the Ashen One is a silent protagonist in a world that barely registers surprise at one more undead in pursuit of impossible glory. They are defined not by speech but by persistence — by the willingness to rise again after every fall and walk back into the dark. In the lore's terms, they are almost nothing; in practice, they are the last hope of an exhausted age.",
+      "game": 20,
+      "photo": "characters/photos/ashen_one.jpg",
+      "slug": "the-ashen-one"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 67,
+    "fields": {
+      "name": "Siegward of Catarina",
+      "description": "A knight of Catarina in his distinctly onion-shaped armor who keeps appearing exactly where the player least expects him, sitting by bonfires, falling down wells, and pondering life with a pot of Siegbrau in hand. Siegward is the game's comfort character — warm, bumbling, and ultimately braver than he looks. His friendship with the player is built entirely through repeated coincidence, and when the game finally demands something of him, he does not flinch.",
+      "game": 20,
+      "photo": "characters/photos/siegward.jpg",
+      "slug": "siegward-of-catarina"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 68,
+    "fields": {
+      "name": "Sister Friede",
+      "description": "A former Undead who abandoned Lordran and fled to the Painted World of Ariandel, where she has spent centuries keeping everything still and cold and safe from change. Friede presents herself as peaceful and maternal — and then the second phase of her boss fight begins. Her three-phase encounter is the most mechanically demanding in the game, and her motivation, fully understood, makes her one of the series' most tragic figures.",
+      "game": 20,
+      "photo": "characters/photos/sister_friede.jpg",
+      "slug": "sister-friede"
+    }
+  },
+  {
+    "model": "catalog.character",
+    "pk": 69,
+    "fields": {
+      "name": "Leonhard of the Carim",
+      "description": "A phantom in a red cape who appears early to give the player a gift and then spends the rest of the game pursuing his own inscrutable agenda with unsettling politeness. Leonhard is the game's most elegantly written betrayal — he tells you almost nothing yet leaves enough breadcrumbs that, in retrospect, every move he makes was visible from the start. His questline ends in a rooftop duel that feels genuinely personal.",
+      "game": 20,
+      "photo": "characters/photos/leonhard.jpg",
+      "slug": "leonhard-of-the-carim"
     }
   }
 ]

@@ -3,70 +3,70 @@
     "model": "catalog.genre",
     "pk": 1,
     "fields": {
-      "name": "RPG"
+      "name": "Action"
     }
   },
   {
     "model": "catalog.genre",
     "pk": 2,
     "fields": {
-      "name": "Action RPG"
+      "name": "RPG"
     }
   },
   {
     "model": "catalog.genre",
     "pk": 3,
     "fields": {
-      "name": "Action-Adventure"
+      "name": "Adventure"
     }
   },
   {
     "model": "catalog.genre",
     "pk": 4,
     "fields": {
-      "name": "Open World"
+      "name": "Strategy"
     }
   },
   {
     "model": "catalog.genre",
     "pk": 5,
     "fields": {
-      "name": "Souls-like"
+      "name": "Shooter"
     }
   },
   {
     "model": "catalog.genre",
     "pk": 6,
     "fields": {
-      "name": "Cyberpunk"
+      "name": "Platformer"
     }
   },
   {
     "model": "catalog.genre",
     "pk": 7,
     "fields": {
-      "name": "Turn-Based RPG"
+      "name": "Horror"
     }
   },
   {
     "model": "catalog.genre",
     "pk": 8,
     "fields": {
-      "name": "Metroidvania"
+      "name": "Sports"
     }
   },
   {
     "model": "catalog.genre",
     "pk": 9,
     "fields": {
-      "name": "Action"
+      "name": "Simulation"
     }
   },
   {
     "model": "catalog.genre",
     "pk": 10,
     "fields": {
-      "name": "Roguelike"
+      "name": "Fighting"
     }
   }
 ]

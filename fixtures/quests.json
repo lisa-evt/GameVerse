@@ -3,8 +3,8 @@
     "model": "catalog.quest",
     "pk": 1,
     "fields": {
-      "title": "Family Matters",
-      "description": "Geralt investigates the Bloody Baron's missing wife and daughter, uncovering one of the game's most emotional and morally complex stories.",
+      "title": "The Ladies of the Wood",
+      "description": "Geralt is hired to find the missing children of a village nestled near the eerie Crookback Bog, leading him deep into the domain of the Crones — three ancient, monstrous sisters who are far more dangerous than any contract monster. The quest forces a genuinely difficult moral choice with no clean answer: the children can be saved, but only by trusting an entity no less terrifying than the one they are being rescued from. It is widely regarded as Witcher 3's finest example of moral ambiguity translated into mechanics.",
       "game": 1
     }
   },
@@ -12,8 +12,8 @@
     "model": "catalog.quest",
     "pk": 2,
     "fields": {
-      "title": "The Last Wish",
-      "description": "Geralt and Yennefer hunt down a mysterious djinn in a heartfelt quest that explores their complicated relationship and destiny.",
+      "title": "Hearts of Stone: Gaunter O'Dimm",
+      "description": "The expansion's central storyline sends Geralt to fulfill a debt on behalf of Olgierd von Everec — a man who sold his soul for immortality and got exactly what he asked for. Each task escalates in emotional and metaphysical complexity, and the finale requires Geralt to outwit a being of near-infinite power using nothing but cleverness and a close reading of contract language. It is a masterclass in fairy-tale logic applied to an RPG context.",
       "game": 1
     }
   },
@@ -21,8 +21,8 @@
     "model": "catalog.quest",
     "pk": 3,
     "fields": {
-      "title": "Carnal Sins",
-      "description": "Geralt investigates a series of brutal murders in Novigrad, solving a dark mystery filled with suspense and difficult choices.",
+      "title": "Now or Never",
+      "description": "A ticking-clock rescue mission as the pogrom against Novigrad's mages turns violent, forcing Geralt and Triss to evacuate dozens of terrified sorcerers through collapsing city streets while witch hunters close in from every direction. The quest doubles as the emotional climax of the Triss romance arc, and its iconic dockside scene — a quiet moment inside a roaring catastrophe — is one of the game's most replayed sequences.",
       "game": 1
     }
   },
@@ -30,17 +30,18 @@
     "model": "catalog.quest",
     "pk": 4,
     "fields": {
-      "title": "Ranni the Witch",
-      "description": "One of Elden Ring's longest and most beloved questlines, leading players through hidden regions while uncovering Ranni's fate.",
-      "game": 2
+      "title": "Through Time and Space",
+      "description": "A surreal dimensional gauntlet accompanying the sage Avallac'h through a sequence of hostile planes — a vacuum world, a scorched planet, a storm-lashed void — each with its own traversal challenge and no combat to fall back on. The quest is a deliberate change of pace from Witcher 3's usual structure: atmospheric, strange, and quietly worldbuilding the cosmic stakes of the main story in ways that no dialogue scene could accomplish.",
+      "game": 1
     }
   },
+
   {
     "model": "catalog.quest",
     "pk": 5,
     "fields": {
-      "title": "Millicent",
-      "description": "A touching journey following Millicent's struggle against the Scarlet Rot, culminating in one of the game's most memorable endings.",
+      "title": "Pouring Forth Oil",
+      "description": "One of the first major robberies of the game — the Leviticus Cornwall oil wagon ambush — that teaches the player how the gang operates and what Arthur is capable of. The multi-stage job involves scouting, ambush, and escape across the open plains of Lemoyne, and the ease of it establishes a dangerous sense of invincibility. In retrospect, it captures exactly the high-water mark of the gang's confidence before everything starts going wrong.",
       "game": 2
     }
   },
@@ -48,8 +49,8 @@
     "model": "catalog.quest",
     "pk": 6,
     "fields": {
-      "title": "Fia, Deathbed Companion",
-      "description": "Assist Fia in restoring the Prince of Death while discovering hidden lore surrounding Those Who Live in Death.",
+      "title": "My Last Boy",
+      "description": "A late-game mission that follows Arthur as he tracks down Thomas Downes, the man whose debt collection contributed to a pivotal event in Arthur's story. It is a quiet, devastating mission with no shootout and no spectacle — just Arthur riding, thinking, and arriving somewhere he cannot leave unchanged. The way it resolves depends entirely on the player's honor level, and both outcomes are among the most emotionally precise moments in the game.",
       "game": 2
     }
   },
@@ -57,26 +58,27 @@
     "model": "catalog.quest",
     "pk": 7,
     "fields": {
-      "title": "The Magic Chisel",
-      "description": "Kratos and Atreus seek a legendary chisel capable of opening hidden pathways, advancing one of the game's central adventures.",
-      "game": 3
+      "title": "The Wheel",
+      "description": "Arthur visits a gravely ill woman from his past and helps her tend her farm, mend her fences, and face what is coming. Nothing explodes. No one is shot. It is a mission about sitting with someone who is dying and not looking away, and the contrast with everything the game asks of the player elsewhere makes it hit with the force of a freight train. Many players list it as the moment RDR2 became something they will never forget.",
+      "game": 2
     }
   },
   {
     "model": "catalog.quest",
     "pk": 8,
     "fields": {
-      "title": "The Journey Home",
-      "description": "The emotional finale of Kratos and Atreus' journey reveals shocking truths while delivering an unforgettable conclusion.",
-      "game": 3
+      "title": "Red Dead Redemption",
+      "description": "The final chapter of John Marston's storyline, in which he sends his family to safety and makes his last stand against an impossible number of Pinkerton agents in the barn at Beecher's Hope. Everyone who plays this mission knows what is coming, and the game makes you walk toward it anyway. The slow-motion emergence from the barn doors is one of the medium's most iconic single images, and the silence that follows is earned completely.",
+      "game": 2
     }
   },
+
   {
     "model": "catalog.quest",
     "pk": 9,
     "fields": {
-      "title": "The Valkyries",
-      "description": "Free the imprisoned Valkyries across the realms before facing Queen Sigrun in the game's toughest optional challenge.",
+      "title": "Ranni's Questline",
+      "description": "The most expansive questline in Elden Ring follows the witch Ranni across multiple legacy dungeons, secret underground civilizations, and the far reaches of the world as she works toward a goal she reveals only in fragments. It demands exploration of some of the game's most hidden locations and rewards players with the alternative ending that the game's community considers the most meaningful. The finale, silent and cosmic in scale, is one of FromSoftware's most beautiful moments.",
       "game": 3
     }
   },
@@ -84,189 +86,548 @@
     "model": "catalog.quest",
     "pk": 10,
     "fields": {
-      "title": "The Hunt",
-      "description": "V tracks down Evelyn Parker after the disastrous Konpeki Plaza heist, uncovering a grim conspiracy in Night City.",
-      "game": 4
+      "title": "Volcano Manor Letters",
+      "description": "An assassination questline offered by the Lady Tanith inside Volcano Manor, sending players to hunt down trespassers — fellow players' phantoms — using only a hand-delivered letter and their knowledge of the map. The quest reveals the Manor's true purpose layer by layer, introduces one of the game's most chilling NPCs, and ends with a boss encounter that recontextualizes everything Rykard has been saying about serpent philosophy.",
+      "game": 3
     }
   },
   {
     "model": "catalog.quest",
     "pk": 11,
     "fields": {
-      "title": "Pyramid Song",
-      "description": "Join Judy Alvarez on a deeply personal underwater dive that explores loss, hope, and the future of Night City.",
-      "game": 4
+      "title": "White Mask Varre's Questline",
+      "description": "The very first NPC to greet the Tarnished at the game's opening turns out to be the entry point into one of Elden Ring's most elaborate and dark narrative threads, culminating in an invasion of another player's world, a finger soaked in an Empyrean's blood, and access to one of the game's most beautiful and cursed late-game areas. It is the perfect encapsulation of how Elden Ring hides its best content in plain sight.",
+      "game": 3
     }
   },
   {
     "model": "catalog.quest",
     "pk": 12,
     "fields": {
-      "title": "Sinnerman",
-      "description": "A routine contract turns into one of Cyberpunk 2077's most controversial quests, exploring faith, guilt, and redemption.",
-      "game": 4
+      "title": "Goldmask and Brother Corhyn",
+      "description": "A questline about faith, reason, and the cost of discovering that the foundation of your religion is a lie. Brother Corhyn follows the silent prophet Goldmask across the world, translating his gestures, and the player can follow along — or not — to arrive at a truth about the Golden Order that has enormous implications for the world's future. Its ending is quiet, philosophical, and genuinely sorrowful.",
+      "game": 3
     }
   },
+
   {
     "model": "catalog.quest",
     "pk": 13,
     "fields": {
-      "title": "Save the Refugees",
-      "description": "Help desperate tiefling refugees escape the dangers of the Emerald Grove through diplomacy, combat, and difficult choices.",
-      "game": 5
+      "title": "We Don't Go to Ravenholm",
+      "description": "Gordon Freeman detours through the abandoned mining town of Ravenholm — cut off from the outside world and overrun with headcrab zombies — with almost no ammunition and only Father Grigori, a half-mad priest with a shotgun, for company. The level functions as a horror game inside an FPS, using environmental puzzles, circular saws, and flame traps as the primary weapons. It remains one of the most atmospheric and terrifying single sequences in shooter history.",
+      "game": 4
     }
   },
   {
     "model": "catalog.quest",
     "pk": 14,
     "fields": {
-      "title": "Find the Nightsong",
-      "description": "A massive quest spanning multiple acts that shapes the fate of Shadowheart and influences the story's major outcomes.",
-      "game": 5
+      "title": "Follow Freeman!",
+      "description": "The moment the Resistance rises in earnest — Gordon leads a ragged army of rebels through the streets of City 17 as Combine forces collapse around them. The mission translates the abstract hope of the underground resistance into a visceral, spectacular street battle, and the sight of rebels shouting his name and following him into impossible odds is the game's emotional climax. No cutscene could have done what a playable uprising does here.",
+      "game": 4
     }
   },
   {
     "model": "catalog.quest",
     "pk": 15,
     "fields": {
-      "title": "Rescue Duke Ravengard",
-      "description": "Infiltrate the Iron Throne prison to save prisoners before the facility collapses in one of the game's most intense missions.",
-      "game": 5
+      "title": "Highway 17 and Sandtraps",
+      "description": "A long, open vehicle section along an abandoned coastal highway where the ocean has receded to reveal Combine mining operations on the sea floor. The player drives a buggy through ambushes, destroyed bridges, and artillery emplacements while the world opens up into something vast and desolate. The Sandtraps section that follows — where antlions swarm anything that touches the sand — is the game's most inventive traversal puzzle.",
+      "game": 4
     }
   },
+
   {
     "model": "catalog.quest",
     "pk": 16,
     "fields": {
-      "title": "A Quiet Time",
-      "description": "Arthur and Lenny spend an unforgettable evening in Valentine, creating one of Red Dead Redemption 2's funniest missions.",
-      "game": 6
+      "title": "Bill's Town",
+      "description": "Joel and Ellie arrive at the fortified town of survivalist Bill, a man who has spent the apocalypse alone by choice and considers that an entirely reasonable decision. The quest is a study in contrasting survival philosophies — Bill's self-sufficient isolation versus Joel's reluctant attachment — and a letter discovered near the end recontextualizes everything the player thought they understood about the curmudgeon they have been following.",
+      "game": 5
     }
   },
   {
     "model": "catalog.quest",
     "pk": 17,
     "fields": {
-      "title": "Red Dead Redemption",
-      "description": "Arthur's final mission delivers a powerful conclusion to his character arc with emotional choices and lasting consequences.",
-      "game": 6
+      "title": "The University",
+      "description": "Joel and Ellie explore a desolate university campus in search of the Fireflies, moving through lecture halls and laboratories that feel genuinely haunted by the world that was. The mission ends in a sudden, violent reversal that changes the game's tone and stakes completely, and the aftermath — Ellie taking over from Joel in a snowy farmhouse — marks the most dramatic structural shift in the game.",
+      "game": 5
     }
   },
   {
     "model": "catalog.quest",
     "pk": 18,
     "fields": {
-      "title": "American Venom",
-      "description": "John Marston hunts Micah Bell in the snowy mountains, bringing the Van der Linde gang's story to a satisfying close.",
-      "game": 6
+      "title": "Winter",
+      "description": "The most harrowing chapter in the game: winter has arrived, Joel is incapacitated, and Ellie must survive alone in a snow-covered mountain town, hunting for food and then hunted in turn. Playing as Ellie for the first time transforms her from a character the player protects into a character the player inhabits, and the final confrontation in the lodge is one of the medium's most brutally effective survival sequences.",
+      "game": 5
     }
   },
   {
     "model": "catalog.quest",
     "pk": 19,
     "fields": {
-      "title": "The White Lady",
-      "description": "Help the spirit of Marissa find peace by gathering her lost belongings throughout the Forgotten Crossroads.",
-      "game": 7
+      "title": "The Firefly Lab",
+      "description": "The game's moral climax, in which Joel arrives at the Firefly hospital and learns what saving humanity will cost. Every action the player takes in the final sequence has been made possible by twenty hours of accumulated care for Ellie, which is precisely what makes the choice — and the lie that follows — so difficult to evaluate. Players have been debating whether Joel was right for over a decade, and the game gives neither side an easy answer.",
+      "game": 5
     }
   },
+
   {
     "model": "catalog.quest",
     "pk": 20,
     "fields": {
-      "title": "The Grimm Troupe",
-      "description": "Summon the mysterious Grimm Troupe and complete a challenging questline featuring memorable bosses and beautiful music.",
-      "game": 7
+      "title": "The Return",
+      "description": "The game's final act, in which Chell fights through GLaDOS's rebuilt testing facility toward an exit that may not exist. The sequence strips away the clinical sterility of the early chambers and replaces it with jury-rigged industrial chaos — back rooms, maintenance corridors, the physical infrastructure of the lie — and culminates in a boss fight that turns everything the player learned about portals against the AI who taught them.",
+      "game": 6
     }
   },
   {
     "model": "catalog.quest",
     "pk": 21,
     "fields": {
-      "title": "The Delicate Flower",
-      "description": "Escort a fragile flower across Hallownest without taking damage in one of the game's most rewarding optional challenges.",
-      "game": 7
+      "title": "The Cooperative Testing Initiative",
+      "description": "The entire co-op campaign, in which GLaDOS deploys two robots — Atlas and P-Body — to test chambers that require genuine cooperation: one player cannot solve them alone. The puzzles escalate from basic simultaneous button presses to complex multi-portal contraptions that demand constant nonverbal communication, and the ending reveals GLaDOS's true motive for running the program with characteristic cruelty.",
+      "game": 6
     }
   },
   {
     "model": "catalog.quest",
     "pk": 22,
     "fields": {
-      "title": "Siegward of Catarina",
-      "description": "Aid the cheerful knight throughout Lothric, culminating in his emotional confrontation with his old friend Yhorm.",
-      "game": 8
+      "title": "The Escape",
+      "description": "Chell's first breakout attempt midway through the game, when GLaDOS seemingly abandons the testing script and the facility begins to malfunction. Moving through burning incinerator rooms, condemned test shafts, and the hollowed-out infrastructure of Aperture reveals a second story beneath the one being narrated — and the turret choir section that closes the chapter is the most purely beautiful moment in the franchise.",
+      "game": 6
     }
   },
+
   {
     "model": "catalog.quest",
     "pk": 23,
     "fields": {
-      "title": "Anri of Astora",
-      "description": "Follow Anri's tragic journey across the kingdom while influencing one of Dark Souls III's secret endings.",
-      "game": 8
+      "title": "Purification",
+      "description": "The game's true ending path: Sekiro enters the memory of a god-defeated warrior and confronts the roots of the Undying phenomenon at its source in the depths of Fountainhead Palace. The questline demands that the player make a sacrifice that feels genuinely personal after twenty hours with the characters involved, and the final boss encounter — at the shores of a transformed interior lake — is one of FromSoftware's most visually arresting.",
+      "game": 7
     }
   },
   {
     "model": "catalog.quest",
     "pk": 24,
     "fields": {
-      "title": "Greirat of the Undead Settlement",
-      "description": "Support Greirat's dangerous scavenging expeditions and determine whether the beloved thief survives his adventures.",
-      "game": 8
+      "title": "Emma and the Mortal Blade",
+      "description": "A late-game quest in which the Wolf must seek the Mortal Blade — one of the few weapons capable of killing the otherwise-immortal — while Emma, the physician who has been treating the Divine Heir, begins to suspect that the path the Wolf is walking leads somewhere terrible. Her concern is quiet and never melodramatic, which makes the mission's eventual resolution hit far harder than an overtly emotional scene would have.",
+      "game": 7
     }
   },
   {
     "model": "catalog.quest",
     "pk": 25,
     "fields": {
-      "title": "The Big Score",
-      "description": "Michael, Franklin, and Trevor plan the largest robbery in Los Santos, choosing between different approaches and outcomes.",
-      "game": 9
+      "title": "The Sculptor's Past",
+      "description": "Pieced together across the entire game through item descriptions, NPC dialogue, and a late-game revelation, this is less a discrete quest than a slow accumulation of truth about the disfigured old man who gave the Wolf his prosthetic arm. The full story of Orangutan — who he was, what he did, and why he chose to remain where he is — reframes every moment spent at the Dilapidated Temple and makes revisiting it with full knowledge genuinely affecting.",
+      "game": 7
     }
   },
+
   {
     "model": "catalog.quest",
     "pk": 26,
     "fields": {
-      "title": "Three's Company",
-      "description": "The three protagonists work together for the first time during a daring rescue mission involving helicopters and snipers.",
-      "game": 9
+      "title": "Grimm Troupe",
+      "description": "A questline that begins when a lantern is lit at a corpse in Forgotten Crossroads, summoning the Grimm Troupe to Hallownest and setting the Knight on a hunt through the kingdom's most dangerous areas to collect flames. It culminates in one of the game's most spectacular boss fights and offers a second, darker resolution that raises pointed questions about what mercy actually requires. The Troupe's presence transforms the atmosphere of every area they inhabit.",
+      "game": 8
     }
   },
   {
     "model": "catalog.quest",
     "pk": 27,
     "fields": {
-      "title": "The Third Way",
-      "description": "Franklin rejects impossible choices and unites the trio for the game's most satisfying and widely preferred ending.",
-      "game": 9
+      "title": "White Palace",
+      "description": "Accessed via a dream within a dream, the White Palace is the Pale King's memory — a brutal precision platforming gauntlet of sawblades, spikes, and collapsing platforms that exists entirely outside normal Hollow Knight combat. It is the game's most demanding optional challenge, and its location at the center of the game's deepest lore mystery makes the difficulty feel thematically appropriate. The Path of Pain sub-area is for players who want to hurt.",
+      "game": 8
     }
   },
   {
     "model": "catalog.quest",
     "pk": 28,
     "fields": {
-      "title": "Orpheus",
-      "description": "Help the legendary musician reunite with Eurydice through a touching story inspired by Greek mythology.",
-      "game": 10
+      "title": "The Seer and the Dream Nail",
+      "description": "The Moth elder who gifts the Knight the Dream Nail sets them on a journey through the memories of the dead — a mechanic that is both a traversal tool and a narrative one, revealing the inner lives of enemies and bosses in fragments of dreaming. The questline climaxes in the Dream Realm itself, and the Seer's final words to the Knight, delivered once all the Essence has been gathered, are among the most quietly beautiful lines in the game.",
+      "game": 8
     }
   },
   {
     "model": "catalog.quest",
     "pk": 29,
     "fields": {
-      "title": "Achilles",
-      "description": "Strengthen Zagreus' bond with Achilles while uncovering his past and helping him reunite with Patroclus.",
+      "title": "Isma's Grove and the Tears of the Kingdom",
+      "description": "A lore-dense journey to recover the Tram Pass and access the forgotten areas of the Royal Waterways, passing through Isma's Grove — a flooded garden haunted by the memory of a protector who gave everything to keep something safe. The environmental storytelling here, delivered entirely without dialogue, traces a love story and a sacrifice across acid pools and giant seed-pods in a way that only games can accomplish.",
+      "game": 8
+    }
+  },
+
+  {
+    "model": "catalog.quest",
+    "pk": 30,
+    "fields": {
+      "title": "The Hanged Man",
+      "description": "The case that anchors the entire game: a hanged mercenary in the courtyard of the Whirling-in-Rags hostel, a labor dispute, a union, and a web of interests that implicates nearly everyone in the fictional city of Revachol. Solving it requires talking to dozens of witnesses, understanding the political geography of a post-revolutionary failed state, and eventually confronting someone whose guilt or innocence depends on how you define those words. It is the most ambitious mystery in any RPG.",
+      "game": 9
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 31,
+    "fields": {
+      "title": "The Church on Ubi Road",
+      "description": "An optional political investigation into the aerostatics church and the pale — the slow-moving existential phenomenon that swallows the world when it is forgotten too thoroughly. The quest is the game's deepest dive into its metaphysics, connecting personal memory to cosmic forgetting in ways that feel coherent and terrifying. The pale is the game's most original invented concept, and this questline is where it is best explained.",
+      "game": 9
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 32,
+    "fields": {
+      "title": "Dolores Dei",
+      "description": "A political history quest in which the Detective and Kim investigate the legacy of Revachol's revolutionary past and the men who shaped it. Tracking down surviving witnesses to events decades old gradually reveals how utopian projects fail — not through villainy but through the ordinary accumulation of compromises. It is the quest that most clearly articulates the game's central thesis about what political hope costs those who hold it.",
+      "game": 9
+    }
+  },
+
+  {
+    "model": "catalog.quest",
+    "pk": 33,
+    "fields": {
+      "title": "The City of Blood",
+      "description": "Doom Eternal's penultimate campaign chapter sends the Slayer through a blood-drenched city overrun at maximum demonic density — the game at its most mechanically demanding. The encounter design reaches its peak here, stacking every enemy type learned across the campaign into arenas that require perfect resource cycling to survive. Completing it feels like passing an exam the game has been designing since the opening level.",
       "game": 10
     }
   },
   {
     "model": "catalog.quest",
-    "pk": 30,
+    "pk": 34,
     "fields": {
-      "title": "Dusa",
-      "description": "Develop a heartfelt friendship with Dusa through repeated conversations and gifts, revealing one of Hades' sweetest stories.",
+      "title": "Urdak",
+      "description": "The Slayer breaches the realm of the Maykrs — a crystalline, impossibly beautiful dimension of divine architecture — and tears through it on his way to confront the Khan Maykr. The visual contrast between the environment's transcendent beauty and the brutality of what the player does inside it is Doom Eternal's most intentional aesthetic statement, and the Khan Maykr boss fight that closes the chapter is a spectacular setpiece.",
       "game": 10
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 35,
+    "fields": {
+      "title": "Reclaiming Earth",
+      "description": "The opening campaign sequence that sets the Slayer's context: Earth has already fallen. Cities are occupied. Humanity is enslaved. The mission establishes stakes immediately and without melodrama, letting the sheer scale of the occupation speak for itself while the player's arsenal is still limited enough that fighting feels costly. It is a masterclass in establishing urgency through environment rather than cutscene.",
+      "game": 10
+    }
+  },
+
+  {
+    "model": "catalog.quest",
+    "pk": 36,
+    "fields": {
+      "title": "Farewell",
+      "description": "The post-game chapter released after Celeste's launch, designed for players who have mastered every mechanic the game taught them — and then some. Farewell is the longest and hardest chapter in the game, a farewell to a character who meant something to Madeline, and it uses its difficulty as an emotional argument: grief is exhausting, and pushing through it anyway is the only way forward. The final room, after hours of punishment, feels like arriving somewhere real.",
+      "game": 11
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 37,
+    "fields": {
+      "title": "Reflection",
+      "description": "The chapter in which Badeline fully manifests and pursues Madeline down the mountain in a sequence that plays like a panic attack given physical form. The pursuit mechanics — Badeline mirroring and amplifying every obstacle — create a felt experience of anxiety that no dialogue scene could replicate. Its resolution, in which Madeline stops running and turns to face what is chasing her, is the game's pivot point and its most important idea.",
+      "game": 11
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 38,
+    "fields": {
+      "title": "The Summit",
+      "description": "The final ascent of Celeste Mountain: Madeline and Badeline climbing together, their merged movement abilities allowing them to reach heights neither could alone. The chapter is designed as a victory lap — difficult enough to feel earned, generous enough to feel celebratory — and the moment the summit flag is planted, with the game's full orchestral theme swelling, is one of the most purely joyful things an indie game has ever produced.",
+      "game": 11
+    }
+  },
+
+  {
+    "model": "catalog.quest",
+    "pk": 39,
+    "fields": {
+      "title": "The Village",
+      "description": "The opening sequence of RE4 Remake drops Leon into a rural Spanish village where the inhabitants — now Ganados — attack as a coordinated mob rather than zombies. The village siege is a masterclass in controlled chaos: limited ammunition, multiple entry points, the bell that stops everything, and a chainsaw-wielding enemy who can end the run in one hit. It is the game's thesis statement about what survival horror can be when it respects the player.",
+      "game": 12
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 40,
+    "fields": {
+      "title": "Separate Ways",
+      "description": "Ada Wong's parallel campaign, running alongside Leon's story and revealing what she was doing during every moment he was not watching. The remake expanded it significantly from the original, giving Ada genuine interiority and a more complex motivation. Playing it immediately after the main campaign recontextualizes several of Leon's missions and makes certain moments hit with an unexpected weight.",
+      "game": 12
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 41,
+    "fields": {
+      "title": "The Castle",
+      "description": "The middle act of RE4, set in Salazar's sprawling Gothic castle, is the longest and most varied section of the game — moving through ballrooms, dungeons, underground lakes, and a clockwork labyrinth across what feels like its own complete adventure. The castle is where the game fully commits to its baroque excess, deploying Regeneradors, castle guards, and the double Garrador fight in a sequence that never loses momentum across its considerable length.",
+      "game": 12
+    }
+  },
+
+  {
+    "model": "catalog.quest",
+    "pk": 42,
+    "fields": {
+      "title": "Escape from Tartarus",
+      "description": "Every successful escape from the Underworld is a quest in itself — a unique combination of boons, weapons, and enemy encounters assembled across the House of Hades, Asphodel, Elysium, and the Temple of Styx. No two runs are identical, and the game's genius is that failure is not a reset but a continuation: returning to the House always advances something — a relationship, a thread of story, a new possibility. The first successful escape is one of gaming's great personal milestones.",
+      "game": 13
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 43,
+    "fields": {
+      "title": "The Epilogue",
+      "description": "After the credits roll, a new post-escape questline begins — one that reframes the entire game's premise and demands a number of successful escapes to complete. The Epilogue is the game's reward for mastery, delivering the emotional resolution the main story withheld and providing a reason to keep playing that is purely narrative rather than mechanical. It is the part of Hades that makes players feel genuinely seen by the designers.",
+      "game": 13
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 44,
+    "fields": {
+      "title": "Patroclus and Achilles",
+      "description": "A hidden questline that requires multiple escape attempts, specific gifts, and conversations spread across dozens of runs to unlock. At its heart is a reunion between two legendary figures separated for an eternity, facilitated by the player in ways that the game never draws attention to. The resolution of their story — which requires Zagreus to carry a message across the boundary of the living and the dead — is the most romantic and quietly devastating moment in the game.",
+      "game": 13
+    }
+  },
+
+  {
+    "model": "catalog.quest",
+    "pk": 45,
+    "fields": {
+      "title": "Suicide Mission",
+      "description": "The final mission of Mass Effect 2 sends Shepard's entire team through the Omega-4 Relay for an assault on the Collector Base with no guarantee that anyone survives. Every squad member can die — permanently — based on decisions made across the entire game: loyalty missions completed, upgrades purchased, roles assigned at the final moment. It is the most consequential single mission in RPG history, and it works because it has earned every death it threatens.",
+      "game": 14
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 46,
+    "fields": {
+      "title": "Mordin's Loyalty Mission",
+      "description": "Shepard accompanies Mordin to a Cerberus laboratory where experiments on his people are being conducted by his own former student. The mission forces a confrontation with the darkest chapter of Mordin's past — his involvement in a biological weapons program — and the conversation that follows is the most morally serious single dialogue in the trilogy. Mordin's willingness to examine his own complicity without excusing it is extraordinary writing.",
+      "game": 14
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 47,
+    "fields": {
+      "title": "Grunt's Loyalty Mission",
+      "description": "A krogan coming-of-age ritual that sends Shepard and Grunt into the badlands of Tuchanka to fight waves of increasingly overwhelming enemies, culminating in a Thresher Maw confrontation on foot. The mission is the game at its most purely fun — spectacular combat, great banter, and a finale that cements Grunt's place in the squad. Its conclusion, which depends on Grunt's loyalty and his genetic tuning, is one of the game's most satisfying payoffs.",
+      "game": 14
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 48,
+    "fields": {
+      "title": "Overlord",
+      "description": "A DLC mission that begins as a mystery — a Cerberus base has gone silent — and becomes something far darker as Shepard uncovers what a scientist did to his own brother in the name of research. Overlord is Mass Effect 2 at its most disturbing: a horror story about the violence of unchecked ambition told through a sequence of increasingly wrong environments, ending with a choice that the game does not let the player make lightly.",
+      "game": 14
+    }
+  },
+
+  {
+    "model": "catalog.quest",
+    "pk": 49,
+    "fields": {
+      "title": "Karlach's Quest",
+      "description": "A search for a solution to the infernal engine slowly incinerating Karlach from the inside out — a problem that has no clean answer and whose resolution depends on how far the player is willing to go. Her questline is the game's most emotionally sustained: funny and warm in its early stages, increasingly desperate in its middle, and resolving in one of several endings that range from bittersweet to genuinely sorrowful. No character in BG3 is loved more fiercely by the community.",
+      "game": 15
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 50,
+    "fields": {
+      "title": "Shadowheart's Nightsong",
+      "description": "A quest to find the Nightsong — a weapon the Harpers want, a prisoner the Absolute's forces are hunting, and something Shadowheart has been sent to retrieve by Shar herself — that culminates in a moment requiring Shadowheart to choose between her goddess, her past, and the future she is beginning to want. The choice is hers to make, and the player can only watch or influence it. Its emotional weight is the highest of any companion quest in the game.",
+      "game": 15
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 51,
+    "fields": {
+      "title": "The House of Hope",
+      "description": "An optional heist into the personal domain of Raphael the cambion — a devil who has been cheerfully offering the party terrible deals since Act One — to steal back an artifact he holds. The mission involves infiltrating hell itself, freeing its prisoners, and confronting Raphael in his own realm while he delivers an operatic villain monologue accompanied by a literal choir. It is the most theatrical sequence in a game full of spectacle, and the boss fight is genuinely challenging.",
+      "game": 15
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 52,
+    "fields": {
+      "title": "Save the Refugees",
+      "description": "The Act One culminating crisis: a tiefling refugee camp outside Emerald Grove is threatened simultaneously by a goblin army and by the druids who want to seal the grove and leave the refugees to their fate. Every choice the player made in the act feeds into this confrontation, and the range of possible outcomes — from triumphant rescue to catastrophic failure to deliberate betrayal — makes it one of the most replayable sequences in any RPG.",
+      "game": 15
+    }
+  },
+
+  {
+    "model": "catalog.quest",
+    "pk": 53,
+    "fields": {
+      "title": "The Journey to Jotunheim",
+      "description": "The final act of God of War 2018, in which Kratos and Atreus travel to the realm of the giants to fulfill Faye's last wish — scattering her ashes from the highest peak in all the realms. The journey is quiet after everything that preceded it, and the revelations waiting at the summit reframe the entire game's events with a completeness that makes replaying from the beginning feel mandatory. It ends not with a battle but with grief, and that restraint is the boldest choice the game makes.",
+      "game": 16
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 54,
+    "fields": {
+      "title": "A Realm Beyond",
+      "description": "Kratos and Atreus's first journey through the World Tree to the realm of Alfheim to recover the Light needed to dispel the mysterious black mist blocking their path. The mission introduces the game's realm-travel mechanics and the Light Elf / Dark Elf conflict, but its real purpose is to deepen the father-son dynamic through a sequence where Kratos must carry his unconscious son through a hostile realm while every instinct he has is screaming at him to put the boy down and fight.",
+      "game": 16
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 55,
+    "fields": {
+      "title": "The Black Rune",
+      "description": "A mission to the ruins of Thamur — a giant frozen mid-fall by Thor's hammer centuries ago — that is one of the game's most visually spectacular environments and introduces the Stranger's true identity in a confrontation that recontextualizes everything about the game's threat. The puzzle design here is some of the most creative in the game, using Thamur's frozen body as both architecture and obstacle.",
+      "game": 16
+    }
+  },
+
+  {
+    "model": "catalog.quest",
+    "pk": 56,
+    "fields": {
+      "title": "Build a Campus",
+      "description": "The Campus district system fundamentally changed how Civilization VI's mid-game is played, requiring players to plan district placement around adjacency bonuses — mountains, rainforests, other districts — from the earliest turns. Developing a Campus into a fully realized science engine, timed correctly with policy cards and great scientist slots, is the core strategic satisfaction of a science victory run, and the planning it demands makes every city feel like a personal creation.",
+      "game": 17
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 57,
+    "fields": {
+      "title": "First Contact War",
+      "description": "An emergent scenario that occurs when two civilizations meet early with incompatible agendas and no diplomatic vocabulary to resolve them — a war that nobody fully intended that reshapes the continent for three hundred turns. Civ VI's AI personality system makes these conflicts feel personal rather than mechanical, and the grudge-match quality of a war against a leader who humiliated you in a previous game is the engine that drives most players' most memorable stories.",
+      "game": 17
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 58,
+    "fields": {
+      "title": "Climate Endgame",
+      "description": "The Gathering Storm expansion's late-game crisis: rising seas flood coastal tiles, storms intensify each turn, and civilizations that industrialized without restraint face the consequences of centuries of carbon output. Managing the climate endgame — adapting your cities, transitioning to renewable energy, potentially geoengineering the crisis away — is the most unique strategic challenge in any 4X game and the most direct statement any mainstream strategy title has made about the present world.",
+      "game": 17
+    }
+  },
+
+  {
+    "model": "catalog.quest",
+    "pk": 59,
+    "fields": {
+      "title": "World Tour",
+      "description": "Street Fighter 6's story mode sends a custom avatar into Metro City and beyond to train under the game's full roster of fighters, each of whom teaches a moveset and offers a slice of their personal story. It is the most generous single-player content package the franchise has ever shipped: dozens of hours of exploration, boss fights, and character vignettes that develop the roster more deeply than any arcade mode could. Completing it feels like earning a place in the world.",
+      "game": 18
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 60,
+    "fields": {
+      "title": "Drive Rush Mastery",
+      "description": "Less a discrete quest than an ongoing tutorial the game never stops teaching — the Drive Rush cancel system, which allows special moves to be extended into full combos with a forward-dash input, is the mechanical ceiling of SF6's competitive scene. Learning to Drive Rush cancel on reaction, in pressure situations, against opponents who are trying to punish every attempt, is the most rewarding skill progression the franchise has ever offered.",
+      "game": 18
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 61,
+    "fields": {
+      "title": "Battle Hub Championships",
+      "description": "The Battle Hub's arcade cabinet ranked matches recreate the classic arcade challenge format with modern netcode, providing the most authentic competitive experience in the franchise's history. Climbing the ranking system — from Rookie to Master — against a global player base while your main's match-up knowledge deepens is the closest SF6 comes to its own endgame, and the community events held in the Hub make it feel like a living competitive ecosystem.",
+      "game": 18
+    }
+  },
+
+  {
+    "model": "catalog.quest",
+    "pk": 62,
+    "fields": {
+      "title": "The Ash Twin Project",
+      "description": "The central mystery of Outer Wilds: why does the loop exist, and who built the device that causes it? Unraveling the Ash Twin Project requires visiting a dozen locations across the solar system in the right order, reading the right stone tablets, and arriving at the sand-filled core of Ash Twin in the brief window before the sand fills it — a sequence that tests everything the player has learned. The answer, when it comes, is generous and heartbreaking.",
+      "game": 19
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 63,
+    "fields": {
+      "title": "The Vessel",
+      "description": "The sequence leading to and through the Nomai Vessel on the Stranger — the DLC's space station of endless dream simulations — which requires the player to understand the Stranger's mechanics fully before attempting. What is inside the simulation, and why it is being maintained, is one of the expansion's most emotionally devastating revelations: a community of beings who chose to wait, inside a dream, rather than face what had already happened to them.",
+      "game": 19
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 64,
+    "fields": {
+      "title": "The Eye of the Universe",
+      "description": "The game's ending: once the player has learned everything there is to know, they travel to the Eye of the Universe — a quantum anomaly older than the solar system — and witness the final moments of everything. The sequence that follows does not explain itself in words. It simply shows, and asks the player to sit with what they are seeing. That it achieves genuine catharsis through pure environmental experience is the final proof that Outer Wilds is extraordinary.",
+      "game": 19
+    }
+  },
+
+  {
+    "model": "catalog.quest",
+    "pk": 65,
+    "fields": {
+      "title": "Siegward's Questline",
+      "description": "A multi-stage questline following the onion knight of Catarina across the entire game — from a sewer rescue to a shared bowl of Siegbrau to a final act of loyalty in the deepest dungeon. The quest is Dark Souls III's warmest storyline: consistently funny in its early stages and quietly heroic at the end. Missing any of its easily-skipped triggers locks the player out of its conclusion, which makes successfully completing it on a first playthrough feel like a genuine accomplishment.",
+      "game": 20
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 66,
+    "fields": {
+      "title": "Ashes of Ariandel",
+      "description": "The first DLC drops the player into the Painted World of Ariandel — a vast snowy landscape of rot and cold maintained by the desperate will of Sister Friede — and gradually reveals the tragedy of a woman who chose stasis over renewal because the alternative was burning down the world she loved. The DLC's final boss encounter is a three-phase masterpiece, and its closing image sets up the Blood of the Wolf DLC with elegant economy.",
+      "game": 20
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 67,
+    "fields": {
+      "title": "The Ringed City",
+      "description": "The franchise's final DLC — and, until Elden Ring, FromSoftware's farewell to the Dark Souls world — descends to the end of time itself, where the last of the Pygmies huddle under the protection of a god who kept a terrible secret. The Ringed City is dense with callback and culmination, and its final boss, Slave Knight Gael, is the most widely beloved in the entire series: a weathered warrior who carried his mission across an age of gods and would not put it down.",
+      "game": 20
+    }
+  },
+  {
+    "model": "catalog.quest",
+    "pk": 68,
+    "fields": {
+      "title": "Leonhard's Questline",
+      "description": "A slow-burning betrayal across the full length of the game, in which the red-caped phantom gifts the player a Cracked Red Eye Orb and then vanishes — only to reappear at intervals, each time slightly more wrong. The questline ends on the rooftop of Anor Londo with a duel over the soul of a sleeping goddess, and the player's victory reveals that Leonhard's devotion, however twisted, was entirely genuine. It is Dark Souls III's most elegantly structured character arc.",
+      "game": 20
     }
   }
 ]

@@ -4,170 +4,384 @@
     "pk": 1,
     "fields": {
       "title": "The Witcher 3: Wild Hunt",
-      "description": "Geralt of Rivia, a monster-hunting witcher, searches for his adopted daughter Ciri as the Wild Hunt closes in.",
+      "description": "An epic open-world RPG set in a dark fantasy universe, following monster hunter Geralt of Rivia on a quest to find his missing adopted daughter. With over 100 hours of handcrafted content, morally complex choices, and a living world that reacts to every decision, this title redefined what open-world storytelling could be. Its two major expansions, Hearts of Stone and Blood and Wine, are masterclasses in narrative design.",
       "slug": "the-witcher-3-wild-hunt",
       "release_year": 2015,
-      "publisher": "CD Projekt",
-      "cover_image": "catalog/covers/witcher3.jpg",
+      "publisher": "CD Projekt Red",
+      "cover_image": "catalog/games/covers/witcher3.jpg",
+      "banner_image": "catalog/games/banners/witcher3_banner.jpg",
       "metacritic_score": 93,
       "genres": [
-        1,
-        4
-      ]
+        2,
+        3,
+        1
+      ],
+      "added_by": null
     }
   },
   {
     "model": "catalog.game",
     "pk": 2,
     "fields": {
-      "title": "Elden Ring",
-      "description": "An open world dark fantasy shaped by Hidetaka Miyazaki and George R. R. Martin, where the player becomes a Tarnished seeking the Elden Ring.",
-      "slug": "elden-ring",
-      "release_year": 2022,
-      "publisher": "Bandai Namco Entertainment",
-      "cover_image": "catalog/covers/elden_ring.jpg",
-      "metacritic_score": 96,
+      "title": "Red Dead Redemption 2",
+      "description": "Set in the dying days of the American frontier in 1899, this breathtaking open-world game follows outlaw Arthur Morgan as his gang fractures under pressure from government forces and rival criminals. Every moment breathes with authenticity — from snowflakes settling on your coat to NPCs who remember past interactions. A meditation on loyalty, freedom, and the cost of a violent life, told with stunning cinematic craft.",
+      "slug": "red-dead-redemption-2",
+      "release_year": 2018,
+      "publisher": "Rockstar Games",
+      "cover_image": "catalog/games/covers/rdr2.jpg",
+      "banner_image": "catalog/games/banners/rdr2_banner.jpg",
+      "metacritic_score": 97,
       "genres": [
-        2,
-        4,
-        5
-      ]
+        1,
+        3
+      ],
+      "added_by": null
     }
   },
   {
     "model": "catalog.game",
     "pk": 3,
     "fields": {
-      "title": "God of War",
-      "description": "Kratos and his son Atreus journey through the nine realms of Norse mythology.",
-      "slug": "god-of-war-2018",
-      "release_year": 2018,
-      "publisher": "Sony Interactive Entertainment",
-      "cover_image": "catalog/covers/god_of_war.jpg",
-      "metacritic_score": 94,
+      "title": "Elden Ring",
+      "description": "FromSoftware's landmark open-world action RPG, born from a collaboration with author George R.R. Martin, plunges players into the shattered Lands Between. Piece together a shattered world's history through item descriptions, cryptic NPC dialogue, and jaw-dropping boss encounters. The seamless blend of punishing combat and vast exploration rewards patience and curiosity, making every discovered grace site feel like a genuine triumph.",
+      "slug": "elden-ring",
+      "release_year": 2022,
+      "publisher": "Bandai Namco Entertainment",
+      "cover_image": "catalog/games/covers/elden_ring.jpg",
+      "banner_image": "catalog/games/banners/elden_ring_banner.jpg",
+      "metacritic_score": 96,
       "genres": [
-        3
-      ]
+        1,
+        2
+      ],
+      "added_by": null
     }
   },
   {
     "model": "catalog.game",
     "pk": 4,
     "fields": {
-      "title": "Cyberpunk 2077",
-      "description": "Mercenary V survives in Night City while carrying the digital engram of rockerboy legend Johnny Silverhand.",
-      "slug": "cyberpunk-2077",
-      "release_year": 2020,
-      "publisher": "CD Projekt",
-      "cover_image": "catalog/covers/cyberpunk2077.jpg",
-      "metacritic_score": 86,
+      "title": "Half-Life 2",
+      "description": "Gordon Freeman returns to a dystopian Earth conquered by the alien Combine in this landmark first-person shooter that forever changed how games tell stories. Using physics puzzles, vehicle sequences, and AI-driven companions, Valve wove narrative and gameplay into a seamless experience. The gravity gun alone inspired a decade of imitators. More than 20 years later, City 17 still feels alive, oppressive, and worth fighting for.",
+      "slug": "half-life-2",
+      "release_year": 2004,
+      "publisher": "Valve",
+      "cover_image": "catalog/games/covers/half_life_2.jpg",
+      "banner_image": "catalog/games/banners/half_life_2_banner.jpg",
+      "metacritic_score": 96,
       "genres": [
-        1,
-        6,
-        4
-      ]
+        5,
+        3
+      ],
+      "added_by": null
     }
   },
   {
     "model": "catalog.game",
     "pk": 5,
     "fields": {
-      "title": "Baldur's Gate 3",
-      "description": "A turn-based D&D RPG in which a party infected by mind flayer parasites tries to avoid becoming illithids.",
-      "slug": "baldurs-gate-3",
-      "release_year": 2023,
-      "publisher": "Larian Studios",
-      "cover_image": "catalog/covers/bg3.jpg",
-      "metacritic_score": 96,
+      "title": "The Last of Us",
+      "description": "A post-apocalyptic survival game that follows hardened smuggler Joel and teenage survivor Ellie across a fungal-infected America. Naughty Dog's masterpiece blends stealth, brutal combat, and resource scarcity with some of the most emotionally devastating writing in gaming history. The relationship at its core evolves organically, making the game's moral climax one of the most debated moments in the medium's history.",
+      "slug": "the-last-of-us",
+      "release_year": 2013,
+      "publisher": "Sony Interactive Entertainment",
+      "cover_image": "catalog/games/covers/the_last_of_us.jpg",
+      "banner_image": "catalog/games/banners/the_last_of_us_banner.jpg",
+      "metacritic_score": 95,
       "genres": [
+        3,
         1,
         7
-      ]
+      ],
+      "added_by": null
     }
   },
   {
     "model": "catalog.game",
     "pk": 6,
     "fields": {
-      "title": "Red Dead Redemption 2",
-      "description": "Arthur Morgan, a member of the Van der Linde gang, lives through the decline of the Wild West era in early 1900s America.",
-      "slug": "red-dead-redemption-2",
-      "release_year": 2018,
-      "publisher": "Rockstar catalog",
-      "cover_image": "catalog/covers/rdr2.jpg",
-      "metacritic_score": 97,
+      "title": "Portal 2",
+      "description": "Armed with the Aperture Science Handheld Portal Device, you must escape a crumbling test facility while unraveling the dark history of its megalomaniacal AI overseer, GLaDOS. Portal 2 is a perfect puzzle game — every chamber is fair, every solution satisfying, and every line of dialogue is genuinely funny. The co-op campaign adds a whole new dimension, requiring real teamwork and trust to solve deviously clever spatial puzzles.",
+      "slug": "portal-2",
+      "release_year": 2011,
+      "publisher": "Valve",
+      "cover_image": "catalog/games/covers/portal_2.jpg",
+      "banner_image": "catalog/games/banners/portal_2_banner.jpg",
+      "metacritic_score": 95,
       "genres": [
-        3,
-        4
-      ]
+        6,
+        3
+      ],
+      "added_by": null
     }
   },
   {
     "model": "catalog.game",
     "pk": 7,
     "fields": {
-      "title": "Hollow Knight",
-      "description": "A small bug knight explores the ruined underground kingdom of Hallownest, full of secrets and dangerous creatures.",
-      "slug": "hollow-knight",
-      "release_year": 2017,
-      "publisher": "Team Cherry",
-      "cover_image": "catalog/covers/hollow_knight.jpg",
+      "title": "Sekiro: Shadows Die Twice",
+      "description": "Set in a brutal reimagining of Sengoku-period Japan, Sekiro casts you as a shinobi sworn to protect a divine child from power-hungry warlords and corrupted immortals. Unlike its FromSoftware siblings, the game demands pure mastery of its posture-based combat — no shortcuts, no over-leveling. Deflect, thrust, and counter with surgical precision. Victory over each boss feels less like luck and more like genuine skill earned the hard way.",
+      "slug": "sekiro-shadows-die-twice",
+      "release_year": 2019,
+      "publisher": "Activision",
+      "cover_image": "catalog/games/covers/sekiro.jpg",
+      "banner_image": "catalog/games/banners/sekiro_banner.jpg",
       "metacritic_score": 90,
       "genres": [
-        8,
-        9
-      ]
+        1,
+        3
+      ],
+      "added_by": null
     }
   },
   {
     "model": "catalog.game",
     "pk": 8,
     "fields": {
-      "title": "Dark Souls III",
-      "description": "An Ashen One, risen from the grave, must return the Lords of Cinder to their thrones and stall the fading of the Flame.",
-      "slug": "dark-souls-3",
-      "release_year": 2016,
-      "publisher": "Bandai Namco Entertainment",
-      "cover_image": "catalog/covers/dark_souls_3.jpg",
-      "metacritic_score": 89,
+      "title": "Hollow Knight",
+      "description": "Descend into Hallownest, a vast underground kingdom of insects and dreams, and uncover the secrets of its ancient plague. Team Cherry's indie metroidvania is a triumph of atmosphere and design: tight, responsive combat meets labyrinthine interconnected maps and a wordless lore delivered through environment and gesture. With over 40 hours of content and some of the hardest optional boss fights ever designed, it punches far above its price.",
+      "slug": "hollow-knight",
+      "release_year": 2017,
+      "publisher": "Team Cherry",
+      "cover_image": "catalog/games/covers/hollow_knight.jpg",
+      "banner_image": "catalog/games/banners/hollow_knight_banner.jpg",
+      "metacritic_score": 87,
       "genres": [
-        2,
-        5
-      ]
+        1,
+        6,
+        3
+      ],
+      "added_by": null
     }
   },
   {
     "model": "catalog.game",
     "pk": 9,
     "fields": {
-      "title": "Grand Theft Auto V",
-      "description": "Three criminals, Michael, Trevor and Franklin, plan a series of heists in the fictional city of Los Santos.",
-      "slug": "grand-theft-auto-5",
-      "release_year": 2013,
-      "publisher": "Rockstar catalog",
-      "cover_image": "catalog/covers/gta5.jpg",
+      "title": "Disco Elysium: The Final Cut",
+      "description": "You wake up in a trashed hotel room with no memory, no badge, and a talking necktie. This tabletop RPG-inspired detective game has no combat — only conversation, skill checks, and an island city teeming with political philosophy and tragedy. Every attribute of your detective — from your Electrochemistry to your Inland Empire — becomes a literal inner voice. It is the most literary, strange, and rewarding RPG ever made.",
+      "slug": "disco-elysium-the-final-cut",
+      "release_year": 2021,
+      "publisher": "ZA/UM",
+      "cover_image": "catalog/games/covers/disco_elysium.jpg",
+      "banner_image": "catalog/games/banners/disco_elysium_banner.jpg",
       "metacritic_score": 97,
       "genres": [
-        9,
-        4
-      ]
+        2,
+        3
+      ],
+      "added_by": null
     }
   },
   {
     "model": "catalog.game",
     "pk": 10,
     "fields": {
-      "title": "Hades",
-      "description": "Zagreus, son of Hades, repeatedly tries to escape the Underworld, battling the forces of the Greek gods along the way.",
-      "slug": "hades",
+      "title": "Doom Eternal",
+      "description": "Hell's armies have conquered Earth, and you are the only thing standing between humanity and extinction. Doom Eternal is a relentless, ultra-fast shooter that plays like a violent ballet — demons are puzzles you solve with bullets, chainsaws, and flame belch. Resource management, aerial movement, and weapon switching must be mastered simultaneously. It is one of the most demanding and satisfying first-person shooter experiences ever created.",
+      "slug": "doom-eternal",
       "release_year": 2020,
-      "publisher": "Supergiant catalog",
-      "cover_image": "catalog/covers/hades.jpg",
+      "publisher": "Bethesda Softworks",
+      "cover_image": "catalog/games/covers/doom_eternal.jpg",
+      "banner_image": "catalog/games/banners/doom_eternal_banner.jpg",
+      "metacritic_score": 88,
+      "genres": [
+        5,
+        1
+      ],
+      "added_by": null
+    }
+  },
+  {
+    "model": "catalog.game",
+    "pk": 11,
+    "fields": {
+      "title": "Celeste",
+      "description": "Madeline climbs Celeste Mountain to confront not just its supernatural hazards but her own anxiety and self-doubt. This precision platformer is brutally challenging, yet endlessly fair — every death is a lesson, never a punishment. Creator Maddy Thorson wove a deeply personal story about mental health into a game where the very act of persisting through hard rooms mirrors the protagonist's inner struggle. The assist mode shows rare accessibility design wisdom.",
+      "slug": "celeste",
+      "release_year": 2018,
+      "publisher": "Matt Makes Games",
+      "cover_image": "catalog/games/covers/celeste.jpg",
+      "banner_image": "catalog/games/banners/celeste_banner.jpg",
+      "metacritic_score": 94,
+      "genres": [
+        6,
+        3
+      ],
+      "added_by": null
+    }
+  },
+  {
+    "model": "catalog.game",
+    "pk": 12,
+    "fields": {
+      "title": "Resident Evil 4 Remake",
+      "description": "Leon S. Kennedy travels to rural Spain to rescue the U.S. President's daughter from a fanatical religious cult in this stunning reimagining of the 2005 original. Capcom rebuilt everything from scratch while preserving the essence of what made RE4 revolutionary: tension, spectacle, and mercantile resource management. New parry mechanics, expanded story content, and breathtaking production values make this arguably better than the already-beloved source material.",
+      "slug": "resident-evil-4-remake",
+      "release_year": 2023,
+      "publisher": "Capcom",
+      "cover_image": "catalog/games/covers/re4_remake.jpg",
+      "banner_image": "catalog/games/banners/re4_remake_banner.jpg",
       "metacritic_score": 93,
       "genres": [
-        10,
+        1,
+        7,
+        3
+      ],
+      "added_by": null
+    }
+  },
+  {
+    "model": "catalog.game",
+    "pk": 13,
+    "fields": {
+      "title": "Hades",
+      "description": "Play as Zagreus, son of the God of the Dead, and fight your way out of the Underworld using an ever-shifting arsenal of boons gifted by Olympian gods. Supergiant Games cracked the roguelite formula by making failure narratively meaningful — every death advances the story through new dialogue and relationships. The result is a game you want to replay endlessly, always discovering new god combinations, weapon aspects, and character depth.",
+      "slug": "hades",
+      "release_year": 2020,
+      "publisher": "Supergiant Games",
+      "cover_image": "catalog/games/covers/hades.jpg",
+      "banner_image": "catalog/games/banners/hades_banner.jpg",
+      "metacritic_score": 93,
+      "genres": [
+        1,
+        2
+      ],
+      "added_by": null
+    }
+  },
+  {
+    "model": "catalog.game",
+    "pk": 14,
+    "fields": {
+      "title": "Mass Effect 2",
+      "description": "Commander Shepard assembles a suicide squad of galactic misfits to take on a universe-threatening enemy in BioWare's finest hour. Every squad member has a rich personal arc that culminates in a loyalty mission — and in the final assault, those choices genuinely matter. Mass Effect 2 understood that great sci-fi is really about characters, and built its space opera mechanics entirely in service of making you care whether each of them survives.",
+      "slug": "mass-effect-2",
+      "release_year": 2010,
+      "publisher": "Electronic Arts",
+      "cover_image": "catalog/games/covers/mass_effect_2.jpg",
+      "banner_image": "catalog/games/banners/mass_effect_2_banner.jpg",
+      "metacritic_score": 96,
+      "genres": [
+        2,
+        5,
+        3
+      ],
+      "added_by": null
+    }
+  },
+  {
+    "model": "catalog.game",
+    "pk": 15,
+    "fields": {
+      "title": "Baldur's Gate 3",
+      "description": "An illithid tadpole lodged in your brain is slowly turning you into a mind flayer — and somehow that's the least of your problems. Larian Studios' adaptation of Dungeons & Dragons fifth edition is the most reactive RPG ever made, with thousands of decision points that ripple across a 100-hour adventure. Every class, origin, and choice feels meaningfully different on replay, and the companion writing rivals prestige television in depth and craft.",
+      "slug": "baldurs-gate-3",
+      "release_year": 2023,
+      "publisher": "Larian Studios",
+      "cover_image": "catalog/games/covers/baldurs_gate_3.jpg",
+      "banner_image": "catalog/games/banners/baldurs_gate_3_banner.jpg",
+      "metacritic_score": 96,
+      "genres": [
+        2,
+        4,
+        3
+      ],
+      "added_by": null
+    }
+  },
+  {
+    "model": "catalog.game",
+    "pk": 16,
+    "fields": {
+      "title": "God of War (2018)",
+      "description": "Kratos, the Ghost of Sparta, has fled to the Norse wilderness to raise his son Atreus — and accidentally stumbles into a war between gods. The reboot ditched Greek tragedy for something more intimate: a story about fatherhood, grief, and the weight of who you used to be. An over-the-shoulder camera keeps you locked in tight, and the seamless single-shot presentation makes the nine realms feel like one unbroken living world.",
+      "slug": "god-of-war-2018",
+      "release_year": 2018,
+      "publisher": "Sony Interactive Entertainment",
+      "cover_image": "catalog/games/covers/god_of_war_2018.jpg",
+      "banner_image": "catalog/games/banners/god_of_war_2018_banner.jpg",
+      "metacritic_score": 94,
+      "genres": [
+        1,
+        3
+      ],
+      "added_by": null
+    }
+  },
+  {
+    "model": "catalog.game",
+    "pk": 17,
+    "fields": {
+      "title": "Civilization VI",
+      "description": "Lead one of dozens of historical civilizations from the Stone Age to the Space Age in this deeply complex turn-based strategy game. District placement, government cards, and competing AI leaders with distinct agendas create a different story every game. The Gathering Storm and Rise and Fall expansions add climate change, natural disasters, and loyalty mechanics that push the already rich formula even further. One more turn has never felt more dangerously true.",
+      "slug": "civilization-vi",
+      "release_year": 2016,
+      "publisher": "2K Games",
+      "cover_image": "catalog/games/covers/civilization_vi.jpg",
+      "banner_image": "catalog/games/banners/civilization_vi_banner.jpg",
+      "metacritic_score": 88,
+      "genres": [
+        4,
         9
-      ]
+      ],
+      "added_by": null
+    }
+  },
+  {
+    "model": "catalog.game",
+    "pk": 18,
+    "fields": {
+      "title": "Street Fighter 6",
+      "description": "Capcom's latest entry in its legendary fighting franchise launched with the most content-rich package the series has ever seen: a fully-voiced World Tour story mode, an impressive roster of classic and new fighters, and a Drive system that adds a universal offensive and defensive resource layer. Whether you're a Ryu veteran or a first-time player, Drive Impact and Drive Rush create moment-to-moment decisions that feel endlessly deep and satisfying.",
+      "slug": "street-fighter-6",
+      "release_year": 2023,
+      "publisher": "Capcom",
+      "cover_image": "catalog/games/covers/street_fighter_6.jpg",
+      "banner_image": "catalog/games/banners/street_fighter_6_banner.jpg",
+      "metacritic_score": 92,
+      "genres": [
+        10,
+        1
+      ],
+      "added_by": null
+    }
+  },
+  {
+    "model": "catalog.game",
+    "pk": 19,
+    "fields": {
+      "title": "Outer Wilds",
+      "description": "You are an astronaut in a handcrafted solar system locked in a perpetual 22-minute time loop, and the only tool you have is curiosity. Outer Wilds gives you no objectives, no markers, no upgrades — only a ship and questions. Every revelation recontextualizes what you already know, and the ending is one of the most emotionally affecting moments in all of gaming. Describing more would be a crime. Simply go in blind.",
+      "slug": "outer-wilds",
+      "release_year": 2019,
+      "publisher": "Annapurna Interactive",
+      "cover_image": "catalog/games/covers/outer_wilds.jpg",
+      "banner_image": "catalog/games/banners/outer_wilds_banner.jpg",
+      "metacritic_score": 85,
+      "genres": [
+        3
+      ],
+      "added_by": null
+    }
+  },
+  {
+    "model": "catalog.game",
+    "pk": 20,
+    "fields": {
+      "title": "Dark Souls III",
+      "description": "The third and final entry in FromSoftware's watershed series sends you through the crumbling Age of Fire one last time, confronting legendary champions and fallen gods in some of the most intricately designed arenas in action RPG history. Dark Souls III is the most refined and accessible entry — faster than its predecessors, visually stunning, and laden with callbacks that reward series veterans. Its DLCs, Ashes of Ariandel and The Ringed City, deliver a poetic farewell to an era.",
+      "slug": "dark-souls-iii",
+      "release_year": 2016,
+      "publisher": "Bandai Namco Entertainment",
+      "cover_image": "catalog/games/covers/dark_souls_3.jpg",
+      "banner_image": "catalog/games/banners/dark_souls_3_banner.jpg",
+      "metacritic_score": 89,
+      "genres": [
+        1,
+        2
+      ],
+      "added_by": null
     }
   }
 ]

@@ -70,7 +70,8 @@ class Game(models.Model):
         )
     )
     publisher = models.CharField(max_length=NAME_MAX_LENGTH)
-    cover_image = models.ImageField(upload_to='games/covers')
+    cover_image = models.ImageField(upload_to='catalog/games/covers')
+    banner_image = models.ImageField(upload_to='catalog/games/banners', null=True, blank=True)
     metacritic_score = models.FloatField()
     genres = models.ManyToManyField(Genre, related_name='games')
     added_by = models.ForeignKey(

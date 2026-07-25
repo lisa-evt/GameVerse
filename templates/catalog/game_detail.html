@@ -9,7 +9,9 @@
 
 {% block content %}
 <section class="gv-hero">
-  <div class="gv-hero__bg" style="--bg-image: url('{{ game.banner_image.url }}');"></div>
+  <div class="gv-hero__bg"
+       style="--bg-image: url('{% if game.banner_image %}{{ game.banner_image.url }}{% else %}{% static 'images/banner_placeholder.jpeg' %}{% endif %}');">
+  </div>
   <div class="gv-hero__overlay"></div>
 
   <div class="container gv-hero__content">
@@ -23,18 +25,13 @@
       <!-- Инфо -->
       <div class="col">
         <h1 class="display-5 fw-bold mb-0">{{ game.title }}</h1>
-        <p class="text-light-emphasis mb-3">by {{ game.publisher }}</p>
+        <p class="gv-subtitle mb-3">by {{ game.publisher }}</p>
 
         <div class="mb-4">
           <span class="fw-bold me-2">Genres:</span>
           {% for genre in game.genres.all %}
             <span class="gv-pill">{{ genre.name }}</span>
           {% endfor %}
-        </div>
-
-        <div class="gv-about">
-          <h6 class="text-uppercase fw-bold mb-2">About</h6>
-          <p class="mb-0">{{ game.description }}</p>
         </div>
 
         {% if game.added_by == user %}
@@ -82,6 +79,17 @@
       </div>
 
     </div>
+
+    <!-- Описание -->
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="gv-about">
+          <h6 class="text-uppercase fw-bold mb-2">About</h6>
+          <p class="mb-0">{{ game.description }}</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 {% endblock %}

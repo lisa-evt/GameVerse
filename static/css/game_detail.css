@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;
   padding: 3rem 0;
+  min-height: 100vh;
 }
 .gv-hero__bg {
   position: absolute;
@@ -64,4 +65,8 @@
   background: transparent;
   padding: 0.5rem 1.5rem;
   font-weight: 600;
+}
+
+.gv-subtitle {
+  color: #737373;
 }

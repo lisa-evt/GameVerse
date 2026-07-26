@@ -154,6 +154,13 @@ class Character(SlugModel):
         unique=True,
         blank=True
     )
+    added_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='added_characters',
+    )
 
     def get_absolute_url(self):
         return reverse('catalog:character_detail', args=(self.slug,))

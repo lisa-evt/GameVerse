@@ -10,7 +10,7 @@
 {% block content %}
 <section class="gv-hero">
   <div class="gv-hero__bg"
-       style="--bg-image: url('{% if game.banner_image %}{{ game.banner_image.url }}{% else %}{% static 'images/banner_placeholder.jpeg' %}{% endif %}');">
+       style="--bg-image: url('{% if game.banner_image %}{{ game.banner_image.url }}{% else %}{% static 'images/banner_placeholder.jpg' %}{% endif %}');">
   </div>
   <div class="gv-hero__overlay"></div>
 
@@ -34,6 +34,26 @@
           {% endfor %}
         </div>
 
+        <div class="mb-4">
+          <span class="fw-bold me-2">Characters:</span>
+          {% for character in game.characters.all|slice:":5" %}
+            <span class="gv-pill">{{ character.name }}</span>
+          {% endfor %}
+          {% if game.characters.all.count > 5 %}
+            <span class="gv-pill text-muted">and more</span>
+          {% endif %}
+        </div>
+
+          <div class="mb-4">
+          <span class="fw-bold me-2">Quests:</span>
+          {% for quest in game.quests.all|slice:":5" %}
+            <span class="gv-pill">{{ quest.title }}</span>
+          {% endfor %}
+          {% if game.quest.all.count > 5 %}
+            <span class="gv-pill text-muted">and more</span>
+          {% endif %}
+        </div>
+
         {% if game.added_by == user %}
         <div class="mt-3">
           <a href="#" class="btn btn-outline-light btn-sm">Редактировать</a>
@@ -50,7 +70,8 @@
         </div>
 
         <div class="gv-side-pill">
-          <i class="bi bi-star-fill text-warning"></i> {{ game.metacritic_score }}/100
+          <img src="{% static 'images/metacritic_logo.png' %}" alt="Metacritic" class="gv-metacritic-icon">
+          {{ game.metacritic_score }}/100
         </div>
 
         {% if user_experience %}

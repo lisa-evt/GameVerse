@@ -8,7 +8,7 @@ from django.shortcuts import redirect
 from django.urls import reverse
 
 
-GAMES_PER_PAGE = 10
+GAMES_PER_PAGE = 15
 CHARACTERS_PER_PAGE = 20
 
 

@@ -16,7 +16,7 @@
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(2, 220px);
-  gap: 16px;
+  gap: 40px;
   justify-content: center;
 }
 
@@ -33,21 +33,12 @@
 }
 
 .game-card {
-  width: 220px;
-}
-
-.game-card .card-img-top {
-  height: 220px;
-  object-fit: cover;
-}
-
-.game-card {
-  max-width: 180px;
+  max-width: 200px;
   margin: 0 auto;
 }
 
 .game-card .card-img-top {
-  height: 220px;
+  height: 320px;
   object-fit: cover;
 }
 

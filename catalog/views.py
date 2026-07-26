@@ -1,12 +1,11 @@
-from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.shortcuts import redirect, render
+from django.urls import reverse
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from .models import Game, Character, Quest
-from .forms import GameForm, CharacterForm
-from django.shortcuts import redirect
-from django.urls import reverse
 
+from .forms import CharacterForm, GameForm
+from .models import Character, Game, Quest
 
 GAMES_PER_PAGE = 15
 CHARACTERS_PER_PAGE = 20

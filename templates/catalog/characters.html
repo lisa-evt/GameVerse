@@ -5,7 +5,9 @@
 
 {% block card_body %}
 <div class="card-body">
-  <h5 class="card-title">{{ item.name }}</h5>
+  <a href="{% url 'catalog:character_detail' item.slug %}" class="text-decoration-none">
+    <h5 class="card-title">{{ item.name }}</h5>
+  </a>
   <p class="card-text text-muted">{{ item.game }}</p>
 </div>
 {% endblock %}

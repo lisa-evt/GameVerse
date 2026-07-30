@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{% block detail_title %}gameVerse{% endblock %}{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/game_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="gv-hero">
+  <div class="gv-hero__bg"
+       style="--bg-image: url('{% block hero_bg %}{% static 'images/banner_placeholder.jpg' %}{% endblock %}');">
+  </div>
+  <div class="gv-hero__overlay"></div>
+
+  <div class="container gv-hero__content">
+    <div class="row g-4">
+
+      <!-- Обложка -->
+      <div class="col-auto">
+        {% block cover_image %}{% endblock %}
+      </div>
+
+      <!-- Инфо -->
+      <div class="col">
+        <h1 class="display-5 fw-bold mb-0">{% block detail_heading %}{% endblock %}</h1>
+        <p class="gv-subtitle mb-3">{% block detail_subtitle %}{% endblock %}</p>
+
+        {% block detail_meta %}{% endblock %}
+
+        {% block owner_actions %}{% endblock %}
+      </div>
+
+      <!-- Правая колонка -->
+      <div class="col-auto text-center">
+        {% block side_panel %}{% endblock %}
+      </div>
+
+    </div>
+
+    <!-- Описание -->
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="gv-about">
+          <h6 class="text-uppercase fw-bold mb-2">About</h6>
+          <p class="mb-0">{% block about_text %}{% endblock %}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

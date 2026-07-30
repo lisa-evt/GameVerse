@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Create character
+{% endblock %}
+
+{% block content %}
+
+<form method="post" enctype="multipart/form-data" class="character-form">
+    {% csrf_token %}
+
+    <div class="character-layout">
+
+        <div class="photo-column">
+            <label class="photo-box">
+
+                <img
+                    id="preview"
+                    src="{% static 'images/placeholder.jpg' %}"
+                    alt="Preview">
+
+                {{ form.photo }}
+
+            </label>
+        </div>
+
+        <div class="info-column">
+
+            {{ form.name }}
+
+            {{ form.game }}
+
+            <div class="about-card">
+                <h3>ABOUT</h3>
+
+                {{ form.description }}
+            </div>
+
+            <button type="submit" class="save-btn">
+                Save
+            </button>
+
+        </div>
+
+    </div>
+
+</form>
+
+{% endblock %}

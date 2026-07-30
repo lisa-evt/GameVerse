@@ -7,6 +7,172 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+.character-form {
+    max-width: 1200px;
+    margin: 50px auto;
+    color: white;
+}
+
+.character-layout {
+    display: flex;
+    gap: 70px;
+    align-items: flex-start;
+}
+
+/* ---------- PHOTO ---------- */
+
+.photo-column {
+    width: 320px;
+}
+
+.photo-box {
+    display: block;
+    width: 320px;
+    height: 460px;
+
+    border-radius: 36px;
+    overflow: hidden;
+
+    cursor: pointer;
+    position: relative;
+
+    border: 2px solid white;
+    transition: .25s;
+}
+
+.photo-box:hover {
+    border-color: white;
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-input {
+    display: none;
+}
+
+/* ---------- RIGHT ---------- */
+
+.info-column {
+    flex: 1;
+}
+
+.form-input {
+    width: 100%;
+    font-size: 34px;
+    font-weight: 700;
+
+    background: transparent;
+    color: white;
+
+    border: none;
+    outline: none;
+
+    margin-bottom: 25px;
+}
+
+.form-input::placeholder {
+    color: rgba(255,255,255,.55);
+}
+
+.form-select {
+    width: 350px;
+
+    font-size: 30px;
+    font-weight: 600;
+
+    color: rgba(255,255,255,.75);
+
+    background: transparent;
+
+    border: none;
+    outline: none;
+
+    margin-bottom: 35px;
+}
+
+/* ---------- ABOUT ---------- */
+
+.about-card {
+
+    width: 700px;
+
+    border: 2px solid white;
+
+    border-radius: 40px;
+
+    padding: 26px 32px;
+}
+
+.about-card h3 {
+
+    margin-bottom: 20px;
+
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.form-textarea {
+
+    width: 100%;
+    resize: none;
+
+    background: transparent;
+
+    border: none;
+	border-radius: 18px;
+    outline: none;
+
+    color: white;
+
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+.form-textarea::placeholder {
+    color: rgba(255,255,255,.5);
+}
+
+/* ---------- BUTTON ---------- */
+
+
+.save-btn {
+    width: 200px;
+    height: 80px;
+
+	margin-top: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 18px;
+
+    background: transparent;
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.pagination {
+  --bs-pagination-color: #6c757d;
+  --bs-pagination-hover-color: #495057;
+  --bs-pagination-hover-bg: #e9ecef;
+  --bs-pagination-hover-border-color: #dee2e6;
+  --bs-pagination-focus-color: #495057;
+  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(108, 117, 125, 0.25);
+  --bs-pagination-active-color: #fff;
+  --bs-pagination-active-bg: #6c757d;
+  --bs-pagination-active-border-color: #6c757d;
+}
+
 
 .nav-link.active {
   border-bottom: 2px solid currentColor;
@@ -15,7 +181,7 @@
 
 .catalog-grid {
   display: grid;
-  grid-template-columns: repeat(2, 220px);
+  grid-template-columns: repeat(2, 500px);
   gap: 40px;
   justify-content: center;
 }
@@ -33,7 +199,7 @@
 }
 
 .game-card {
-  max-width: 200px;
+  max-width: 400px;
   margin: 0 auto;
 }
 

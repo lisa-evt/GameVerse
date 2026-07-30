@@ -43,7 +43,7 @@ class AuthorOrSuperuserRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
 
     def get_object(self, queryset=None):
         """
-        Retrieves the object and caches it on the instance to prevent 
+        Retrieves the object and caches it on the instance to prevent
         duplicate database queries during the view's lifecycle.
         """
         if not hasattr(self, '_cached_object'):
@@ -51,9 +51,6 @@ class AuthorOrSuperuserRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
         return self._cached_object
 
     def test_func(self):
-        """
-        Checks if the current user is the author of the object or a superuser.
-        """
         target_object = self.get_object()
         return (target_object.added_by == self.request.user) or self.request.user.is_superuser
 

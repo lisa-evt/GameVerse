@@ -1,11 +1,12 @@
 {% if page_obj.has_other_pages %}
-  <nav aria-label="Page navigation" class="my-5">
+  <nav aria-label="Page navigation" class="mt-auto mb-2">
     <ul class="pagination justify-content-center">
       {% if page_obj.has_previous %}
         <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
         <li class="page-item">
           <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
-            << </a>
+            <<
+          </a>
         </li>
       {% endif %}
       {% for i in page_obj.paginator.page_range %}

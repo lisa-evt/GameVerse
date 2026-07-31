@@ -2,49 +2,86 @@
 {% load static %}
 
 {% block title %}
-Create character
+Add character — gameVerse
+{% endblock %}
+
+{% block extra_css %}
+<link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css"
+      rel="stylesheet">
 {% endblock %}
 
 {% block content %}
 
-<form method="post" enctype="multipart/form-data" class="character-form">
-    {% csrf_token %}
+<div class="character-page">
+    <form method="post"
+          enctype="multipart/form-data"
+          class="character-form">
+        {% csrf_token %}
+        <div class="character-layout">
+            <!-- Фото -->
+            <div class="photo-column">
+                <label for="{{ form.photo.id_for_label }}" class="photo-box">
+                    <img
+                        id="preview"
+                        src="{% static 'images/placeholder.jpg' %}"
+                        alt="Character preview">
 
-    <div class="character-layout">
-
-        <div class="photo-column">
-            <label class="photo-box">
-
-                <img
-                    id="preview"
-                    src="{% static 'images/placeholder.jpg' %}"
-                    alt="Preview">
-
-                {{ form.photo }}
-
-            </label>
-        </div>
-
-        <div class="info-column">
-
-            {{ form.name }}
-
-            {{ form.game }}
-
-            <div class="about-card">
-                <h3>ABOUT</h3>
-
-                {{ form.description }}
+                    {{ form.photo }}
+                </label>
+                {{ form.photo.errors }}
             </div>
+            <!-- Правая часть -->
+            <div class="info-column">
+                {{ form.name.errors }}
+                {{ form.name }}
 
-            <button type="submit" class="save-btn">
-                Save
-            </button>
+                {{ form.game.errors }}
+                {{ form.game }}
+                <div class="about-card">
+                    <h3>ABOUT</h3>
+                    {{ form.description.errors }}
+                    {{ form.description }}
+                </div>
 
+                <button type="submit" class="save-btn">
+                    SAVE
+                </button>
+            </div>
         </div>
+    </form>
+</div>
 
-    </div>
+{% endblock %}
 
-</form>
+{% block extra_js %}
+
+<script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    // Поиск игры
+    new TomSelect('#id_game', {
+        create: false,
+        maxOptions: 10,
+        placeholder: 'Search game...'
+    });
+
+    // Предпросмотр фотографии
+    const input = document.querySelector('.photo-input');
+    const preview = document.getElementById('preview');
+
+    if (input) {
+        input.addEventListener('change', function () {
+
+            if (this.files.length > 0) {
+                preview.src = URL.createObjectURL(this.files[0]);
+            }
+
+        });
+    }
+
+});
+</script>
 
 {% endblock %}

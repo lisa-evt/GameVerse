@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Create game — gameVerse
+{% endblock %}
+
+{% block content %}
+
+<form method="post"
+      enctype="multipart/form-data"
+      class="character-form">
+
+    {% csrf_token %}
+
+    <div class="character-layout">
+        <!-- Обложка игры -->
+        <div class="photo-column">
+            <label for="{{ form.cover_image.id_for_label }}" class="photo-box">
+                <img
+                    id="preview"
+                    src="{% static 'images/placeholder.jpg' %}"
+                    alt="Preview">
+                {{ form.cover_image }}
+            </label>
+            {{ form.cover.errors }}
+        </div>
+        <!-- Правая колонка -->
+        <div class="info-column">
+            {{ form.title.errors }}
+            {{ form.title }}
+            <div class="about-card">
+                <h3>ABOUT</h3>
+                {{ form.description.errors }}
+                {{ form.description }}
+            </div>
+            <button type="submit" class="save-btn">
+                SAVE
+            </button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const input = document.querySelector('.photo-input');
+    const preview = document.getElementById('preview');
+    if (input) {
+        input.addEventListener('change', function () {
+            if (this.files.length > 0) {
+                preview.src = URL.createObjectURL(this.files[0]);
+            }
+        });
+    }
+});
+</script>
+
+{% endblock %}

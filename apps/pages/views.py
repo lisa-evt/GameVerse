@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 
-from catalog.models import Game
+from apps.catalog.models import Game
 
 
 class HomePageView(TemplateView):

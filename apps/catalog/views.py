@@ -123,14 +123,17 @@ class GameCreateView(LoginRequiredMixin, AuthorAssignmentMixin, CreateView):
     template_name = 'catalog/add_game.html'
 
 
-class CharacterCreateView(LoginRequiredMixin, CreateView, AuthorAssignmentMixin):
+class CharacterCreateView(LoginRequiredMixin, AuthorAssignmentMixin, CreateView):
     """
     Displays a form to create a new character and handles its submission.
     Requires the user to be logged in.
     """
     model = Character
     form_class = CharacterForm
-    template_name = 'catalog/add_character.html'
+    template_name = 'catalog/add_create_character.html'
+
+    def get_success_url(self):
+        return reverse('catalog:character_detail', kwargs={'slug': self.object.slug})
 
 
 class GameUpdateView(AuthorOrSuperuserRequiredMixin, UpdateView):
@@ -150,7 +153,7 @@ class CharacterUpdateView(AuthorOrSuperuserRequiredMixin, UpdateView):
     """
     model = Character
     form_class = CharacterForm
-    template_name = 'catalog/add_character.html'
+    template_name = 'catalog/add_create_character.html'
 
 
 class GameDeleteView(AuthorOrSuperuserRequiredMixin, DeleteView):
@@ -174,6 +177,7 @@ class CharacterDeleteView(AuthorOrSuperuserRequiredMixin, DeleteView):
     Only accessible by the character's author or a superuser.
     """
     model = Character
+    pk_url_kwarg = 'character_slug'
     template_name = 'catalog/character_confirm_delete.html'
 
     def get_success_url(self):
@@ -181,3 +185,8 @@ class CharacterDeleteView(AuthorOrSuperuserRequiredMixin, DeleteView):
         Redirects the user to the characters list upon successful deletion.
         """
         return reverse('catalog:characters')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CharacterForm(instance=self.object)
+        return context

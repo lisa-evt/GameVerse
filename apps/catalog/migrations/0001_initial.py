@@ -5,7 +5,7 @@ import django.db.models.deletion
 from django.conf import settings
 from django.db import migrations, models
 
-import catalog.models
+import apps.catalog.models
 
 
 class Migration(migrations.Migration):
@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=120)),
                 ('description', models.TextField()),
-                ('realise_year', models.IntegerField(validators=[django.core.validators.MinValueValidator(1958), django.core.validators.MaxValueValidator(catalog.models.current_year)])),
+                ('realise_year', models.IntegerField(validators=[django.core.validators.MinValueValidator(1958), django.core.validators.MaxValueValidator(apps.catalog.models.current_year)])),
                 ('publisher', models.CharField(max_length=200)),
                 ('cover_image', models.ImageField(upload_to='games/covers')),
                 ('metacritic_rating', models.FloatField()),

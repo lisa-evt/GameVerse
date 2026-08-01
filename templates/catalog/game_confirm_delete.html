@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Delete game — GameVerse
+{% endblock %}
+
+{% block content %}
+
+<div class="character-page delete-page">
+
+    <section class="danger-banner">
+
+        <h1>DELETE GAME</h1>
+
+        <p>
+            You are about to permanently delete this game.
+            This action cannot be undone.
+        </p>
+
+    </section>
+
+    <form method="post" class="character-form">
+
+        {% csrf_token %}
+
+        <div class="character-layout">
+
+            <div class="photo-column">
+
+                <div class="photo-box">
+
+                    {% if object.cover_image %}
+                        <img
+                            src="{{ object.cover_image.url }}"
+                            alt="{{ object.title }}">
+                    {% else %}
+                        <img
+                            src="{% static 'images/placeholder.jpg' %}"
+                            alt="Game">
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+            <div class="info-column">
+
+                <div class="readonly-title">
+                    {{ object.title }}
+                </div>
+
+                <div class="readonly-game">
+                    {{ object.release_year }}
+                </div>
+
+                <div class="readonly-game">
+                    {{ object.publisher }}
+                </div>
+
+                <div class="readonly-game">
+                    Metacritic: {{ object.metacritic_score }}
+                </div>
+
+                <div class="readonly-game">
+                    Genres:
+                    {% for genre in object.genres.all %}
+                        {{ genre.name }}{% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="about-card">
+
+                    <h3>ABOUT</h3>
+
+                    <div class="readonly-description">
+                        {{ object.description|linebreaks }}
+                    </div>
+
+                </div>
+
+                <div class="button-row">
+
+                    <a
+                        href="{{ object.get_absolute_url }}"
+                        class="cancel-btn">
+
+                        CANCEL
+
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="delete-btn">
+
+                        DELETE
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

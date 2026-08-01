@@ -3,34 +3,58 @@ from django import forms
 from .models import Character, Game
 
 
+from django import forms
+
+from .models import Game
+
+
 class GameForm(forms.ModelForm):
     class Meta:
         model = Game
         fields = (
             'title',
-            'description',
             'release_year',
             'publisher',
-            'cover_image',
-            'banner_image',
+            'metacritic_score',
             'genres',
+            'description',
+            'cover_image',
         )
 
         widgets = {
             'title': forms.TextInput(attrs={
                 'class': 'form-input',
-                'placeholder': 'Enter game title'
+                'placeholder': 'Game title',
+            }),
+
+            'release_year': forms.NumberInput(attrs={
+                'class': 'form-small-input',
+                'placeholder': 'Release year',
+            }),
+
+            'publisher': forms.TextInput(attrs={
+                'class': 'form-small-input',
+                'placeholder': 'Publisher',
+            }),
+
+            'metacritic_score': forms.NumberInput(attrs={
+                'class': 'form-small-input',
+                'placeholder': 'Metacritic',
+                'step': '0.1',
+            }),
+
+            'genres': forms.SelectMultiple(attrs={
+                'class': 'form-select',
             }),
 
             'description': forms.Textarea(attrs={
                 'class': 'form-textarea',
-                'placeholder': "Write game's description...",
-                'rows': 5
+                'placeholder': 'Game description...',
             }),
 
             'cover_image': forms.FileInput(attrs={
                 'class': 'photo-input',
-                'accept': 'image/*'
+                'accept': 'image/*',
             }),
         }
 

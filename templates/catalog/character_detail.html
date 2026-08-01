@@ -6,17 +6,24 @@
 {% block hero_bg %}{% if character.game.banner_image %}{{ character.game.banner_image.url }}{% else %}{% static 'images/banner_placeholder.jpg' %}{% endif %}{% endblock %}
 
 {% block cover_image %}
-<img src="{{ character.image.url }}" alt="{{ character.name }}" class="gv-cover">
+<img src="{{ character.photo.url }}" alt="{{ character.name }}" class="gv-cover">
 {% endblock %}
-
+p
 {% block detail_heading %}{{ character.name }}{% endblock %}
 {% block detail_subtitle %}{{ character.game.title }}{% endblock %}
 
 {% block owner_actions %}
 {% if character.added_by == user %}
 <div class="mt-3">
-  <a href="#" class="btn btn-outline-light btn-sm">Редактировать</a>
-  <a href="#" class="btn btn-outline-danger btn-sm">Удалить</a>
+  <a href="{% url 'catalog:character_edit' slug=character.slug %}"
+    class="btn btn-outline-light btn-sm">
+      Edit
+  </a>
+
+  <a href="{% url 'catalog:character_delete' slug=character.slug %}"
+    class="btn btn-outline-danger btn-sm">
+      Delete
+  </a>
 </div>
 {% endif %}
 {% endblock %}

@@ -32,22 +32,27 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
-# Application definition
-
-INSTALLED_APPS = [
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'catalog.apps.CatalogConfig',
-    'users.apps.UsersConfig',
-    'journal.apps.JournalConfig',
-    'pages.apps.PagesConfig',
+]
+
+THIRD_PARTY_APPS = [
     'django_bootstrap5',
 ]
+
+LOCAL_APPS = [
+    'apps.catalog.apps.CatalogConfig',
+    'apps.users.apps.UsersConfig',
+    'apps.journal.apps.JournalConfig',
+    'apps.pages.apps.PagesConfig',
+]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Delete character — GameVerse
+{% endblock %}
+
+{% block content %}
+
+<div class="character-page delete-page">
+
+    <!-- Верхняя плашка -->
+
+    <section class="danger-banner">
+
+        <h1>DELETE CHARACTER</h1>
+
+        <p>
+            You are about to permanently delete this character.
+            This action cannot be undone.
+        </p>
+
+    </section>
+
+    <form method="post" class="character-form">
+
+        {% csrf_token %}
+
+        <div class="character-layout">
+
+            <div class="photo-column">
+
+                <div class="photo-box">
+
+                    {% if object.photo %}
+                        <img
+                            src="{{ object.photo.url }}"
+                            alt="{{ object.name }}">
+                    {% else %}
+                        <img
+                            src="{% static 'images/placeholder.jpg' %}"
+                            alt="Character">
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+            <div class="info-column">
+
+                <div class="readonly-title">
+                    {{ object.name }}
+                </div>
+
+                <div class="readonly-game">
+                    {{ object.game.title }}
+                </div>
+
+                <div class="about-card">
+
+                    <h3>ABOUT</h3>
+
+                    <div class="readonly-description">
+                        {{ object.description|linebreaks }}
+                    </div>
+
+                </div>
+
+                <div class="button-row">
+
+                    <a
+                        href="{{ object.get_absolute_url }}"
+                        class="cancel-btn">
+
+                        CANCEL
+
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="delete-btn">
+
+                        DELETE
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

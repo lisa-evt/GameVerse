@@ -2,7 +2,11 @@
 {% load static %}
 
 {% block title %}
-Add character — gameVerse
+    {% if object %}
+        Edit character — GameVerse
+    {% else %}
+        Add character — GameVerse
+    {% endif %}
 {% endblock %}
 
 {% block extra_css %}
@@ -13,42 +17,80 @@ Add character — gameVerse
 {% block content %}
 
 <div class="character-page">
+
     <form method="post"
           enctype="multipart/form-data"
           class="character-form">
+
         {% csrf_token %}
+
         <div class="character-layout">
-            <!-- Фото -->
+
+            <!-- Photo -->
+
             <div class="photo-column">
-                <label for="{{ form.photo.id_for_label }}" class="photo-box">
-                    <img
-                        id="preview"
-                        src="{% static 'images/placeholder.jpg' %}"
-                        alt="Character preview">
+
+                <label
+                    for="{{ form.photo.id_for_label }}"
+                    class="photo-box">
+
+                    {% if object and object.photo %}
+                        <img
+                            id="preview"
+                            src="{{ object.photo.url }}"
+                            alt="{{ object.name }}">
+                    {% else %}
+                        <img
+                            id="preview"
+                            src="{% static 'images/placeholder.jpg' %}"
+                            alt="Character preview">
+                    {% endif %}
 
                     {{ form.photo }}
+
                 </label>
+
                 {{ form.photo.errors }}
+
             </div>
-            <!-- Правая часть -->
+
+            <!-- Content -->
+
             <div class="info-column">
+
                 {{ form.name.errors }}
                 {{ form.name }}
 
                 {{ form.game.errors }}
                 {{ form.game }}
+
                 <div class="about-card">
+
                     <h3>ABOUT</h3>
+
                     {{ form.description.errors }}
                     {{ form.description }}
+
                 </div>
 
-                <button type="submit" class="save-btn">
-                    SAVE
+                <button
+                    type="submit"
+                    class="save-btn">
+
+                    {% if object %}
+                        SAVE CHANGES
+                    {% else %}
+                        CREATE CHARACTER
+                    {% endif %}
+
                 </button>
+
             </div>
+
         </div>
+
     </form>
+
 </div>
 
 {% endblock %}
@@ -60,18 +102,20 @@ Add character — gameVerse
 <script>
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Поиск игры
-    new TomSelect('#id_game', {
-        create: false,
-        maxOptions: 10,
-        placeholder: 'Search game...'
-    });
+    const select = document.getElementById('id_game');
 
-    // Предпросмотр фотографии
+    if (select) {
+        new TomSelect(select, {
+            create: false,
+            maxOptions: 10,
+            placeholder: 'Search game...'
+        });
+    }
+
     const input = document.querySelector('.photo-input');
     const preview = document.getElementById('preview');
 
-    if (input) {
+    if (input && preview) {
         input.addEventListener('change', function () {
 
             if (this.files.length > 0) {

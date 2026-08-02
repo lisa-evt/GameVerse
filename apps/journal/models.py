@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
+from .querysets import UserJournalQuerySet
 
 STATUS_MAX_CHAR_LENGTH = 11
 MAX_QUOTE_LENGTH = 250
@@ -58,6 +59,7 @@ class UserJournal(CreatedAtModel):
     status = models.CharField(
         max_length=STATUS_MAX_CHAR_LENGTH,
         choices=GameStatus,
+        default=GameStatus.PLANNED
     )
     favorite_quests = models.ManyToManyField(
         'catalog.Quest',
@@ -69,6 +71,8 @@ class UserJournal(CreatedAtModel):
     is_on_showcase = models.BooleanField(default=False)
     completed_date = models.DateField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    objects = UserJournalQuerySet.as_manager()
 
     class Meta:
         constraints = (

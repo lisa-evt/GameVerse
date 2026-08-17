@@ -2,12 +2,6 @@ from django import forms
 
 from .models import Character, Game
 
-
-from django import forms
-
-from .models import Game
-
-
 class GameForm(forms.ModelForm):
     class Meta:
         model = Game
@@ -19,6 +13,7 @@ class GameForm(forms.ModelForm):
             'genres',
             'description',
             'cover_image',
+            'banner_image',
         )
 
         widgets = {
@@ -28,17 +23,17 @@ class GameForm(forms.ModelForm):
             }),
 
             'release_year': forms.NumberInput(attrs={
-                'class': 'form-small-input',
+                'class': 'form-input',
                 'placeholder': 'Release year',
             }),
 
             'publisher': forms.TextInput(attrs={
-                'class': 'form-small-input',
+                'class': 'form-input',
                 'placeholder': 'Publisher',
             }),
 
             'metacritic_score': forms.NumberInput(attrs={
-                'class': 'form-small-input',
+                'class': 'form-input',
                 'placeholder': 'Metacritic',
                 'step': '0.1',
             }),
@@ -54,6 +49,10 @@ class GameForm(forms.ModelForm):
 
             'cover_image': forms.FileInput(attrs={
                 'class': 'photo-input',
+                'accept': 'image/*',
+            }),
+            'banner_image': forms.FileInput(attrs={
+                'class': 'banner-input',
                 'accept': 'image/*',
             }),
         }

@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Delete journal entry — GameVerse
+{% endblock %}
+
+{% block content %}
+
+<div class="character-page delete-page">
+
+    <section class="danger-banner">
+
+        <h1>DELETE ENTRY</h1>
+
+        <p>
+            You are about to permanently delete your journal entry for
+            {{ object.game.title }}. This action cannot be undone.
+        </p>
+
+    </section>
+
+    <form method="post" class="character-form">
+
+        {% csrf_token %}
+
+        <div class="character-layout">
+
+            <div class="photo-column">
+
+                <div class="photo-box">
+
+                    {% if object.game.cover_image %}
+                        <img
+                            src="{{ object.game.cover_image.url }}"
+                            alt="{{ object.game.title }}">
+                    {% else %}
+                        <img
+                            src="{% static 'images/placeholder.jpg' %}"
+                            alt="Game">
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+            <div class="info-column">
+
+                <div class="readonly-title">
+                    {{ object.game.title }}
+                </div>
+
+                <div class="readonly-game">
+                    Status: {{ object.get_status_display }}
+                </div>
+
+                {% if object.personal_rating %}
+                    <div class="readonly-game">
+                        My score: {{ object.personal_rating }}/10
+                    </div>
+                {% endif %}
+
+                {% if object.completed_date %}
+                    <div class="readonly-game">
+                        Completed: {{ object.completed_date }}
+                    </div>
+                {% endif %}
+
+                {% if object.review %}
+                    <div class="about-card">
+
+                        <h3>REVIEW</h3>
+
+                        <div class="readonly-description">
+                            {{ object.review|linebreaks }}
+                        </div>
+
+                    </div>
+                {% endif %}
+
+                <div class="button-row">
+
+                    
+                        href="{% url 'journal:journal_entry_detail' username=object.user.username game_slug=object.game.slug %}"
+                        class="cancel-btn">
+
+                        CANCEL
+
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="delete-btn">
+
+                        DELETE
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

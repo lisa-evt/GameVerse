@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    {% if object %}
+        Edit journal entry — GameVerse
+    {% else %}
+        Add to journal — GameVerse
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<div class="character-page">
+
+    <form method="post"
+          enctype="multipart/form-data"
+          class="character-form">
+
+        {% csrf_token %}
+
+        <div class="character-layout">
+
+            <!-- Game cover (read-only, entry belongs to this game) -->
+
+            <div class="photo-column">
+
+                <div class="photo-box">
+
+                    {% if game.cover_image %}
+                        <img
+                            src="{{ game.cover_image.url }}"
+                            alt="{{ game.title }}">
+                    {% else %}
+                        <img
+                            src="{% static 'images/placeholder.jpg' %}"
+                            alt="Game">
+                    {% endif %}
+
+                </div>
+
+                <div class="readonly-title">
+                    {{ game.title }}
+                </div>
+
+            </div>
+
+            <!-- Right column -->
+
+            <div class="info-column">
+
+                <div class="field-row">
+
+                    {{ form.status.errors }}
+                    {{ form.status }}
+
+                    {{ form.personal_rating.errors }}
+                    {{ form.personal_rating }}
+
+                </div>
+
+                {{ form.completed_date.errors }}
+                {{ form.completed_date }}
+
+                {{ form.favorite_quests.errors }}
+                {{ form.favorite_quests }}
+
+                {{ form.favorite_characters.errors }}
+                {{ form.favorite_characters }}
+
+                {{ form.favorite_quests.errors }}
+                {{ form.favorite_quests }}
+
+                <div class="about-card">
+
+                    <h3>REVIEW</h3>
+
+                    {{ form.review.errors }}
+                    {{ form.review }}
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="save-btn">
+
+                    {% if object %}
+                        SAVE CHANGES
+                    {% else %}
+                        ADD TO JOURNAL
+                    {% endif %}
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+{% endblock %}

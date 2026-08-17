@@ -1,0 +1,115 @@
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    display: none;
+}
+.select2-container--default .select2-selection--multiple {
+    min-height: auto;
+    padding: 4px 8px;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+    white-space: normal;
+}
+.select2-container--default .select2-selection--multiple {
+    background-color: rgba(144, 144, 144, 0.25);
+    border: none;
+    border-radius: 3px;
+}
+.select2-container {
+    width: 100% !important;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice__display {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.select2-container--default .select2-selection--multiple .select2-search__field {
+    font-size: 20px;
+    margin-top: 0;
+    height: auto;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: rgba(144, 144, 144, 0.4);
+    border: none;
+    color: white;
+    padding-left: 8px;
+}
+
+.select2-dropdown {
+    background-color: #2a2a2a;
+    border: none;
+}
+
+.select2-container--default .select2-results__option {
+    color: white;
+}
+
+.select2-container--default .select2-results__option--highlighted {
+    background-color: rgba(144, 144, 144, 0.4);
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: rgba(144, 144, 144, 0.25);
+    border: none;
+    border-radius: 3px;
+    height: auto;
+    padding: 8px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: normal;
+    padding: 0;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    display: none;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.select2-container {
+    margin-bottom: 25px;
+}
+
+.select2-container--default .select2-selection--single,
+.select2-container--default .select2-selection--multiple {
+    border-radius: 15px;
+}
+
+.form-input {
+    border-radius: 15px !important;
+}
+
+.banner-box {
+    display: block;
+    width: 320px;
+    height: 180px;
+
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 16px;
+
+    cursor: pointer;
+    position: relative;
+
+    border: 2px solid white;
+    transition: .25s;
+}
+
+.banner-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+}

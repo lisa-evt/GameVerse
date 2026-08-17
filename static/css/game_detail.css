@@ -1,3 +1,11 @@
+.gv-hero.gv-hero--compact {
+  min-height: auto;
+}
+
+.gv-hero--compact .gv-hero__content {
+  padding-block: 2rem;
+}
+
 .gv-hero {
   position: relative;
   overflow: hidden;

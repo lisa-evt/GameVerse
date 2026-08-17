@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.pages.urls')),
     path('catalog/', include('apps.catalog.urls', namespace='catalog')),
+    path('journal/', include('apps.journal.urls', namespace='journal')),
 ]
 
 if settings.DEBUG:

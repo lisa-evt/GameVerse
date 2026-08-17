@@ -7,6 +7,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
 /* ===========================
    DELETE MODE
 =========================== */
@@ -223,6 +224,7 @@
     width: 100%;
     font-size: 34px;
     font-weight: 700;
+	border-radius: 15px;
 
     background: transparent;
     color: white;
@@ -235,6 +237,14 @@
 
 .form-input::placeholder {
     color: rgba(255,255,255,.55);
+}
+
+.field-row {
+    margin-bottom: 30px;
+}
+
+.select2-container {
+    margin-bottom: 35px;
 }
 
 .form-select {
@@ -257,7 +267,7 @@
 
 .about-card {
 
-    width: 700px;
+    width: 100%;
 
     border: 2px solid white;
 
@@ -279,6 +289,7 @@
 
     width: 100%;
     resize: none;
+	border-radius: 15px;
 
     background: transparent;
 

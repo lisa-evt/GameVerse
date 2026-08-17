@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="character-page">
+  <form method="post" enctype="multipart/form-data" class="character-form">
+    {% csrf_token %}
+
+    <div class="character-layout">
+
+      <!-- Photo/Cover -->
+      <div class="photo-column">
+        <label for="{% block image_field_id %}{% endblock %}" class="photo-box">
+          {% block preview_image %}{% endblock %}
+          {% block image_field %}{% endblock %}
+        </label>
+        {% block image_errors %}{% endblock %}
+        {% block extra_image %}{% endblock %}
+      </div>
+
+      <!-- Content -->
+      <div class="info-column">
+        {% block form_fields %}{% endblock %}
+
+        <div class="about-card">
+          <h3>ABOUT</h3>
+          {{ form.description.errors }}
+          {{ form.description }}
+        </div>
+
+        <button type="submit" class="save-btn">SAVE</button>
+      </div>
+
+    </div>
+  </form>
+</div>
+{% endblock %}

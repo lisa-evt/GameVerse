@@ -1,7 +1,10 @@
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
+from smart_selects.db_fields import ChainedManyToManyField
+
 from .querysets import UserJournalQuerySet
+
 
 STATUS_MAX_CHAR_LENGTH = 11
 MAX_QUOTE_LENGTH = 250
@@ -61,8 +64,10 @@ class UserJournal(CreatedAtModel):
         choices=GameStatus,
         default=GameStatus.PLANNED
     )
-    favorite_quests = models.ManyToManyField(
+    favorite_quests = ChainedManyToManyField(
         'catalog.Quest',
+        chained_field='game',          # поле в ЭТОЙ модели (UserJournal), от которого зависим
+        chained_model_field='game',    # поле в Quest, связывающее его с Game
         related_name='favorited_in',
         blank=True,
     )

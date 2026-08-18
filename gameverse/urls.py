@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('apps.pages.urls')),
     path('catalog/', include('apps.catalog.urls', namespace='catalog')),
     path('journal/', include('apps.journal.urls', namespace='journal')),
+    path('chaining/', include('smart_selects.urls')),
 ]
 
 if settings.DEBUG:

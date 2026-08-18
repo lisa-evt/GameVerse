@@ -3,55 +3,53 @@
 
 {% block content %}
 
+
 <section id="banner">
-    <div class="inner">
-        <h2>gameVerse</h2>
-        <p>Твой личный дневник игр<br />
-        скриншоты, впечатления и любимые моменты<br />
-        [здесь будет описание проекта]</p>
-        <ul class="actions special">
-            <li><a href="#" class="button primary">Начать</a></li>
-        </ul>
-    </div>
-    <a href="#one" class="more scrolly">Узнать больше</a>
+  <div class="inner">
+    <h2>gameVerse</h2>
+    <p>Your personal playthrough journal<br />
+    screenshots, thoughts and favorite moments<br />
+    </p>
+  </div>
+  <a href="#one" class="more scrolly">More</a>
 </section>
 
 <section id="one" class="wrapper style1 special">
-    <div class="inner">
-        <header class="major">
-            <h2>[Заголовок фичи 1]</h2>
-            <p>[Плейсхолдер: краткое описание, например, про отслеживание пройденных игр]</p>
-        </header>
-        <ul class="icons major">
-            <li><span class="icon fa-gamepad major style1"><span class="label">[Фича 1]</span></span></li>
-            <li><span class="icon fa-image major style2"><span class="label">[Фича 2]</span></span></li>
-            <li><span class="icon solid fa-star major style3"><span class="label">[Фича 3]</span></span></li>
-        </ul>
-    </div>
+  <div class="inner">
+      <header class="major">
+          <h2>Do you tend to forget games over time?</h2>
+          <p>Here you can track your games, highlight favorite moments and share your thoughts</p>
+      </header>
+      <ul class="icons major">
+          <li><span class="icon solid fa-gamepad major style1"></span></li>
+          <li><span class="icon solid fa-image major style2"></span></li>
+          <li><span class="icon solid fa-star major style3"></span></li>
+      </ul>
+  </div>
 </section>
 
 <section id="two" class="wrapper alt style2">
-    <section class="spotlight">
-        <div class="image"><img src="{% static 'images/pic01.jpg' %}" alt=""></div>
-        <div class="content">
-            <h2>[Заголовок 1]</h2>
-            <p>[Плейсхолдер текста — вернёшься позже и опишешь эту секцию подробнее]</p>
-        </div>
-    </section>
-    <section class="spotlight">
-        <div class="image"><img src="{% static 'images/pic02.jpg' %}" alt=""></div>
-        <div class="content">
-            <h2>[Заголовок 2]</h2>
-            <p>[Плейсхолдер текста]</p>
-        </div>
-    </section>
-    <section class="spotlight">
-        <div class="image"><img src="{% static 'images/pic03.jpg' %}" alt=""></div>
-        <div class="content">
-            <h2>[Заголовок 3]</h2>
-            <p>[Плейсхолдер текста]</p>
-        </div>
-    </section>
+  <section class="spotlight">
+      <div class="image"><img src="{% static 'images/catalog_games.png' %}" alt=""></div>
+      <div class="content">
+          <h2>Add or choose games from library!</h2>
+          <p>We have a wide library of different games, feel free to join community and add your favoties!</p>
+      </div>
+  </section>
+  <section class="spotlight">
+      <div class="image"><img src="{% static 'images/journal_entry.jpg' %}" alt=""></div>
+      <div class="content">
+          <h2>Highlight!</h2>
+          <p>Write your review, impressions, atmosphere, set different statuses, add your favorite characters, their quotes, quests... Anything you want to remember about the game! </p>
+      </div>
+  </section>
+  <section class="spotlight">
+      <div class="image"><img src="{% static 'images/screenshots.jpeg' %}" alt=""></div>
+      <div class="content">
+          <h2>Screenshot!</h2>
+          <p>Add your screenshots that capture your favorite moments</p>
+      </div>
+  </section>
 </section>
 
 {% endblock %}

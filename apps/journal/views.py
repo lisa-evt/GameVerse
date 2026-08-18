@@ -5,13 +5,14 @@ from django.contrib import messages
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 
-from apps.catalog.models import Game, Character, Quest
-from .forms import GameStatusForm, JournalEntryForm, CommentForm, ScreenshotFormSet, QuoteFormSet
-from .models import UserJournal, Comment, FavoriteCharacter
+from apps.catalog.models import Game, Character
 from apps.catalog.views import AuthorOrSuperuserRequiredMixin
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.urls import reverse
+from django.http import HttpResponseRedirect
 
+from .forms import GameStatusForm, JournalEntryForm, CommentForm, ScreenshotFormSet, QuoteFormSet
+from .models import UserJournal, Comment, FavoriteCharacter
 
 from django.contrib.auth import get_user_model
 
@@ -112,9 +113,6 @@ class UserJournalDetailView(DetailView):
         ).select_related('character')
         return context
 
-
-from django.http import HttpResponseRedirect
-from django.urls import reverse
 
 
 class UserJournalUpdateView(LoginRequiredMixin, UpdateView):

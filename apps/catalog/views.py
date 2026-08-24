@@ -7,13 +7,13 @@ mixins for access control and database query optimization.
 """
 
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse, reverse_lazy
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 
 from .forms import CharacterForm, GameForm
-from .models import Character, Game
 from .mixins import AuthorAssignmentMixin, AuthorOrSuperuserRequiredMixin
+from .models import Character, Game
 
 GAMES_PER_PAGE = 15
 CHARACTERS_PER_PAGE = 20

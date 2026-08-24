@@ -1,7 +1,6 @@
 from django.urls import path
 
-from .views import HomePageView, AboutPageView, RoadmapPageView
-
+from .views import AboutPageView, HomePageView, RoadmapPageView
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='index'),

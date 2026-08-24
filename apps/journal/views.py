@@ -1,42 +1,23 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import get_object_or_404, redirect
-from django.views import View
 from django.contrib import messages
+from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404, redirect
+from django.urls import reverse
+from django.views import View
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 
-from apps.catalog.models import Game, Character
+from apps.catalog.models import Character, Game
 from apps.catalog.views import AuthorOrSuperuserRequiredMixin
-from django.contrib.auth.mixins import UserPassesTestMixin
-from django.urls import reverse
-from django.http import HttpResponseRedirect
 
-from .forms import GameStatusForm, JournalEntryForm, CommentForm, ScreenshotFormSet, QuoteFormSet
-from .models import UserJournal, Comment, FavoriteCharacter
-
-from django.contrib.auth import get_user_model
+from .forms import (CommentForm, GameStatusForm, JournalEntryForm,
+                    QuoteFormSet, ScreenshotFormSet)
+from .models import Comment, FavoriteCharacter, UserJournal
+from .mixins import CommentDeleteAllowedMixin, AuthorRequiredMixin
 
 User = get_user_model()
-
-
-class CommentDeleteAllowedMixin(UserPassesTestMixin):
-    """Разрешает удаление автору комментария, автору записи журнала или суперюзеру."""
-
-    def test_func(self):
-        comment = self.get_object()
-        user = self.request.user
-        return (
-            user == comment.author
-            or user == comment.journal_entry.user
-            or user.is_superuser
-        )
-
-
-class AuthorRequiredMixin(UserPassesTestMixin):
-    """Разрешает доступ только автору записи."""
-
-    def test_func(self):
-        return self.get_object().user == self.request.user
+JOURNAL_ENTRIES_PER_PAGE = 5
 
 
 class GameStatusQuickView(LoginRequiredMixin, View):
@@ -50,7 +31,7 @@ class GameStatusQuickView(LoginRequiredMixin, View):
         )
         form = GameStatusForm(request.POST, instance=personal_status)
         if not form.is_valid():
-            messages.error(request, "There was an error processing your request.")
+            messages.error(request, "Error occured while processing request.")
             return redirect(game.get_absolute_url())
         form.save()
         return redirect(game.get_absolute_url())
@@ -58,7 +39,7 @@ class GameStatusQuickView(LoginRequiredMixin, View):
 
 class UserJournalListView(ListView):
     model = UserJournal
-    paginate_by = 5
+    paginate_by = JOURNAL_ENTRIES_PER_PAGE
     template_name = 'journal/profile.html'
 
     def get_queryset(self):
@@ -114,8 +95,7 @@ class UserJournalDetailView(DetailView):
         return context
 
 
-
-class UserJournalUpdateView(LoginRequiredMixin, UpdateView):
+class UserJournalUpdateView(AuthorOrSuperuserRequiredMixin, UpdateView):
     model = UserJournal
     form_class = JournalEntryForm
     template_name = 'journal/journal_entry_form.html'

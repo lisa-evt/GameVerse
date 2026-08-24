@@ -9,7 +9,6 @@ from django.utils import timezone
 from django.utils.text import slugify
 from unidecode import unidecode
 
-
 DEFAULT_SLUG_PLACEHOLDER = "item"
 SLUG_COUNTER_START = 2
 

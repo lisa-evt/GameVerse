@@ -1,8 +1,6 @@
 from django.db import models
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.utils.timezone import now
-
-from django.db.models import Q
 
 
 class UserJournalQuerySet(models.QuerySet):

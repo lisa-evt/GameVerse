@@ -5,7 +5,6 @@ from smart_selects.db_fields import ChainedManyToManyField
 
 from .querysets import UserJournalQuerySet
 
-
 STATUS_MAX_CHAR_LENGTH = 11
 MAX_QUOTE_LENGTH = 250
 

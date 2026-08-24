@@ -36,11 +36,16 @@
             <li><a class="dropdown-item" href="{% url 'catalog:game_add' %}">Add game</a></li>
             <li><a class="dropdown-item" href="{% url 'catalog:character_add' %}">Add character</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
+            <li>
+              <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="dropdown-item">Logout</button>
+              </form>
+            </li>
           </ul>
         </div>
         {% else %}
-        <a class="btn btn-outline-primary" href="#">Login</a>
+        <a class="btn btn-outline-primary" href="{% url 'login' %}">Login</a>
         {% endif %}
       </div>
     </div>

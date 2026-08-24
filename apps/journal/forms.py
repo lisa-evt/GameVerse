@@ -1,8 +1,9 @@
-from .models import UserJournal, Comment, FavoriteQuote, Screenshot
 from django import forms
+from django.forms import inlineformset_factory
+
 from apps.catalog.models import Character, Quest
 
-from django.forms import inlineformset_factory
+from .models import Comment, FavoriteQuote, Screenshot, UserJournal
 
 
 class FavoriteQuoteForm(forms.ModelForm):

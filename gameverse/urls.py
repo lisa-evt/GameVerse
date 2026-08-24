@@ -25,7 +25,12 @@ urlpatterns = [
     path('catalog/', include('apps.catalog.urls', namespace='catalog')),
     path('journal/', include('apps.journal.urls', namespace='journal')),
     path('chaining/', include('smart_selects.urls')),
+    path('auth/', include('django.contrib.auth.urls')),
 ]
+
+handler400 = 'apps.pages.views.bad_request'
+handler404 = 'apps.pages.views.page_not_found'
+handler500 = 'apps.pages.views.server_error'
 
 if settings.DEBUG:
     urlpatterns += static(

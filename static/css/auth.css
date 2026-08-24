@@ -1,0 +1,167 @@
+/* Auth pages (login, logout, password reset/change) — dark glassmorphism,
+   consistent with gameVerse's visual language.
+   Colors are CSS variables at the top — retune them to match main.css exactly. */
+
+:root {
+  --gv-auth-accent: #8a7bff;
+  --gv-auth-accent-dark: #5f4bff;
+  --gv-auth-glass-bg: rgba(255, 255, 255, 0.05);
+  --gv-auth-glass-border: rgba(255, 255, 255, 0.12);
+  --gv-auth-text: #f0f0f5;
+  --gv-auth-text-muted: rgba(240, 240, 245, 0.6);
+  --gv-auth-danger: #ff8a8a;
+}
+
+.gv-auth-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.25rem;
+}
+
+.gv-auth-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: var(--gv-auth-glass-bg);
+  border: 1px solid var(--gv-auth-glass-border);
+  border-radius: 18px;
+  padding: 2.75rem 2.25rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45);
+  color: var(--gv-auth-text);
+  overflow: hidden;
+}
+
+/* signature touch: a slow-moving glow along the top edge of the card */
+.gv-auth-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gv-auth-accent), transparent);
+  background-size: 200% 100%;
+  animation: gv-auth-glow 3.5s ease-in-out infinite;
+}
+
+@keyframes gv-auth-glow {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gv-auth-card::before { animation: none; }
+}
+
+.gv-auth-icon {
+  text-align: center;
+  font-size: 2.25rem;
+  color: var(--gv-auth-accent);
+  margin-bottom: 1rem;
+}
+
+.gv-auth-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.gv-auth-subtitle {
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--gv-auth-text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.gv-auth-card .form-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+
+.gv-auth-card .form-control,
+.gv-auth-card .form-select {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--gv-auth-glass-border);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+}
+
+.gv-auth-card .form-control:focus,
+.gv-auth-card .form-select:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--gv-auth-accent);
+  box-shadow: 0 0 0 0.2rem rgba(138, 123, 255, 0.25);
+  color: #fff;
+}
+
+.gv-auth-card .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.gv-auth-card .form-text {
+  color: var(--gv-auth-text-muted) !important;
+}
+
+.gv-auth-card .invalid-feedback {
+  color: var(--gv-auth-danger);
+}
+
+.gv-auth-card .alert {
+  background: rgba(255, 138, 138, 0.1);
+  border: 1px solid rgba(255, 138, 138, 0.3);
+  color: var(--gv-auth-danger);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.gv-btn-primary {
+  display: block;
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--gv-auth-accent), var(--gv-auth-accent-dark));
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  transition: filter 0.2s, transform 0.15s;
+}
+
+.gv-btn-primary:hover,
+.gv-btn-primary:focus {
+  filter: brightness(1.1);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.gv-auth-links {
+  margin-top: 1.75rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.gv-auth-links a {
+  color: var(--gv-auth-accent);
+  text-decoration: none;
+}
+
+.gv-auth-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 420px) {
+  .gv-auth-card {
+    padding: 2rem 1.5rem;
+    border-radius: 14px;
+  }
+}

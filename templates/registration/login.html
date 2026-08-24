@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load django_bootstrap5 %}
+
+{% block title %}Sign in — gameVerse{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="gv-auth-page">
+  <div class="gv-auth-card">
+    <h1 class="gv-auth-title">Welcome!</h1>
+    <p class="gv-auth-subtitle">Sign in to see your journal</p>
+
+    <form method="post">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      {% if next %}
+        <input type="hidden" name="next" value="{{ next }}">
+      {% endif %}
+      <button type="submit" class="btn gv-btn-primary">Sign in</button>
+    </form>
+
+    <div class="gv-auth-links">
+      <a href="{% url 'password_reset' %}">Forgot password?</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

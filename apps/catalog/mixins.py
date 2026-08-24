@@ -1,11 +1,12 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect
-
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 
 from .forms import CharacterForm, GameForm
 from .models import Character, Game
+
+
 class AuthorAssignmentMixin:
     """Assigns the current user as the author before saving the object."""
 

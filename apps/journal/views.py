@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
@@ -13,8 +13,8 @@ from apps.catalog.views import AuthorOrSuperuserRequiredMixin
 
 from .forms import (CommentForm, GameStatusForm, JournalEntryForm,
                     QuoteFormSet, ScreenshotFormSet)
+from .mixins import AuthorRequiredMixin, CommentDeleteAllowedMixin
 from .models import Comment, FavoriteCharacter, UserJournal
-from .mixins import CommentDeleteAllowedMixin, AuthorRequiredMixin
 
 User = get_user_model()
 JOURNAL_ENTRIES_PER_PAGE = 5
@@ -68,6 +68,12 @@ class UserJournalCreateView(LoginRequiredMixin, CreateView):
         form.instance.game = get_object_or_404(Game, slug=self.kwargs['game_slug'])
         return super().form_valid(form)
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['game'] = get_object_or_404(Game, slug=self.kwargs['game_slug'])
+        kwargs['user'] = self.request.user
+        return kwargs
+
 
 class UserJournalDetailView(DetailView):
     model = UserJournal
@@ -95,7 +101,7 @@ class UserJournalDetailView(DetailView):
         return context
 
 
-class UserJournalUpdateView(AuthorOrSuperuserRequiredMixin, UpdateView):
+class UserJournalUpdateView(AuthorRequiredMixin, UpdateView):
     model = UserJournal
     form_class = JournalEntryForm
     template_name = 'journal/journal_entry_form.html'

@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import UserPassesTestMixin
 
+
 class CommentDeleteAllowedMixin(UserPassesTestMixin):
     """Разрешает удаление автору комментария, автору записи журнала или суперюзеру."""
 
@@ -14,7 +15,7 @@ class CommentDeleteAllowedMixin(UserPassesTestMixin):
 
 
 class AuthorRequiredMixin(UserPassesTestMixin):
-    """Разрешает доступ только автору записи."""
+    """Grants access to author only."""
 
     def test_func(self):
         return self.get_object().user == self.request.user

@@ -6,7 +6,7 @@ A personal game journal & catalog app — track games you've played, write revie
 
 ---
 
-## 🇬🇧 English
+## en English
 
 ### Tech Stack
 - **Backend:** Django, PostgreSQL

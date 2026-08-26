@@ -25,7 +25,7 @@ class ScreenshotForm(forms.ModelForm):
 
 
 class GameStatusForm(forms.ModelForm):
-    """For «+ My List» — only status"""
+    """For '+ My List' — only status"""
     class Meta:
         model = UserJournal
         fields = ('status',)
@@ -50,12 +50,14 @@ class JournalEntryForm(forms.ModelForm):
         )
 
     def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
         game = kwargs.pop('game', None)
         super().__init__(*args, **kwargs)
+        user = user or self.instance.user
         game = game or self.instance.game
         self.fields['favorite_characters'].queryset = Character.objects.filter(game=game)
         self.fields['favorite_characters'].initial = Character.objects.filter(
-            favorited_by_users__user=self.instance.user, game=game,
+            favorited_by_users__user=user, game=game,
         )
         self.fields['favorite_quests'].queryset = Quest.objects.filter(game=game)
 

@@ -190,11 +190,11 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
         if not hasattr(self, '_journal_entry'):
             self._journal_entry = get_object_or_404(
                 UserJournal.objects
-                    .select_related('user', 'game')
-                    .prefetch_related(
-                        'favorite_quests', 'screenshots', 'comments__author',
-                    )
-                    .visible_to(self.request.user),
+                .select_related('user', 'game')
+                .prefetch_related(
+                    'favorite_quests', 'screenshots', 'comments__author',
+                )
+                .visible_to(self.request.user),
                 user__username=self.kwargs['username'],
                 game__slug=self.kwargs['game_slug'],
             )

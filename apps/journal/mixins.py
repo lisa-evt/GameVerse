@@ -12,10 +12,3 @@ class CommentDeleteAllowedMixin(UserPassesTestMixin):
             or user == comment.journal_entry.user
             or user.is_superuser
         )
-
-
-class AuthorRequiredMixin(UserPassesTestMixin):
-    """Grants access to author only."""
-
-    def test_func(self):
-        return self.get_object().user == self.request.user

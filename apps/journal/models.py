@@ -156,6 +156,37 @@ class FavoriteQuote(models.Model):
         return f'"{self.quote}" - {self.character}'
 
 
+class FavoriteCharacterManager(models.Manager):
+
+    def sync_for(self, user, game, characters):
+        selected = set(characters)
+
+        existing = self.filter(
+            user=user,
+            character__game=game,
+        ).select_related('character')
+
+        existing_characters = {fc.character for fc in existing}
+
+        to_add = selected - existing_characters
+        to_remove = existing_characters - selected
+
+        if to_add:
+            self.bulk_create([
+                FavoriteCharacter(
+                    user=user,
+                    character=character,
+                )
+                for character in to_add
+            ])
+
+        if to_remove:
+            self.filter(
+                user=user,
+                character__in=to_remove,
+            ).delete()
+
+
 class FavoriteCharacter(models.Model):
     """Represents a game character favorited by a user.
 
@@ -165,6 +196,7 @@ class FavoriteCharacter(models.Model):
         is_on_showcase (BooleanField): Whether this character
             is highlighted on the user's profile showcase.
     """
+    objects = FavoriteCharacterManager()
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         related_name='favorite_characters',

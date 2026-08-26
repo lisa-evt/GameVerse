@@ -9,11 +9,11 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 
 from apps.catalog.models import Character, Game
-from apps.catalog.views import AuthorOrSuperuserRequiredMixin
+from apps.catalog.mixins import OwnerRequiredMixin
 
 from .forms import (CommentForm, GameStatusForm, JournalEntryForm,
                     QuoteFormSet, ScreenshotFormSet)
-from .mixins import AuthorRequiredMixin, CommentDeleteAllowedMixin
+from .mixins import CommentDeleteAllowedMixin
 from .models import Comment, FavoriteCharacter, UserJournal
 
 User = get_user_model()
@@ -60,48 +60,77 @@ class UserJournalCreateView(LoginRequiredMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['game'] = get_object_or_404(Game, slug=self.kwargs['game_slug'])
+        game = get_object_or_404(
+            Game,
+            slug=self.kwargs['game_slug'],
+        )
+        context['game'] = game
+        context.setdefault(
+            'screenshot_formset',
+            ScreenshotFormSet(),
+        )
+        context.setdefault(
+            'quote_formset',
+            QuoteFormSet(
+                form_kwargs={'game': game},
+            ),
+        )
         return context
-
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        form.instance.game = get_object_or_404(Game, slug=self.kwargs['game_slug'])
-        return super().form_valid(form)
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['game'] = get_object_or_404(Game, slug=self.kwargs['game_slug'])
+        kwargs['game'] = get_object_or_404(
+            Game,
+            slug=self.kwargs['game_slug'],
+        )
         kwargs['user'] = self.request.user
         return kwargs
 
+    def post(self, request, *args, **kwargs):
+        self.object = None
+        form = self.get_form()
+        game = get_object_or_404(
+            Game,
+            slug=self.kwargs['game_slug'],
+        )
+        screenshot_formset = ScreenshotFormSet(
+            request.POST,
+            request.FILES,
+        )
+        quote_formset = QuoteFormSet(
+            request.POST,
+            form_kwargs={'game': game},
+        )
+        form.instance.user = request.user
+        form.instance.game = game
+        if (
+            form.is_valid()
+            and screenshot_formset.is_valid()
+            and quote_formset.is_valid()
+        ):
+            self.object = form.save()
+            screenshot_formset.instance = self.object
+            screenshot_formset.save()
+            quote_formset.instance = self.object
+            quote_formset.save()
+            return HttpResponseRedirect(self.get_success_url())
 
-class UserJournalDetailView(DetailView):
-    model = UserJournal
-    template_name = 'journal/journal_entry.html'
-
-    def get_object(self):
-        return get_object_or_404(
-            UserJournal.objects
-                .select_related('user', 'game')
-                .prefetch_related(
-                    'favorite_quests', 'screenshots', 'comments__author',
-                )
-                .visible_to(self.request.user),
-            user__username=self.kwargs['username'],
-            game__slug=self.kwargs['game_slug'],
+        return self.render_to_response(
+            self.get_context_data(
+                form=form,
+                screenshot_formset=screenshot_formset,
+                quote_formset=quote_formset,
+            )
         )
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['form'] = CommentForm()
-        context['game'] = self.object.game
-        context['favorite_characters'] = FavoriteCharacter.objects.filter(
-            user=self.object.user, character__game=self.object.game,
-        ).select_related('character')
-        return context
+    def get_success_url(self):
+        return reverse('journal:journal_entry_detail', kwargs={
+            'username': self.object.user.username,
+            'game_slug': self.object.game.slug,
+        })
 
 
-class UserJournalUpdateView(AuthorRequiredMixin, UpdateView):
+class UserJournalUpdateView(OwnerRequiredMixin, UpdateView):
     model = UserJournal
     form_class = JournalEntryForm
     template_name = 'journal/journal_entry_form.html'
@@ -162,8 +191,35 @@ class UserJournalUpdateView(AuthorRequiredMixin, UpdateView):
         })
 
 
-class UserJournalDeleteView(AuthorOrSuperuserRequiredMixin, DeleteView):
+class UserJournalDetailView(DetailView):
     model = UserJournal
+    template_name = 'journal/journal_entry.html'
+
+    def get_object(self):
+        return get_object_or_404(
+            UserJournal.objects
+            .select_related('user', 'game')
+            .prefetch_related(
+                'favorite_quests', 'screenshots', 'comments__author',
+            )
+            .visible_to(self.request.user),
+            user__username=self.kwargs['username'],
+            game__slug=self.kwargs['game_slug'],
+        )
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CommentForm()
+        context['game'] = self.object.game
+        context['favorite_characters'] = FavoriteCharacter.objects.filter(
+            user=self.object.user, character__game=self.object.game,
+        ).select_related('character')
+        return context
+
+
+class UserJournalDeleteView(OwnerRequiredMixin, DeleteView):
+    model = UserJournal
+    owner_field = 'user'
     template_name = 'journal/journal_entry_confirm_delete.html'
 
     def get_object(self, queryset=None):

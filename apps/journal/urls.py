@@ -33,7 +33,7 @@ urlpatterns = [
     path(
         '<str:username>/<slug:game_slug>/',
         views.UserJournalDetailView.as_view(),
-        name='journal_entry',
+        name='journal_entry_detail',
     ),
     path(
         'comment/<int:pk>/delete/',

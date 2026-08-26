@@ -6,13 +6,12 @@ updating, and deleting Game and Character objects. It also includes custom
 mixins for access control and database query optimization.
 """
 
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse, reverse_lazy
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 
 from .forms import CharacterForm, GameForm
-from .mixins import AuthorAssignmentMixin, AuthorOrSuperuserRequiredMixin
+from .mixins import AuthorAssignmentMixin, OwnerRequiredMixin
 from .models import Character, Game
 
 GAMES_PER_PAGE = 15
@@ -39,7 +38,7 @@ class CharactersListView(ListView):
 
 class GameDetailView(DetailView):
     """
-    Displays the details of a single game, including its related 
+    Displays the details of a single game, including its related
     characters and quests.
     """
     model = Game
@@ -47,7 +46,7 @@ class GameDetailView(DetailView):
 
     def get_queryset(self):
         """
-        Optimizes database queries by prefetching related characters 
+        Optimizes database queries by prefetching related characters
         and quests.
         """
         return super().get_queryset().prefetch_related('characters', 'quests')
@@ -100,42 +99,50 @@ class CharacterCreateView(AuthorAssignmentMixin, CreateView):
     template_name = 'catalog/character_add.html'
 
 
-class GameUpdateView(AuthorOrSuperuserRequiredMixin, UpdateView):
+class GameUpdateView(OwnerRequiredMixin, UpdateView):
     """
     Displays a form to update an existing game.
     Only accessible by the game's author or a superuser.
     """
     model = Game
+    owner_field = 'added_by'
+    allow_superuser = True
     form_class = GameForm
     template_name = 'catalog/game_add.html'
 
 
-class CharacterUpdateView(AuthorOrSuperuserRequiredMixin, UpdateView):
+class CharacterUpdateView(OwnerRequiredMixin, UpdateView):
     """
     Displays a form to update an existing character.
     Only accessible by the character's author or a superuser.
     """
     model = Character
+    owner_field = 'added_by'
+    allow_superuser = True
     form_class = CharacterForm
     template_name = 'catalog/character_add.html'
 
 
-class GameDeleteView(AuthorOrSuperuserRequiredMixin, DeleteView):
+class GameDeleteView(OwnerRequiredMixin, DeleteView):
     """
     Displays a confirmation page to delete an existing game.
     Only accessible by the game's author or a superuser.
     """
     model = Game
+    owner_field = 'added_by'
+    allow_superuser = True
     template_name = 'catalog/game_confirm_delete.html'
     success_url = reverse_lazy('catalog:games')
 
 
-class CharacterDeleteView(AuthorOrSuperuserRequiredMixin, DeleteView):
+class CharacterDeleteView(OwnerRequiredMixin, DeleteView):
     """
     Displays a confirmation page to delete an existing character.
     Only accessible by the character's author or a superuser.
     """
     model = Character
+    owner_field = 'added_by'
+    allow_superuser = True
     pk_url_kwarg = 'character_slug'
     template_name = 'catalog/character_confirm_delete.html'
     success_url = reverse_lazy('catalog:characters')

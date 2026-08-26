@@ -1,10 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect
-from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
-                                  UpdateView)
-
-from .forms import CharacterForm, GameForm
-from .models import Character, Game
 
 
 class AuthorAssignmentMixin:
@@ -15,28 +10,33 @@ class AuthorAssignmentMixin:
         return super().form_valid(form)
 
 
-class AuthorOrSuperuserRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
+class OwnerRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
     """
-    Mixin that verifies the current user is either the author of the object
-    or a superuser.
+    Restricts access to the object's owner.
+
+    Subclasses must set `owner_field` to the FK field name that identifies
+    the object's owner (e.g. 'user' for UserJournal, 'added_by' for
+    Game/Character). Optionally set `allow_superuser = True` to also grant
+    access to superusers.
     """
+    owner_field = None
+    allow_superuser = False
 
     def get_object(self, queryset=None):
-        """
-        Retrieves the object and caches it on the instance to prevent
-        duplicate database queries during the view's lifecycle.
-        """
+        """Caches the object to avoid duplicate queries during the request."""
         if not hasattr(self, '_cached_object'):
             self._cached_object = super().get_object(queryset)
         return self._cached_object
 
     def test_func(self):
-        target_object = self.get_object()
-        return (target_object.added_by == self.request.user) or self.request.user.is_superuser
+        obj = self.get_object()
+        owner = getattr(obj, self.owner_field)
+        is_owner = owner == self.request.user
+        return is_owner or (self.allow_superuser and self.request.user.is_superuser)
 
     def handle_no_permission(self):
-        """
-        Redirects unauthorized users to the object's detail page instead
-        of showing a 403 Forbidden error.
-        """
+        if not self.request.user.is_authenticated:
+            # not logged in at all -> redirect to login
+            return super().handle_no_permission()
+        # logged in, but not the owner -> send them back to the object's page
         return redirect(self.get_object().get_absolute_url())

@@ -164,6 +164,7 @@ class Character(SlugModel):
 
     def get_absolute_url(self):
         return reverse('catalog:character_detail', args=(self.slug,))
+    
 
     class Meta:
         ordering = ['name']

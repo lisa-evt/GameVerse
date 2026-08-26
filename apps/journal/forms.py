@@ -63,33 +63,13 @@ class JournalEntryForm(forms.ModelForm):
 
     def save(self, commit=True):
         instance = super().save(commit=commit)
-
-        if not commit:
-            self.save_m2m = lambda: self._sync_favorite_characters(instance)
-            return instance
-
-        self._sync_favorite_characters(instance)
+        if commit:
+            FavoriteCharacter.objects.sync_for(
+                user=instance.user,
+                game=instance.game,
+                characters=self.cleaned_data['favorite_characters'],
+            )
         return instance
-
-    def _sync_favorite_characters(self, instance):
-        selected = set(self.cleaned_data['favorite_characters'])
-        existing = FavoriteCharacter.objects.filter(
-            user=instance.user, character__game=instance.game,
-        ).select_related('character')
-        existing_characters = {fc.character for fc in existing}
-
-        to_add = selected - existing_characters
-        to_remove = existing_characters - selected
-
-        if to_add:
-            FavoriteCharacter.objects.bulk_create([
-                FavoriteCharacter(user=instance.user, character=character)
-                for character in to_add
-            ])
-        if to_remove:
-            FavoriteCharacter.objects.filter(
-                user=instance.user, character__in=to_remove,
-            ).delete()
 
 
 class CommentForm(forms.ModelForm):

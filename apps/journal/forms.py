@@ -14,8 +14,12 @@ class FavoriteQuoteForm(forms.ModelForm):
 
     def __init__(self, *args, game=None, **kwargs):
         super().__init__(*args, **kwargs)
-        if game is not None:
-            self.fields['character'].queryset = Character.objects.filter(game=game)
+        if game is None:
+            raise ValueError(
+                "FavoriteQuoteForm requires 'game' to be passed explicitly "
+                "via form_kwargs (e.g. form_kwargs={'game': game})."
+            )
+        self.fields['character'].queryset = Character.objects.filter(game=game)
 
 
 class ScreenshotForm(forms.ModelForm):
@@ -53,8 +57,10 @@ class JournalEntryForm(forms.ModelForm):
         user = kwargs.pop('user', None)
         game = kwargs.pop('game', None)
         super().__init__(*args, **kwargs)
+        
         user = user or self.instance.user
         game = game or self.instance.game
+
         self.fields['favorite_characters'].queryset = Character.objects.filter(game=game)
         self.fields['favorite_characters'].initial = Character.objects.filter(
             favorited_by_users__user=user, game=game,
@@ -62,6 +68,13 @@ class JournalEntryForm(forms.ModelForm):
         self.fields['favorite_quests'].queryset = Quest.objects.filter(game=game)
 
     def save(self, commit=True):
+        """
+        Save the journal entry.
+
+        Note: favorite_characters sync only happens when commit=True.
+        Calling save(commit=False) will NOT sync favorite characters —
+        this form does not currently support the deferred save_m2m() pattern.
+        """
         instance = super().save(commit=commit)
         if commit:
             FavoriteCharacter.objects.sync_for(
@@ -78,13 +91,24 @@ class CommentForm(forms.ModelForm):
         fields = ('text',)
 
 
-QuoteFormSet = inlineformset_factory(
+BaseQuoteFormSet = inlineformset_factory(
     UserJournal,
     FavoriteQuote,
     form=FavoriteQuoteForm,
     extra=1,
     can_delete=True,
 )
+
+
+class QuoteFormSet(BaseQuoteFormSet):
+    def __init__(self, *args, form_kwargs=None, **kwargs):
+        if not form_kwargs or 'game' not in form_kwargs:
+            raise ValueError(
+                "QuoteFormSet requires 'game' to be passed via form_kwargs "
+                "(e.g. form_kwargs={'game': game})."
+            )
+        super().__init__(*args, form_kwargs=form_kwargs, **kwargs)
+
 
 ScreenshotFormSet = inlineformset_factory(
     UserJournal,

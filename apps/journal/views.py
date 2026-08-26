@@ -1,15 +1,17 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db import transaction
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
+from django.utils.functional import cached_property
 from django.views import View
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 
-from apps.catalog.models import Character, Game
 from apps.catalog.mixins import OwnerRequiredMixin
+from apps.catalog.models import Character, Game
 
 from .forms import (CommentForm, GameStatusForm, JournalEntryForm,
                     QuoteFormSet, ScreenshotFormSet)
@@ -58,12 +60,16 @@ class UserJournalCreateView(LoginRequiredMixin, CreateView):
     form_class = JournalEntryForm
     template_name = 'journal/journal_entry_form.html'
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        game = get_object_or_404(
+    @cached_property
+    def game(self):
+        return get_object_or_404(
             Game,
             slug=self.kwargs['game_slug'],
         )
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        game = self.game
         context['game'] = game
         context.setdefault(
             'screenshot_formset',
@@ -79,20 +85,14 @@ class UserJournalCreateView(LoginRequiredMixin, CreateView):
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['game'] = get_object_or_404(
-            Game,
-            slug=self.kwargs['game_slug'],
-        )
+        kwargs['game'] = self.game
         kwargs['user'] = self.request.user
         return kwargs
 
     def post(self, request, *args, **kwargs):
         self.object = None
         form = self.get_form()
-        game = get_object_or_404(
-            Game,
-            slug=self.kwargs['game_slug'],
-        )
+        game = self.game
         screenshot_formset = ScreenshotFormSet(
             request.POST,
             request.FILES,
@@ -103,16 +103,20 @@ class UserJournalCreateView(LoginRequiredMixin, CreateView):
         )
         form.instance.user = request.user
         form.instance.game = game
-        if (
-            form.is_valid()
-            and screenshot_formset.is_valid()
-            and quote_formset.is_valid()
-        ):
-            self.object = form.save()
-            screenshot_formset.instance = self.object
-            screenshot_formset.save()
-            quote_formset.instance = self.object
-            quote_formset.save()
+        form_valid = form.is_valid()
+        screenshot_formset_valid = screenshot_formset.is_valid()
+        quote_formset_valid = quote_formset.is_valid()
+
+        if form_valid and screenshot_formset_valid and quote_formset_valid:
+            with transaction.atomic():
+                self.object = form.save()
+
+                screenshot_formset.instance = self.object
+                screenshot_formset.save()
+
+                quote_formset.instance = self.object
+                quote_formset.save()
+
             return HttpResponseRedirect(self.get_success_url())
 
         return self.render_to_response(
@@ -161,34 +165,42 @@ class UserJournalUpdateView(OwnerRequiredMixin, UpdateView):
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         form = self.get_form()
+
         screenshot_formset = ScreenshotFormSet(
-            request.POST, request.FILES, instance=self.object,
+            request.POST,
+            request.FILES,
+            instance=self.object,
         )
+
         quote_formset = QuoteFormSet(
             request.POST,
             instance=self.object,
             form_kwargs={'game': self.object.game},
         )
 
-        if form.is_valid() and screenshot_formset.is_valid() and quote_formset.is_valid():
-            self.object = form.save()
-            screenshot_formset.instance = self.object
-            screenshot_formset.save()
-            quote_formset.instance = self.object
-            quote_formset.save()
+        form_valid = form.is_valid()
+        screenshot_formset_valid = screenshot_formset.is_valid()
+        quote_formset_valid = quote_formset.is_valid()
+
+        if form_valid and screenshot_formset_valid and quote_formset_valid:
+            with transaction.atomic():
+                self.object = form.save()
+
+                screenshot_formset.instance = self.object
+                screenshot_formset.save()
+
+                quote_formset.instance = self.object
+                quote_formset.save()
+
             return HttpResponseRedirect(self.get_success_url())
 
-        return self.render_to_response(self.get_context_data(
-            form=form,
-            screenshot_formset=screenshot_formset,
-            quote_formset=quote_formset,
-        ))
-
-    def get_success_url(self):
-        return reverse('journal:journal_entry_detail', kwargs={
-            'username': self.object.user.username,
-            'game_slug': self.object.game.slug,
-        })
+        return self.render_to_response(
+            self.get_context_data(
+                form=form,
+                screenshot_formset=screenshot_formset,
+                quote_formset=quote_formset,
+            )
+        )
 
 
 class UserJournalDetailView(DetailView):

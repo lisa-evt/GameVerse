@@ -2,7 +2,6 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 
 
 class CommentDeleteAllowedMixin(UserPassesTestMixin):
-    """Разрешает удаление автору комментария, автору записи журнала или суперюзеру."""
 
     def test_func(self):
         comment = self.get_object()

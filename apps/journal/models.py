@@ -147,10 +147,13 @@ class FavoriteQuote(models.Model):
             ValidationError:
             If the character's game does not match the journal entry's game.
         """
+        if not self.character_id or not self.user_journal_entry_id:
+            return
         if self.character.game != self.user_journal_entry.game:
             raise ValidationError(
                 'Character must belong to the same game as the journal entry.'
             )
+
 
     def __str__(self):
         return f'"{self.quote}" - {self.character}'

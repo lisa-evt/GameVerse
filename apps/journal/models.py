@@ -65,8 +65,8 @@ class UserJournal(CreatedAtModel):
     )
     favorite_quests = ChainedManyToManyField(
         'catalog.Quest',
-        chained_field='game',          # поле в ЭТОЙ модели (UserJournal), от которого зависим
-        chained_model_field='game',    # поле в Quest, связывающее его с Game
+        chained_field='game',
+        chained_model_field='game',
         related_name='favorited_in',
         blank=True,
     )

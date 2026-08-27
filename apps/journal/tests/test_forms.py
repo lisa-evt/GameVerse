@@ -2,16 +2,11 @@ import pytest
 from django.core.files.uploadedfile import SimpleUploadedFile
 
 from apps.catalog.models import Character, Game, Quest
-from apps.journal.forms import (
-    CommentForm,
-    FavoriteQuoteForm,
-    GameStatusForm,
-    JournalEntryForm,
-    QuoteFormSet,
-    ScreenshotForm,
-    ScreenshotFormSet,
-)
-from apps.journal.models import FavoriteCharacter, FavoriteQuote, Screenshot, UserJournal
+from apps.journal.forms import (CommentForm, FavoriteQuoteForm, GameStatusForm,
+                                JournalEntryForm, QuoteFormSet, ScreenshotForm,
+                                ScreenshotFormSet)
+from apps.journal.models import (FavoriteCharacter, FavoriteQuote, Screenshot,
+                                 UserJournal)
 
 pytestmark = pytest.mark.django_db
 
@@ -62,6 +57,7 @@ def character(game):
         game=game,
     )
 
+
 @pytest.fixture
 def other_character(other_game):
     return Character.objects.create(
@@ -71,12 +67,20 @@ def other_character(other_game):
 
 @pytest.fixture
 def quest(game):
-    return Quest.objects.create(title='The Cake Is a Lie', description='Reach the cake.', game=game)
+    return Quest.objects.create(
+        title='The Cake Is a Lie',
+        description='Reach the cake.',
+        game=game
+    )
 
 
 @pytest.fixture
 def other_quest(other_game):
-    return Quest.objects.create(title='Save the city', description='...', game=other_game)
+    return Quest.objects.create(
+        title='Save the city',
+        description='...',
+        game=other_game
+    )
 
 
 @pytest.fixture
@@ -102,7 +106,9 @@ class TestFavoriteQuoteForm:
         with pytest.raises(ValueError, match="requires 'game'"):
             FavoriteQuoteForm()
 
-    def test_character_queryset_filtered_by_game(self, game, character, other_character):
+    def test_character_queryset_filtered_by_game(
+            self, game, character, other_character
+    ):
         form = FavoriteQuoteForm(game=game)
         assert list(form.fields['character'].queryset) == [character]
         assert other_character not in form.fields['character'].queryset
@@ -202,11 +208,15 @@ class TestJournalEntryFormFavoriteCharactersInitial:
         foreign_character = Character.objects.create(
             name='Astarion', description='...', game=other_game,
         )
-        FavoriteCharacter.objects.create(user=user, character=foreign_character)
+        FavoriteCharacter.objects.create(
+            user=user,
+            character=foreign_character
+        )
 
         form = JournalEntryForm(instance=journal)
 
-        assert foreign_character not in form.fields['favorite_characters'].initial
+        chars_initial = form.fields['favorite_characters'].initial
+        assert foreign_character not in chars_initial
 
     def test_favorites_of_other_user_are_excluded(
         self, user, other_user, game, character,
@@ -224,7 +234,6 @@ class TestJournalEntryFormFavoriteCharactersInitial:
 class TestJournalEntryFormSave:
 
     def _valid_data(self, character):
-        # personal_rating=9 — предположение, подгони под реальные MinValueValidator/MaxValueValidator
         return {
             'status': UserJournal.GameStatus.COMPLETED,
             'personal_rating': 9,
@@ -234,24 +243,38 @@ class TestJournalEntryFormSave:
         }
 
     def test_save_syncs_favorite_characters(self, user, game, character):
-        form = JournalEntryForm(data=self._valid_data(character), user=user, game=game)
+        form = JournalEntryForm(
+            data=self._valid_data(character),
+            user=user,
+            game=game
+        )
         form.instance.user = user
         form.instance.game = game
         assert form.is_valid(), form.errors
 
         form.save()
 
-        assert FavoriteCharacter.objects.filter(user=user, character=character).exists()
+        assert FavoriteCharacter.objects.filter(
+            user=user, character=character,
+        ).exists()
 
-    def test_save_commit_false_does_not_sync_favorites(self, user, game, character):
-        form = JournalEntryForm(data=self._valid_data(character), user=user, game=game)
+    def test_save_commit_false_does_not_sync_favorites(
+            self, user, game, character
+    ):
+        form = JournalEntryForm(
+            data=self._valid_data(character),
+            user=user,
+            game=game
+        )
         form.instance.user = user
         form.instance.game = game
         assert form.is_valid(), form.errors
 
         form.save(commit=False)
 
-        assert not FavoriteCharacter.objects.filter(user=user, character=character).exists()
+        assert not FavoriteCharacter.objects.filter(
+            user=user, character=character
+        ).exists()
 
     def test_save_removes_unselected_favorite(self, user, game, character):
         FavoriteCharacter.objects.create(user=user, character=character)
@@ -264,7 +287,9 @@ class TestJournalEntryFormSave:
 
         form.save()
 
-        assert not FavoriteCharacter.objects.filter(user=user, character=character).exists()
+        assert not FavoriteCharacter.objects.filter(
+            user=user, character=character
+        ).exists()
 
 
 # --- CommentForm ----------------------------------------------------
@@ -290,8 +315,9 @@ class TestQuoteFormSet:
             QuoteFormSet()
 
     def test_saves_quote_linked_to_journal(self, journal, game, character):
-        # достаём реальный prefix формсета вместо того чтобы угадывать его вручную
-        empty_formset = QuoteFormSet(instance=journal, form_kwargs={'game': game})
+        empty_formset = QuoteFormSet(
+            instance=journal, form_kwargs={'game': game}
+        )
         prefix = empty_formset.prefix
 
         data = {
@@ -302,12 +328,16 @@ class TestQuoteFormSet:
             f'{prefix}-0-quote': 'The cake is a lie.',
             f'{prefix}-0-character': character.pk,
         }
-        formset = QuoteFormSet(data, instance=journal, form_kwargs={'game': game})
+        formset = QuoteFormSet(
+            data, instance=journal, form_kwargs={'game': game}
+        )
         assert formset.is_valid(), formset.errors
 
         formset.save()
 
-        assert FavoriteQuote.objects.filter(quote='The cake is a lie.').exists()
+        assert FavoriteQuote.objects.filter(
+            quote='The cake is a lie.'
+        ).exists()
 
 
 # --- ScreenshotFormSet -------------------------------------------------

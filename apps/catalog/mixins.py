@@ -32,7 +32,9 @@ class OwnerRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
         obj = self.get_object()
         owner = getattr(obj, self.owner_field)
         is_owner = owner == self.request.user
-        return is_owner or (self.allow_superuser and self.request.user.is_superuser)
+        return is_owner or (
+            self.allow_superuser and self.request.user.is_superuser
+        )
 
     def handle_no_permission(self):
         if not self.request.user.is_authenticated:

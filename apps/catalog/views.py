@@ -59,8 +59,12 @@ class GameDetailView(DetailView):
         context['characters'] = self.object.characters.all()
         context['quests'] = self.object.quests.all()
         if self.object.added_by == self.request.user:
-            context['edit_url'] = reverse('catalog:game_edit', args=[self.object.slug])
-            context['delete_url'] = reverse('catalog:game_delete', args=[self.object.slug])
+            context['edit_url'] = reverse(
+                'catalog:game_edit', args=[self.object.slug]
+            )
+            context['delete_url'] = reverse(
+                'catalog:game_delete', args=[self.object.slug]
+            )
         return context
 
 
@@ -74,8 +78,12 @@ class CharacterDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.object.added_by == self.request.user:
-            context['edit_url'] = reverse('catalog:character_edit', args=[self.object.slug])
-            context['delete_url'] = reverse('catalog:character_delete', args=[self.object.slug])
+            context['edit_url'] = reverse(
+                'catalog:character_edit', args=[self.object.slug]
+            )
+            context['delete_url'] = reverse(
+                'catalog:character_delete', args=[self.object.slug]
+            )
         return context
 
 

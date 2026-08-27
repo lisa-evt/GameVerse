@@ -57,17 +57,19 @@ class JournalEntryForm(forms.ModelForm):
         user = kwargs.pop('user', None)
         game = kwargs.pop('game', None)
         super().__init__(*args, **kwargs)
-        
+
         user = user or self.instance.user
         game = game or self.instance.game
 
-        self.fields['favorite_characters'].queryset = Character.objects.filter(game=game)
-        self.fields['favorite_characters'].initial = Character.objects.filter(
+        fav_chars = self.fields['favorite_characters']
+        fav_quests = self.fields['favorite_quests']
+        fav_chars.queryset = Character.objects.filter(game=game)
+        fav_chars.initial = Character.objects.filter(
             favorited_by_users__user=user, game=game,
         )
-        self.fields['favorite_quests'].queryset = Quest.objects.filter(game=game)
+        fav_quests.queryset = Quest.objects.filter(game=game)
 
-    def save(self, commit=True):
+    def save(self, commit: bool = True) -> UserJournal:
         """
         Save the journal entry.
 

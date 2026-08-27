@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
+from django.urls import reverse
 from smart_selects.db_fields import ChainedManyToManyField
 
 from .querysets import UserJournalQuerySet
@@ -89,6 +90,12 @@ class UserJournal(CreatedAtModel):
     def __str__(self):
         return f'{self.user} - {self.game} ({self.status})'
 
+    def get_absolute_url(self):
+        return reverse('journal:journal_entry_detail', kwargs={
+            'username': self.user.username,
+            'game_slug': self.game.slug,
+        })
+
 
 class Screenshot(models.Model):
     """Represents a screenshot uploaded by a user for a specific journal entry.
@@ -153,7 +160,6 @@ class FavoriteQuote(models.Model):
             raise ValidationError(
                 'Character must belong to the same game as the journal entry.'
             )
-
 
     def __str__(self):
         return f'"{self.quote}" - {self.character}'
@@ -247,6 +253,9 @@ class Comment(CreatedAtModel):
 
     class Meta:
         ordering = ('created_at',)
+
+    def get_absolute_url(self):
+        return self.journal_entry.get_absolute_url()
 
     def __str__(self):
         return f"{self.author}: {self.text[:30]}"
